@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Shop\store.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".vs\Bizuteria\v17\DocumentLayout.backup.json" />
+    <Content Include=".vs\Bizuteria\v17\DocumentLayout.json" />
+    <Content Include=".vs\ProjectSettings.json" />
+    <Content Include=".vs\VSWorkspaceState.json" />
+    <Content Include="Views\Home\.vs\Bizuteria\v17\DocumentLayout.backup.json" />
+    <Content Include="Views\Home\.vs\Bizuteria\v17\DocumentLayout.json" />
+    <Content Include="Views\Home\.vs\ProjectSettings.json" />
+    <Content Include="Views\Home\.vs\VSWorkspaceState.json" />
+    <Content Include="wwwroot\.vs\Bizuteria\v17\DocumentLayout.backup.json" />
+    <Content Include="wwwroot\.vs\Bizuteria\v17\DocumentLayout.json" />
+    <Content Include="wwwroot\.vs\ProjectSettings.json" />
+    <Content Include="wwwroot\.vs\VSWorkspaceState.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include=".vs\Bizuteria\config\applicationhost.config" />
+    <None Include=".vs\Bizuteria\FileContentIndex\382dc483-793e-4677-afa4-fb8887b3adb5.vsidx" />
+    <None Include=".vs\Bizuteria\FileContentIndex\4304c165-72d9-4889-9b8b-1e544b8fdd2a.vsidx" />
+    <None Include=".vs\Bizuteria\FileContentIndex\76715a4e-d0b4-4a85-82c8-4ebc0fce1629.vsidx" />
+    <None Include=".vs\Bizuteria\FileContentIndex\fd09beae-862c-4137-b5f5-541ad8fc4b13.vsidx" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include="Views\Home\.vs\Bizuteria\config\applicationhost.config" />
+    <None Include="Views\Home\.vs\Bizuteria\FileContentIndex\382dc483-793e-4677-afa4-fb8887b3adb5.vsidx" />
+    <None Include="Views\Home\.vs\Bizuteria\FileContentIndex\4304c165-72d9-4889-9b8b-1e544b8fdd2a.vsidx" />
+    <None Include="Views\Home\.vs\Bizuteria\FileContentIndex\76715a4e-d0b4-4a85-82c8-4ebc0fce1629.vsidx" />
+    <None Include="Views\Home\.vs\Bizuteria\FileContentIndex\fd09beae-862c-4137-b5f5-541ad8fc4b13.vsidx" />
+    <None Include="Views\Home\.vs\slnx.sqlite" />
+    <None Include="Views\Shop\store.cshtml" />
+    <None Include="wwwroot\.vs\Bizuteria\config\applicationhost.config" />
+    <None Include="wwwroot\.vs\Bizuteria\FileContentIndex\382dc483-793e-4677-afa4-fb8887b3adb5.vsidx" />
+    <None Include="wwwroot\.vs\Bizuteria\FileContentIndex\4304c165-72d9-4889-9b8b-1e544b8fdd2a.vsidx" />
+    <None Include="wwwroot\.vs\Bizuteria\FileContentIndex\76715a4e-d0b4-4a85-82c8-4ebc0fce1629.vsidx" />
+    <None Include="wwwroot\.vs\Bizuteria\FileContentIndex\fd09beae-862c-4137-b5f5-541ad8fc4b13.vsidx" />
+    <None Include="wwwroot\.vs\slnx.sqlite" />
+    <None Include="wwwroot\assets\bootstrap\css\bootstrap.min.css" />
+    <None Include="wwwroot\assets\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\assets\css\baguetteBox.min.css" />
+    <None Include="wwwroot\assets\css\Shop-item-styles.css" />
+    <None Include="wwwroot\assets\css\Shop-item.css" />
+    <None Include="wwwroot\assets\css\vanilla-zoom.min.css" />
+    <None Include="wwwroot\assets\fonts\Simple-Line-Icons.eot" />
+    <None Include="wwwroot\assets\fonts\simple-line-icons.min.css" />
+    <None Include="wwwroot\assets\fonts\Simple-Line-Icons.svg" />
+    <None Include="wwwroot\assets\fonts\Simple-Line-Icons.ttf" />
+    <None Include="wwwroot\assets\fonts\Simple-Line-Icons.woff" />
+    <None Include="wwwroot\assets\fonts\Simple-Line-Icons.woff2" />
+    <None Include="wwwroot\assets\img\avatars\avatar1.jpg" />
+    <None Include="wwwroot\assets\img\avatars\avatar2.jpg" />
+    <None Include="wwwroot\assets\img\avatars\avatar3.jpg" />
+    <None Include="wwwroot\assets\img\scenery\61-HMICpUTL._AC_UY1000_.jpg" />
+    <None Include="wwwroot\assets\img\scenery\66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg" />
+    <None Include="wwwroot\assets\img\scenery\Bizuteria.avif" />
+    <None Include="wwwroot\assets\img\scenery\depositphotos_5028610-stock-photo-beautiful-woman.jpg" />
+    <None Include="wwwroot\assets\img\scenery\image1.jpg" />
+    <None Include="wwwroot\assets\img\scenery\image4.jpg" />
+    <None Include="wwwroot\assets\img\scenery\image5.jpg" />
+    <None Include="wwwroot\assets\img\scenery\image6.jpg" />
+    <None Include="wwwroot\assets\img\scenery\pulsera-aine-stone-gold.jpg" />
+    <None Include="wwwroot\assets\img\scenery\R2SSHBKMWRFEZIHQN7EW6ZDI34.jpg" />
+    <None Include="wwwroot\assets\img\scenery\yellow.jpeg" />
+    <None Include="wwwroot\assets\img\tech\61-HMICpUTL._AC_UY1000_.jpg" />
+    <None Include="wwwroot\assets\img\tech\66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg" />
+    <None Include="wwwroot\assets\img\tech\Bizuteria.avif" />
+    <None Include="wwwroot\assets\img\tech\depositphotos_5028610-stock-photo-beautiful-woman.jpg" />
+    <None Include="wwwroot\assets\img\tech\image4.jpg" />
+    <None Include="wwwroot\assets\img\tech\pulsera-aine-stone-gold.jpg" />
+    <None Include="wwwroot\assets\img\tech\R2SSHBKMWRFEZIHQN7EW6ZDI34.jpg" />
+    <None Include="wwwroot\assets\img\tech\yellow.jpeg" />
+    <None Include="wwwroot\assets\js\baguetteBox.min.js" />
+    <None Include="wwwroot\assets\js\theme.js" />
+    <None Include="wwwroot\assets\js\vanilla-zoom.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Clases\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+</Project>

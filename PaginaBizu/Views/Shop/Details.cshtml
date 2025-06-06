@@ -1,0 +1,99 @@
+﻿@model PaginaBizu.Models.Product
+
+@{
+    ViewData["Title"] = Model.NombreArticulo;
+
+    // Formatea el precio con separador de miles (espacio no separable entre miles)
+    var precioFormateado = $"₡{Model.Precio:N0}".Replace(",", " "); // Espacio no separable
+}
+
+@Html.AntiForgeryToken()  <!-- Esto genera el token antifalsificación -->
+
+<script>
+    function agregarAlCarrito(productoId) {
+        // Obtener el token antifalsificación generado por Razor
+        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+
+        fetch('/Cart/AddToCart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'RequestVerificationToken': token
+            },
+            body: JSON.stringify({ id: productoId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Actualiza el contador del carrito
+                document.getElementById("cart-count").innerText = data.count;
+            } else {
+                alert('No se pudo agregar el producto al carrito.');
+            }
+        })
+        .catch(error => {
+            console.error('Error al agregar al carrito:', error);
+        });
+    }
+</script>
+
+<style>
+    body {
+        background-color: #fceff1;
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .product-title {
+        color: #a6798f;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+
+    .product-description {
+        color: #555;
+        font-size: 1.1rem;
+    }
+
+    .product-price {
+        font-size: 1.5rem;
+        color: #d4af37;
+        font-weight: bold;
+    }
+
+    .btn-outline-primary {
+        border-color: #d4af37;
+        color: #d4af37;
+    }
+
+        .btn-outline-primary:hover {
+            background-color: #d4af37;
+            color: white;
+        }
+
+    .img-fluid {
+        border-radius: 15px;
+        border: 2px solid #d4af37;
+    }
+
+    .container {
+        padding-top: 40px;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <img src="@Url.Content("~/images/" + Model.ImagenUrl)" class="img-fluid shadow" alt="@Model.NombreArticulo" />
+        </div>
+        <div class="col-md-6">
+            <h2 class="product-title">@Model.NombreArticulo</h2>
+            <p class="product-description">@Model.Descripcion</p>
+            <p class="product-price">@Html.Raw(precioFormateado)</p>
+
+            <!-- Botón para agregar al carrito -->
+            <button class="btn btn-outline-primary mt-3" onclick="agregarAlCarrito(@Model.Id)">Agregar al carrito</button>
+
+            <a href="@Url.Action("Index", "Shop")" class="btn btn-outline-primary mt-3">Volver a la Tienda</a>
+        </div>
+    </div>
+</div>

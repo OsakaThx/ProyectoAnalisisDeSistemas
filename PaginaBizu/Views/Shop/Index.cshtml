@@ -1,0 +1,78 @@
+﻿@model IEnumerable<PaginaBizu.Models.Product>
+
+@{
+    ViewData["Title"] = "Shop";
+}
+
+<style>
+    body {
+        background-color: #fceff1; /* Rosa pastel muy suave */
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .shop-title {
+        text-align: center;
+        color: #a6798f; /* Tono suave, tipo rosa antiguo */
+        margin-top: 30px;
+        margin-bottom: 40px;
+        font-weight: 600;
+    }
+
+    .card {
+        border: 2px solid #d4af37; /* Dorado suave */
+        border-radius: 15px;
+        background-color: #fffafa;
+        transition: transform 0.3s;
+    }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+    .card-img-top {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        object-fit: cover;
+        height: 250px;
+    }
+
+    .card-title {
+        color: #a6798f;
+        font-weight: bold;
+    }
+
+    .card-text {
+        color: #555;
+    }
+
+    .btn-primary {
+        background-color: #d4af37;
+        border: none;
+        color: white;
+    }
+
+        .btn-primary:hover {
+            background-color: #b8962f;
+        }
+</style>
+
+<h2 class="shop-title">Tienda</h2>
+
+<div class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var producto in Model)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="@Url.Content("~/images/" + producto.ImagenUrl)" class="card-img-top" alt="@producto.NombreArticulo">
+                    <div class="card-body">
+                        <h5 class="card-title">@producto.NombreArticulo</h5>
+                        <p class="card-text">@producto.Descripcion</p>
+                        <p class="card-text"><strong>₡@String.Format("{0:N0}", producto.Precio) colones</strong></p>
+                        <a href="@Url.Action("Details", "Shop", new { id = producto.Id })" class="btn btn-primary mt-2">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

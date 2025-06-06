@@ -1,0 +1,38 @@
+﻿@model PaginaBizu.Models.Product
+@{
+    ViewData["Title"] = "Detalles del producto";
+}
+
+<h1>Detalles del producto</h1>
+
+<div>
+    <h4>Producto</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.NombreArticulo)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.NombreArticulo)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.CantidadDisponible)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.CantidadDisponible)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Precio)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.Precio)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Descripcion)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.Descripcion)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.ImagenUrl)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.ImagenUrl)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Categoria)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.Categoria)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(m => m.FechaCreacion)</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(m => m.FechaCreacion)</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Volver a la lista</a>
+</div>

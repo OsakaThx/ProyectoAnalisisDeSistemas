@@ -1,0 +1,52 @@
+﻿@model IEnumerable<PaginaBizu.Models.Product>
+@{
+    ViewData["Title"] = "Lista de Productos";
+    var item = Model.FirstOrDefault();
+}
+
+<h1>Lista de Productos</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Crear nuevo producto</a>
+</p>
+
+@if (item != null)
+{
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(_ => item.NombreArticulo)</th>
+                <th>@Html.DisplayNameFor(_ => item.CantidadDisponible)</th>
+                <th>@Html.DisplayNameFor(_ => item.Precio)</th>
+                <th>@Html.DisplayNameFor(_ => item.Descripcion)</th>
+                <th>@Html.DisplayNameFor(_ => item.ImagenUrl)</th>
+                <th>@Html.DisplayNameFor(_ => item.Categoria)</th>
+                <th>@Html.DisplayNameFor(_ => item.FechaCreacion)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var producto in Model)
+            {
+                <tr>
+                    <td>@producto.NombreArticulo</td>
+                    <td>@producto.CantidadDisponible</td>
+                    <td>@producto.Precio.ToString("C")</td>
+                    <td>@producto.Descripcion</td>
+                    <td><img src="@producto.ImagenUrl" alt="Imagen" style="width:100px;" /></td>
+                    <td>@producto.Categoria</td>
+                    <td>@producto.FechaCreacion.ToShortDateString()</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@producto.Id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@producto.Id">Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@producto.Id">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay productos disponibles.</p>
+}

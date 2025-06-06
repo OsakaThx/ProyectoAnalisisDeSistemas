@@ -1,0 +1,187 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}  <!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i&amp;display=swap">
+    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="assets/css/baguetteBox.min.css">
+    <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css">
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: contain;
+        }
+       
+
+        {
+            max-height: 200px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container">
+            <a class="navbar-brand logo" href="#">Bizuteria</a>
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                <span class="visually-hidden">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" asp-controller="Shop" asp-action="Index">Shop</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="page landing-page">
+        <section class="clean-block clean-hero" style="color: rgba(225,211,223,0.85);background: url('assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg');">
+            <div class="text">
+                <h2>Encuentra la mejor Bizuteria de Costa Rica</h2>
+                <p></p>
+            </div>
+        </section>
+        <section class="clean-block clean-info dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info"><span style="color: rgb(0, 0, 0);">Algunos de nuestros accesorios</span></h2>
+                    <p></p>
+                </div>
+                <div class="container mt-4">
+                    <!-- Pulsera 1 -->
+                    <div class="row mb-4 align-items-center">
+                        <div class="col-md-6 text-center">
+                            <img src="assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg" style="max-width: 250px;" alt="Pulsera 1">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Pulsera Dorada</h5>
+                            <p>₡15,000</p>
+                        </div>
+                    </div>
+                    <!-- Pulsera 2 -->
+                    <div class="row mb-4 align-items-center">
+                        <div class="col-md-6 text-center">
+                            <img src="assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg" style="max-width: 250px;" alt="Pulsera 2">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Pulsera Elegante</h5>
+                            <p>₡18,500</p>
+                        </div>
+                    </div>
+                    <!-- Pulsera 3 -->
+                    <div class="row mb-4 align-items-center">
+                        <div class="col-md-6 text-center">
+                            <img src="assets/img/scenery/pulsera-aine-stone-gold.jpg" style="max-width: 250px;" alt="Pulsera 3">
+                        </div>
+                        <div class="col-md-6">
+                            <h5>Pulsera Piedra Dorada</h5>
+                            <p>₡21,000</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block features">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info"><span style="color: rgb(224, 59, 178);">Encuentranos en</span></h2>
+                    <p>Costa Rica</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-5 feature-box">
+                        <i class="icon-social-instagram icon" style="color: rgb(224,59,178);"></i>
+                        <h4>Instagram</h4>
+                        <p>BizuCr</p>
+                    </div>
+                    <div class="col-md-5 feature-box">
+                        <i class="icon-phone icon" style="color: rgb(224,59,178);"></i>
+                        <h4>Whatsapp</h4>
+                        <p>8402 5070</p>
+                    </div>
+                    <div class="col-md-5 feature-box">
+                        <i class="icon-social-facebook icon" style="color: rgb(224,59,178);"></i>
+                        <h4>Facebook</h4>
+                        <p>BizuCr</p>
+                    </div>
+                    <div class="col-md-5 feature-box">
+                        <h4></h4>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block slider dark">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Slider</h2>
+                </div>
+                <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="w-100 d-block img-fluid" src="assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg" alt="Slide Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100 d-block img-fluid" src="assets/img/scenery/il_570xN.2179198790_o9bo.jpeg" alt="Slide Image">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="w-100 d-block img-fluid" src="assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg" alt="Slide Image">
+                        </div>
+                    </div>
+                    <div>
+                        <a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Next</span>
+                        </a>
+                    </div>
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#carousel-1" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#carousel-1" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#carousel-1" data-bs-slide-to="2"></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        <section class="clean-block about-us">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Sobre nosotros</h2>
+                    <p>Nos encontramos en Costa Rica, somos una empresa nueva que quiere ofrecerte el mejor servicio</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card text-center clean-card"></div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card text-center clean-card"></div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card text-center clean-card"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="page-footer dark">
+        <div class="footer-copyright">
+            <p>© 2025 Copyright Text</p>
+        </div>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/baguetteBox.min.js"></script>
+    <script src="assets/js/vanilla-zoom.js"></script>
+    <script src="assets/js/theme.js"></script>
+</body>
+</html>
