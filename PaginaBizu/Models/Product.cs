@@ -22,7 +22,7 @@
 		[StringLength(500, ErrorMessage = "La descripción no puede exceder 500 caracteres.")]
 		public string Descripcion { get; set; }
 
-		[Url(ErrorMessage = "La URL de la imagen debe ser válida.")]
+		
 		public string ImagenUrl { get; set; }
 
 		[StringLength(50, ErrorMessage = "La categoría no puede exceder 50 caracteres.")]

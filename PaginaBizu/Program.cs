@@ -32,32 +32,38 @@ using (var scope = app.Services.CreateScope())
 		await roleManager.CreateAsync(new IdentityRole("Admin"));
 	}
 
-	var adminEmail = "hoshuacastillo48@gmail.com";
-	var adminPassword = "Joshua0905."; // Cambia por una contraseña segura
+	var usuariosAdmin = new List<(string Email, string Password)>
+{
+	("hoshuacastillo48@gmail.com", "Joshua0905."),       // Tú
+    ("compa1@gmail.com", "Password123!"),                // Compañero 1
+    ("compa2@gmail.com", "Password456!")                 // Compañero 2
+};
 
-	var adminUser = await userManager.FindByEmailAsync(adminEmail);
-
-	if (adminUser == null)
+	foreach (var (email, password) in usuariosAdmin)
 	{
-		adminUser = new ApplicationUser
+		var user = await userManager.FindByEmailAsync(email);
+		if (user == null)
 		{
-			UserName = adminEmail,
-			Email = adminEmail,
-			EmailConfirmed = true
-		};
+			user = new ApplicationUser
+			{
+				UserName = email,
+				Email = email,
+				EmailConfirmed = true
+			};
 
-		var result = await userManager.CreateAsync(adminUser, adminPassword);
+			var result = await userManager.CreateAsync(user, password);
+			if (!result.Succeeded)
+			{
+				throw new Exception($"No se pudo crear el usuario {email}: " + string.Join(", ", result.Errors.Select(e => e.Description)));
+			}
+		}
 
-		if (!result.Succeeded)
+		if (!await userManager.IsInRoleAsync(user, "Admin"))
 		{
-			throw new Exception("No se pudo crear el usuario admin: " + string.Join(", ", result.Errors.Select(e => e.Description)));
+			await userManager.AddToRoleAsync(user, "Admin");
 		}
 	}
 
-	if (!await userManager.IsInRoleAsync(adminUser, "Admin"))
-	{
-		await userManager.AddToRoleAsync(adminUser, "Admin");
-	}
 }
 
 // Middleware pipeline
