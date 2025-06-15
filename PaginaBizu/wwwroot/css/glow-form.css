@@ -1,0 +1,128 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Dejamos el body con fondo neutro claro para no tapar toda la página */
+body {
+    background: #f5f5f5;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor centrado fijo para el login pequeño */
+.login-container-small {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 370px; /* Igual que antes */
+    padding: 40px 35px 60px;
+    box-sizing: border-box;
+    background: #1b1b1b; /* Fondo oscuro elegante */
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: inset 0 0 1px #272727;
+    z-index: 9999;
+}
+
+    /* Texto título */
+    .login-container-small .text {
+        font-size: 30px;
+        color: #c7c7c7;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    /* Formulario con margen arriba */
+    .login-container-small form {
+        margin-top: 40px;
+    }
+
+        /* Campo input con icono */
+        .login-container-small form .field {
+            margin-top: 20px;
+            display: flex;
+        }
+
+    .login-container-small .field .fas {
+        height: 50px;
+        width: 60px;
+        color: #868686;
+        font-size: 20px;
+        line-height: 50px;
+        border: 1px solid #444;
+        border-right: none;
+        border-radius: 5px 0 0 5px;
+        background: linear-gradient(#333, #222);
+    }
+
+    .login-container-small .field input,
+    .login-container-small form button {
+        height: 50px;
+        width: 100%;
+        outline: none;
+        font-size: 19px;
+        color: #868686;
+        padding: 0 15px;
+        border-radius: 0 5px 5px 0;
+        border: 1px solid #444;
+        caret-color: #339933;
+        background: linear-gradient(#333, #222);
+    }
+
+    .login-container-small input:focus {
+        color: #339933;
+        box-shadow: 0 0 5px rgba(0, 255, 0, .2), inset 0 0 5px rgba(0, 255, 0, .1);
+        background: linear-gradient(#333933, #222922);
+        animation: glow .8s ease-out infinite alternate;
+    }
+
+@keyframes glow {
+    0% {
+        border-color: #339933;
+        box-shadow: 0 0 5px rgba(0, 255, 0, .2), inset 0 0 5px rgba(0, 0, 0, .1);
+    }
+
+    100% {
+        border-color: #6f6;
+        box-shadow: 0 0 20px rgba(0, 255, 0, .6), inset 0 0 10px rgba(0, 255, 0, .4);
+    }
+}
+
+.login-container-small button {
+    margin-top: 30px;
+    border-radius: 5px !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #868686;
+    color: #868686;
+    transition: all 0.3s ease;
+}
+
+    .login-container-small button:hover {
+        color: #339933;
+        border: 1px solid #339933;
+        box-shadow: 0 0 5px rgba(0, 255, 0, .3), 0 0 10px rgba(0, 255, 0, .2), 0 0 15px rgba(0, 255, 0, .1), 0 2px 0 black;
+    }
+
+/* Enlace abajo */
+.login-container-small .link {
+    margin-top: 25px;
+    color: #868686;
+    text-align: center;
+}
+
+    .login-container-small .link a {
+        color: #339933;
+        text-decoration: none;
+    }
+
+        .login-container-small .link a:hover {
+            text-decoration: underline;
+        }

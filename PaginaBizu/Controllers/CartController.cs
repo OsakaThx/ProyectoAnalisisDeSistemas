@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PaginaBizu.Data;
-using PaginaBizu.Models;
 using PaginaBizu.Helpers;
-using System.Collections.Generic;
-using System.Linq;
 using PaginaBizu.Models;
+
 
 
 namespace PaginaBizu.Controllers

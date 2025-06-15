@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PaginaBizu.Data;
-using PaginaBizu.Models;
-using System.Linq;
 
 namespace PaginaBizu.Controllers
 {

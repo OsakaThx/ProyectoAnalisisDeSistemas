@@ -1,0 +1,83 @@
+﻿namespace PaginaBizu.wwwroot.css
+/* Estilo general */
+body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #fff;
+        color: #333;
+}
+
+h2, h4, h5 {
+        font-weight: bold;
+}
+
+/* Hero principal */
+.clean-hero {
+        padding: 100px 0;
+        color: white;
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+}
+
+    .clean-hero .text h2 {
+            font-size: 3rem;
+    }
+
+@@media (max-width: 576px) {
+        .clean-hero .text h2 {
+                font-size: 1.5rem;
+           
+    }
+}
+
+/* Productos */
+.img-fluid {
+        max-height: 250px;
+        object-fit: contain;
+}
+
+/* Carrusel */
+.carousel-item img {
+        height: 459px;
+        object-fit: cover;
+}
+
+@@media (max-width: 768px) {
+        .carousel-item img {
+                height: 300px;
+           
+    }
+}
+
+@@media (max-width: 576px) {
+        .carousel-item img {
+                height: 250px;
+           
+    }
+}
+
+/* Características */
+.feature-box i {
+        font-size: 40px;
+        margin-bottom: 10px;
+        color: #e03bb2;
+}
+
+.feature-box h4 {
+        font-size: 1.3rem;
+        margin-top: 10px;
+}
+
+.clean-card {
+        border: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s ease-in-out;
+}
+
+    .clean-card:hover {
+            transform: scale(1.03);
+    }
+/* Solo para limitar altura del carrusel y mantener ancho responsivo */
+.carousel-item img {
+    max-height: 400px; /* Ajusta la altura máxima que quieras */
+    object-fit: cover; /* Para que la imagen se recorte bien si es necesario */
+    width: 100%;
+}

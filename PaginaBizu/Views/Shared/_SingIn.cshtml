@@ -1,0 +1,47 @@
+﻿@model PaginaBizu.Models.SingInModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<link rel="stylesheet" href="~/css/glow-form.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<div class="login-container-small">
+    <div class="text">CREAR CUENTA</div>
+
+    <form asp-action="SingIn" asp-controller="Account" method="post">
+        @Html.AntiForgeryToken()
+
+        <!-- Email -->
+        <div class="field">
+            <span class="fas fa-envelope"></span>
+            <input asp-for="Email" placeholder="Correo electrónico" />
+        </div>
+        <span asp-validation-for="Email" class="text-danger d-block"></span>
+
+        <!-- Password -->
+        <div class="field">
+            <span class="fas fa-lock"></span>
+            <input asp-for="Password" type="password" placeholder="Contraseña" />
+        </div>
+        <span asp-validation-for="Password" class="text-danger d-block"></span>
+
+        <!-- Confirm Password -->
+        <div class="field">
+            <span class="fas fa-lock"></span>
+            <input asp-for="ConfirmPassword" type="password" placeholder="Confirmar contraseña" />
+        </div>
+        <span asp-validation-for="ConfirmPassword" class="text-danger d-block"></span>
+
+        <!-- Botón Registrarme -->
+        <button type="submit">Registrarme</button>
+
+        <!-- Enlace a Iniciar sesión -->
+        <div class="link">
+            ¿Ya tienes cuenta?
+            <a asp-controller="Account" asp-action="Login">Iniciar sesión</a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,5 +1,4 @@
 ﻿// Helpers/SessionExtensions.cs
-using Microsoft.AspNetCore.Http;
 using System.Text.Json;
 
 namespace PaginaBizu.Helpers

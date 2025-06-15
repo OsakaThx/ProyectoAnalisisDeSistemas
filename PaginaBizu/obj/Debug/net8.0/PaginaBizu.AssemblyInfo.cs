@@ -12,10 +12,11 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("604f0275-a1ab-4cd0-ae92-993f6a19469d")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("PaginaBizu")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aea4e440c33a1e0fd9ada4a64b67f68fffc83080")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cb838bb36369397145f6b958b53529850adab2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("PaginaBizu")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PaginaBizu")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
