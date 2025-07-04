@@ -1,0 +1,56 @@
+﻿.addtocart {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    background: #d4af37; /* dorado */
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    display: inline-block;
+}
+
+    .addtocart:hover {
+        background-color: #b8962f;
+    }
+
+    .addtocart .pretext {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.4s ease;
+    }
+
+    .addtocart .done {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #339933; /* verde */
+        color: white;
+        transform: translate(-110%) skew(-40deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 600;
+        letter-spacing: 1px;
+        transition: transform 0.4s ease;
+        border-radius: 5px;
+    }
+
+        .addtocart .done .posttext {
+            transform: skew(40deg);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .addtocart .done i {
+            font-size: 1rem;
+        }

@@ -100,6 +100,24 @@ namespace PaginaBizu.Controllers
 		{
 			return View("~/Views/Shared/_LoginPartialUser.cshtml");
 		}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Login(string email, string password, bool rememberMe)
+		{
+			if (!ModelState.IsValid)
+				return View("~/Views/Shared/_LoginPartialUser.cshtml");
+
+			var result = await _signInManager.PasswordSignInAsync(email, password, rememberMe, lockoutOnFailure: false);
+
+			if (result.Succeeded)
+			{
+				return RedirectToAction("Index", "Home");
+			}
+
+			ModelState.AddModelError(string.Empty, "Correo o contraseña incorrectos.");
+			return View("~/Views/Shared/_LoginPartialUser.cshtml");
+		}
+
 
 	}
 }

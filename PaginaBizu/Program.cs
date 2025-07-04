@@ -85,6 +85,7 @@ async Task CreateAdminRolesAndUsers(WebApplication app)
 		("hoshuacastillo48@gmail.com", "Joshua0905."),
 		("compa1@gmail.com",          "Password123!"),
 		("compa2@gmail.com",          "Password456!")
+		
 	};
 
 	foreach (var (email, pwd) in admins)

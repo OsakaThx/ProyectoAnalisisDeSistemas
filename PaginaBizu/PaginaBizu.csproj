@@ -29,7 +29,6 @@
 	<!-- Carpetas que quieres que existan -->
 	<ItemGroup>
 		<Folder Include="Clases\" />
-		<Folder Include="Views\Sesion\" />
 	</ItemGroup>
 
 	<!-- 📦 Paquetes NuGet -->
