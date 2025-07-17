@@ -1,4 +1,4 @@
-﻿@* No uses @model si no necesitas datos directamente *@
+﻿@* Login de adentro *@
 @using Microsoft.AspNetCore.Identity
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
@@ -45,4 +45,5 @@
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/login-validation.js"></script>
 }

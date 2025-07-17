@@ -1,17 +1,108 @@
-﻿@model PaginaBizu.Models.Product
+﻿@model PaginaBizu.Models.DetalleProductoViewModel
 
 @{
-    ViewData["Title"] = Model.NombreArticulo;
-
-    // Formatea el precio con separador de miles (espacio no separable entre miles)
-    var precioFormateado = $"₡{Model.Precio:N0}".Replace(",", " "); // Espacio no separable
+    ViewData["Title"] = Model.Producto.NombreArticulo;
+    var precioFormateado = $"₡{Model.Producto.Precio:N0}".Replace(",", " ");
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@Html.AntiForgeryToken()  <!-- Esto genera el token antifalsificación -->
+@section Styles {
+    <link rel="stylesheet" href="~/css/product-details.css" />
+}
+
+<h1>@Model.Producto.NombreArticulo</h1>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <img src="@Url.Content("~/images/" + Model.Producto.ImagenUrl)" alt="@Model.Producto.NombreArticulo" class="img-fluid shadow" />
+    </div>
+    <div class="col-md-6">
+        <p>@Model.Producto.Descripcion</p>
+        <p class="h4 text-primary">@Html.Raw(precioFormateado)</p>
+
+        <button class="btn btn-outline-primary mb-4" onclick="agregarAlCarrito(@Model.Producto.Id)">Agregar al carrito</button>
+
+        <a asp-controller="Shop" asp-action="Index" class="btn btn-outline-secondary mb-4 ms-2">Volver a la tienda</a>
+    </div>
+</div>
+
+<hr />
+
+<h3>Comentarios</h3>
+
+@if (TempData["ComentarioError"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ComentarioError"]
+    </div>
+}
+
+@if (Model.Comentarios.Any())
+{
+    <ul class="list-group mb-4">
+        @foreach (var comentario in Model.Comentarios)
+        {
+            <li class="list-group-item">
+                <strong>@(comentario.Usuario?.UserName ?? "Anónimo")</strong>
+                <span class="text-warning">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        if (i <= comentario.Calificacion)
+                        {
+                            <span>&#9733;</span>
+                        }
+                        else
+                        {
+                            <span style="color:#ddd;">&#9733;</span>
+                        }
+                    }
+                </span>
+                <br />
+                <small class="text-muted">@comentario.Fecha.ToString("dd/MM/yyyy HH:mm")</small>
+                <p>@comentario.Contenido</p>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p class="text-muted">No hay comentarios aún.</p>
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <form id="comentarioForm" asp-action="Crear" asp-controller="Comentarios" method="post" class="mb-5">
+        <input type="hidden" name="ProductoId" value="@Model.Producto.Id" />
+        <div class="mb-3">
+            <label for="Contenido" class="form-label">Escribe tu comentario:</label>
+            <textarea id="Contenido" name="Contenido" class="form-control" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Calificación:</label>
+            <div class="star-rating">
+                @for (int i = 5; i >= 1; i--)
+                {
+                    <input type="radio" id="estrella-@i" name="Calificacion" value="@i" />
+                    <label for="estrella-@i" title="@i estrellas">&#9733;</label>
+                }
+            </div>
+        </div>
+
+        <div id="errorMessages" class="text-danger mb-3"></div>
+
+        <button type="submit" class="btn btn-success">Enviar Comentario</button>
+    </form>
+}
+else
+{
+    <p class="text-muted">
+        Debes <a asp-controller="Account" asp-action="Login">iniciar sesión</a> para dejar un comentario.
+    </p>
+}
 
 <script>
     function agregarAlCarrito(productoId) {
-        // Obtener el token antifalsificación generado por Razor
         const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
 
         fetch('/Cart/AddToCart', {
@@ -25,7 +116,6 @@
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                // Actualiza el contador del carrito
                 document.getElementById("cart-count").innerText = data.count;
             } else {
                 alert('No se pudo agregar el producto al carrito.');
@@ -35,65 +125,28 @@
             console.error('Error al agregar al carrito:', error);
         });
     }
-</script>
 
-<style>
-    body {
-        background-color: #fceff1;
-        font-family: 'Segoe UI', sans-serif;
-    }
+    // Validación cliente del formulario
+    document.getElementById("comentarioForm")?.addEventListener("submit", function (event) {
+        const contenido = document.getElementById("Contenido").value.trim();
+        const estrellas = document.querySelector('input[name="Calificacion"]:checked');
+        const errorDiv = document.getElementById("errorMessages");
 
-    .product-title {
-        color: #a6798f;
-        font-weight: bold;
-        font-size: 2rem;
-    }
+        let errores = [];
 
-    .product-description {
-        color: #555;
-        font-size: 1.1rem;
-    }
-
-    .product-price {
-        font-size: 1.5rem;
-        color: #d4af37;
-        font-weight: bold;
-    }
-
-    .btn-outline-primary {
-        border-color: #d4af37;
-        color: #d4af37;
-    }
-
-        .btn-outline-primary:hover {
-            background-color: #d4af37;
-            color: white;
+        if (!contenido) {
+            errores.push("Tienes que escribir un comentario.");
         }
 
-    .img-fluid {
-        border-radius: 15px;
-        border: 2px solid #d4af37;
-    }
+        if (!estrellas) {
+            errores.push("Tienes que puntuar el producto.");
+        }
 
-    .container {
-        padding-top: 40px;
-    }
-</style>
-
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6 mb-4">
-            <img src="@Url.Content("~/images/" + Model.ImagenUrl)" class="img-fluid shadow" alt="@Model.NombreArticulo" />
-        </div>
-        <div class="col-md-6">
-            <h2 class="product-title">@Model.NombreArticulo</h2>
-            <p class="product-description">@Model.Descripcion</p>
-            <p class="product-price">@Html.Raw(precioFormateado)</p>
-
-            <!-- Botón para agregar al carrito -->
-            <button class="btn btn-outline-primary mt-3" onclick="agregarAlCarrito(@Model.Id)">Agregar al carrito</button>
-
-            <a href="@Url.Action("Index", "Shop")" class="btn btn-outline-primary mt-3">Volver a la Tienda</a>
-        </div>
-    </div>
-</div>
+        if (errores.length > 0) {
+            event.preventDefault(); // evita enviar el formulario
+            errorDiv.innerHTML = errores.join("<br>");
+        } else {
+            errorDiv.innerHTML = "";
+        }
+    });
+</script>

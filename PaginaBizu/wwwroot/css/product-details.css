@@ -1,0 +1,73 @@
+﻿body.product-details {
+    background-color: #f8f9fa; /* gris muy claro, neutro y profesional */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.product-details .product-title {
+    color: #2c3e50; /* azul oscuro elegante */
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.product-details .product-description {
+    color: #555;
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+}
+
+.product-details .product-price {
+    font-size: 1.75rem;
+    color: #b7950b; /* dorado más sobrio */
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.product-details .btn-outline-primary {
+    border-color: #b7950b;
+    color: #b7950b;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+    .product-details .btn-outline-primary:hover {
+        background-color: #b7950b;
+        color: white;
+    }
+
+.product-details .img-fluid {
+    border-radius: 12px;
+    border: 2px solid #b7950b;
+    box-shadow: 0 4px 10px rgba(183, 149, 11, 0.3);
+    max-width: 100%;
+    height: auto;
+}
+
+.product-details .container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.star-rating {
+    direction: rtl; /* Para que las estrellas se seleccionen de derecha a izquierda */
+    font-size: 2rem;
+    unicode-bidi: bidi-override;
+    display: inline-flex;
+}
+
+    .star-rating input[type="radio"] {
+        display: none;
+    }
+
+    .star-rating label {
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.2s;
+        padding: 0 5px;
+    }
+
+        .star-rating input[type="radio"]:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #f39c12; /* color dorado para las estrellas */
+        }

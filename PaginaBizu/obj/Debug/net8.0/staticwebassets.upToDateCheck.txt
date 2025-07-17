@@ -58,6 +58,7 @@ wwwroot\assets\js\theme.js
 wwwroot\assets\js\vanilla-zoom.js
 wwwroot\css\custom.css
 wwwroot\css\glow-form.css
+wwwroot\css\product-details.css
 wwwroot\css\shop.css
 wwwroot\css\site.css
 wwwroot\css\style.css
@@ -69,6 +70,7 @@ wwwroot\images\il_570xN.2179198790_o9bo.jpg
 wwwroot\images\imagenpulseraoro.jpg
 wwwroot\images\pulseraverde.jpg
 wwwroot\images\ShopImages\head.png.jpg
+wwwroot\js\register-validation.js
 wwwroot\js\shop.js
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
@@ -136,3 +138,4 @@ wwwroot\shop\cart.html
 wwwroot\shop\index.html
 wwwroot\shop\product.html
 wwwroot\shop\success.html
+wwwroot\js\login-validation.js

@@ -22,22 +22,19 @@ namespace PaginaBizu.Controllers
 		{
 			return View(await _context.Products.ToListAsync());
 		}
-
 		// GET: Products/Details/5
 		public async Task<IActionResult> Details(int? id)
 		{
 			if (id == null)
-			{
 				return NotFound();
-			}
 
 			var product = await _context.Products
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (product == null)
-			{
-				return NotFound();
-			}
+				.FirstOrDefaultAsync(p => p.Id == id);
 
+			if (product == null)
+				return NotFound();
+
+			// Retorna una vista que solo muestre detalles administrativos sin comentarios
 			return View(product);
 		}
 
@@ -48,7 +45,7 @@ namespace PaginaBizu.Controllers
 		}
 
 		// POST: Products/Create
-		// To protect from overposting attacks, enable the specific properties you want to bind to.
+		
 		// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
@@ -80,7 +77,7 @@ namespace PaginaBizu.Controllers
 		}
 
 		// POST: Products/Edit/5
-		// To protect from overposting attacks, enable the specific properties you want to bind to.
+
 		// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PaginaBizu.Data;
+using PaginaBizu.Models;
 
 namespace PaginaBizu.Controllers
 {
@@ -29,7 +30,44 @@ namespace PaginaBizu.Controllers
 				return NotFound();
 			}
 
-			return View(producto);
+			var comentarios = _context.Comentarios
+				.Where(c => c.ProductoId == id)
+				.OrderByDescending(c => c.Fecha)
+				.ToList();
+
+			var viewModel = new DetalleProductoViewModel
+			{
+				Producto = producto,
+				Comentarios = comentarios
+			};
+
+			return View(viewModel);
 		}
+		[HttpPost]
+		public IActionResult AgregarComentario(string Texto, int ProductoId)
+		{
+			if (string.IsNullOrWhiteSpace(Texto))
+			{
+				TempData["Error"] = "El comentario no puede estar vacío.";
+				return RedirectToAction("Details", "Shop", new { id = ProductoId }); // Controlador explícito
+			}
+
+			var comentario = new Comentario
+			{
+				Contenido = Texto,
+				Fecha = DateTime.Now,
+				ProductoId = ProductoId,
+				// Aquí asigna el usuario si usas identidad
+			};
+
+			_context.Comentarios.Add(comentario);
+			_context.SaveChanges();
+
+			// Redirige explícitamente a Shop/Details
+			return RedirectToAction("Details", "Shop", new { id = ProductoId });
+		}
+
+
+
 	}
 }
