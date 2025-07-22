@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PaginaBizu</name>
+    </assembly>
+    <members>
+        <member name="T:PaginaBizu.Areas.Identity.Pages.Account.AccessDeniedModel">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="M:PaginaBizu.Areas.Identity.Pages.Account.AccessDeniedModel.OnGet">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:PaginaBizu.Areas.Identity.Pages.Account.LoginModel.Input">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:PaginaBizu.Areas.Identity.Pages.Account.LoginModel.ExternalLogins">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:PaginaBizu.Areas.Identity.Pages.Account.LoginModel.ReturnUrl">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:PaginaBizu.Areas.Identity.Pages.Account.LoginModel.ErrorMessage">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:PaginaBizu.Areas.Identity.Pages.Account.LoginModel.InputModel">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:PaginaBizu.Areas.Identity.Pages.Account.LoginModel.InputModel.Email">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:PaginaBizu.Areas.Identity.Pages.Account.LoginModel.InputModel.Password">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="P:PaginaBizu.Areas.Identity.Pages.Account.LoginModel.InputModel.RememberMe">
+            <summary>
+                This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
+                directly from your code. This API may change or be removed in future releases.
+            </summary>
+        </member>
+        <member name="T:PaginaBizu.Controllers.Api.TestController">
+            <summary>
+            Controlador de prueba para verificar que Swagger funciona correctamente.
+            </summary>
+        </member>
+        <member name="M:PaginaBizu.Controllers.Api.TestController.Ping">
+            <summary>
+            Retorna un mensaje de prueba para verificar que el API está activo.
+            </summary>
+            <returns>Un mensaje "pong"</returns>
+        </member>
+        <member name="M:PaginaBizu.Controllers.Api.TestController.Sumar(System.Int32,System.Int32)">
+            <summary>
+            Suma dos números dados como parámetros.
+            </summary>
+            <param name="a">Primer número entero</param>
+            <param name="b">Segundo número entero</param>
+            <returns>Resultado de la suma</returns>
+        </member>
+        <member name="T:PaginaBizu.Migrations.InicialProductos">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.InicialProductos.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.InicialProductos.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.InicialProductos.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PaginaBizu.Migrations.AddIdentity">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.AddIdentity.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.AddIdentity.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.AddIdentity.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PaginaBizu.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PaginaBizu.Migrations.AgregarTablaComentarios">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.AgregarTablaComentarios.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.AgregarTablaComentarios.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.AgregarTablaComentarios.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:PaginaBizu.Models.ErrorViewModel">
+            <summary>
+            Modelo para manejar información de error en la vista de error.
+            </summary>
+        </member>
+        <member name="P:PaginaBizu.Models.ErrorViewModel.RequestId">
+            <summary>
+            Identificador único de la solicitud para seguimiento.
+            </summary>
+        </member>
+        <member name="P:PaginaBizu.Models.ErrorViewModel.ShowRequestId">
+            <summary>
+            Indica si se debe mostrar el RequestId en la vista.
+            </summary>
+        </member>
+    </members>
+</doc>

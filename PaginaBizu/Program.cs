@@ -1,18 +1,31 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using PaginaBizu.Data;
 using PaginaBizu.Models;
+using Serilog;
+using PaginaBizu.Filters;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Opcional: si quieres asegurarte de la carga strict
-builder.Configuration
-	   .SetBasePath(builder.Environment.ContentRootPath)
-	   .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-	   .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
-	   .AddEnvironmentVariables();
+// Configuración de Serilog para logging
+Log.Logger = new LoggerConfiguration()
+	.ReadFrom.Configuration(builder.Configuration)  // lee configuracion desde appsettings.json
+	.WriteTo.Console()                              // logs en consola
+	.WriteTo.File("logs/paginabizu.log", rollingInterval: RollingInterval.Day)  // logs en archivo
+	.CreateLogger();
 
-// Configuraci�n de DbContext
+
+// Integrar Serilog al host de la aplicación
+builder.Host.UseSerilog();
+
+// Configuración de appsettings
+builder.Configuration
+	.SetBasePath(builder.Environment.ContentRootPath)
+	.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+	.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+	.AddEnvironmentVariables();
+
+// Configuración de DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
 	options.UseSqlServer(
 		builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -20,11 +33,28 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 	)
 );
 
-// Identity igual que antes�
+
+// Configuracion de Swagger
+// Este servicio habilita la exploración de endpoints de API para Swagger.
+builder.Services.AddSession();
+
+
+// Configuración de Swagger (documentación de API)
+builder.Services.AddEndpointsApiExplorer(); // Permite explorar endpoints
+builder.Services.AddSwaggerGen(c =>
+{
+	// Este bloque incluye los comentarios XML en Swagger si están habilitados en el .csproj
+	var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+	var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+	c.IncludeXmlComments(xmlPath);
+});
+// Genera la documentación Swagger
+
+
+// Configuración de Identity
 builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 {
 	options.SignIn.RequireConfirmedAccount = false;
-	// Solo aflojar contrase�a en Dev o Docker
 	if (builder.Environment.IsDevelopment() || builder.Environment.EnvironmentName == "Docker")
 	{
 		options.Password.RequireDigit = false;
@@ -37,7 +67,14 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
 .AddRoles<IdentityRole>()
 .AddEntityFrameworkStores<AppDbContext>();
 
-builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<LogActionFilter>();
+
+builder.Services.AddControllersWithViews(options =>
+{
+	options.Filters.Add<LogActionFilter>(); 
+});
+
 builder.Services.AddSession();
 
 var app = builder.Build();
@@ -55,6 +92,18 @@ if (!app.Environment.IsDevelopment())
 	app.UseHsts();
 }
 
+
+// Activación de Swagger (solo en desarrollo)
+
+// Swagger genera la documentación de tu API y una interfaz web para probarla.
+// Solo se activa en desarrollo para evitar exponer información sensible en producción.
+if (app.Environment.IsDevelopment())
+{
+	app.UseSwagger();    // Habilita el middleware para generar el JSON de Swagger
+	app.UseSwaggerUI();  // Habilita el frontend en /swagger para probar la API
+}
+
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
@@ -70,6 +119,7 @@ app.MapRazorPages();
 
 app.Run();
 
+// --- Usuarios y roles predefinidos ---
 async Task CreateAdminRolesAndUsers(WebApplication app)
 {
 	using var scope = app.Services.CreateScope();
@@ -83,9 +133,8 @@ async Task CreateAdminRolesAndUsers(WebApplication app)
 	var admins = new[]
 	{
 		("hoshuacastillo48@gmail.com", "Joshua0905."),
-		("compa1@gmail.com",          "Password123!"),
-		("compa2@gmail.com",          "Password456!")
-
+		("compa1@gmail.com", "Password123!"),
+		("compa2@gmail.com", "Password456!")
 	};
 
 	foreach (var (email, pwd) in admins)

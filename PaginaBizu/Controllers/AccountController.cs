@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PaginaBizu.Models;
 
+
 namespace PaginaBizu.Controllers
 {
 	public class AccountController : Controller
@@ -107,7 +108,7 @@ namespace PaginaBizu.Controllers
 			if (!ModelState.IsValid)
 				return View("~/Views/Shared/_LoginPartialUser.cshtml");
 
-			var result = await _signInManager.PasswordSignInAsync(email, password, rememberMe, lockoutOnFailure: false);
+			var result = await _signInManager.PasswordSignInAsync(email, password, rememberMe, lockoutOnFailure: true);
 
 			if (result.Succeeded)
 			{

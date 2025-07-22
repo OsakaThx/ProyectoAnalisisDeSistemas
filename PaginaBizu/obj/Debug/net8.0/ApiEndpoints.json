@@ -1,1 +1,196 @@
-[]
+[
+  {
+    "ContainingType": "PaginaBizu.Controllers.CartApiController",
+    "Method": "AddToCart",
+    "RelativePath": "api/CartApi/AddToCart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "data",
+        "Type": "PaginaBizu.Controllers.CartApiController\u002BAddToCartModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.ComentariosControllerApi",
+    "Method": "Crear",
+    "RelativePath": "api/ComentariosControllerApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PaginaBizu.Controllers.ComentarioCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.ProductApiController",
+    "Method": "Get",
+    "RelativePath": "api/ProductApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.ProductsApiController",
+    "Method": "GetProducts",
+    "RelativePath": "api/ProductsApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.ProductsApiController",
+    "Method": "CreateProduct",
+    "RelativePath": "api/ProductsApi",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "product",
+        "Type": "PaginaBizu.Models.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.ProductsApiController",
+    "Method": "GetProduct",
+    "RelativePath": "api/ProductsApi/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.ProductsApiController",
+    "Method": "UpdateProduct",
+    "RelativePath": "api/ProductsApi/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "product",
+        "Type": "PaginaBizu.Models.Product",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.ProductsApiController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/ProductsApi/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.ShopApiController",
+    "Method": "GetProducts",
+    "RelativePath": "api/ShopApi",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.ShopApiController",
+    "Method": "GetProductDetails",
+    "RelativePath": "api/ShopApi/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.ShopApiController",
+    "Method": "AgregarComentario",
+    "RelativePath": "api/ShopApi/AgregarComentario",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "comentarioDto",
+        "Type": "PaginaBizu.Controllers.Api.ComentarioDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.TestController",
+    "Method": "Ping",
+    "RelativePath": "api/Test/ping",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PaginaBizu.Controllers.Api.TestController",
+    "Method": "Sumar",
+    "RelativePath": "api/Test/sumar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "a",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "b",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
