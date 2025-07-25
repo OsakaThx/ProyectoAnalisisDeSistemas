@@ -58,11 +58,11 @@ wwwroot\assets\js\theme.js
 wwwroot\assets\js\vanilla-zoom.js
 wwwroot\css\custom.css
 wwwroot\css\glow-form.css
+wwwroot\css\gucci-style.css
 wwwroot\css\product-details.css
 wwwroot\css\shop.css
 wwwroot\css\site.css
 wwwroot\css\style.css
-wwwroot\css\tailwind.css
 wwwroot\favicon.ico
 wwwroot\images\09a84a043cf1b58d59b0e39a12c60491.jpg
 wwwroot\images\17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg
@@ -74,7 +74,6 @@ wwwroot\images\ShopImages\head.png.jpg
 wwwroot\js\login-validation.js
 wwwroot\js\register-validation.js
 wwwroot\js\shop.js
-wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css

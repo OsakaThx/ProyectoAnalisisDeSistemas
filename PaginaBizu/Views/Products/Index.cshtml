@@ -3,51 +3,76 @@
     ViewData["Title"] = "Lista de Productos";
     var item = Model.FirstOrDefault();
 }
-
-<h1>Lista de Productos</h1>
-
-<p>
-    <a class="btn btn-primary" asp-action="Create">Crear nuevo producto</a>
-    <a class="btn btn-info" asp-controller="Orders" asp-action="Index">Ver Pedidos</a>
-</p>
-
-@if (item != null)
-{
-    <table class="table table-bordered table-striped table-hover">
-        <thead>
-            <tr>
-                <th>@Html.DisplayNameFor(_ => item.NombreArticulo)</th>
-                <th>@Html.DisplayNameFor(_ => item.CantidadDisponible)</th>
-                <th>@Html.DisplayNameFor(_ => item.Precio)</th>
-                <th>@Html.DisplayNameFor(_ => item.Descripcion)</th>
-                <th>@Html.DisplayNameFor(_ => item.ImagenUrl)</th>
-                <th>@Html.DisplayNameFor(_ => item.Categoria)</th>
-                <th>@Html.DisplayNameFor(_ => item.FechaCreacion)</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var producto in Model)
-            {
-                <tr>
-                    <td>@producto.NombreArticulo</td>
-                    <td>@producto.CantidadDisponible</td>
-                    <td>@producto.Precio.ToString("C")</td>
-                    <td>@producto.Descripcion</td>
-                    <td><img src="@producto.ImagenUrl" alt="Imagen" style="width:100px;" /></td>
-                    <td>@producto.Categoria</td>
-                    <td>@producto.FechaCreacion.ToShortDateString()</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@producto.Id">Editar</a> |
-                        <a asp-action="Details" asp-route-id="@producto.Id">Detalles</a> |
-                        <a asp-action="Delete" asp-route-id="@producto.Id">Eliminar</a>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+@section Styles {
+    <link rel="stylesheet" href="~/css/shop.css" />
 }
-else
-{
-    <p>No hay productos disponibles.</p>
+<div class="product-list-container my-4">
+    <h1 class="mb-4 text-uppercase fw-bold" style="letter-spacing: 0.1em; color: #a67c00;">Lista de Productos</h1>
+
+    <div class="d-flex flex-wrap align-items-center mb-4 gap-3">
+        <a class="btn btn-primary btn-lg px-4" asp-action="Create">Crear nuevo producto</a>
+        <a class="btn btn-info btn-lg px-4" asp-controller="Orders" asp-action="Index">Ver Pedidos</a>
+        <div class="ms-auto" style="min-width: 250px;">
+            <input type="text" id="searchInput" class="form-control" placeholder="Buscar producto por nombre..." />
+        </div>
+    </div>
+
+    @if (item != null)
+    {
+        <div class="table-responsive shadow-sm rounded">
+            <table class="table table-hover align-middle" id="productosTable" style="min-width: 750px;">
+                <thead class="table-light text-uppercase text-secondary" style="letter-spacing: 0.1em;">
+                    <tr>
+                        <th>@Html.DisplayNameFor(_ => item.NombreArticulo)</th>
+                        <th>@Html.DisplayNameFor(_ => item.CantidadDisponible)</th>
+                        <th>@Html.DisplayNameFor(_ => item.Precio)</th>
+                        <th>@Html.DisplayNameFor(_ => item.Descripcion)</th>
+                        <th>Imagen</th>
+                        <th>@Html.DisplayNameFor(_ => item.Categoria)</th>
+                        <th>@Html.DisplayNameFor(_ => item.FechaCreacion)</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var producto in Model)
+                    {
+                        <tr>
+                            <td class="nombre-articulo fw-semibold">@producto.NombreArticulo</td>
+                            <td>@producto.CantidadDisponible</td>
+                            <td class="text-success fw-bold">@producto.Precio.ToString("C")</td>
+                            <td class="text-truncate" style="max-width: 250px;" title="@producto.Descripcion">@producto.Descripcion</td>
+                            <td>
+                                <img src="@producto.ImagenUrl" alt="Imagen" class="product-image rounded" style="max-width: 80px; max-height: 80px; object-fit: contain;" />
+                            </td>
+                            <td>@producto.Categoria</td>
+                            <td>@producto.FechaCreacion.ToShortDateString()</td>
+                            <td class="actions-cell">
+                                <a class="btn btn-sm btn-outline-warning me-1" asp-action="Edit" asp-route-id="@producto.Id">Editar</a>
+                                <a class="btn btn-sm btn-outline-info me-1" asp-action="Details" asp-route-id="@producto.Id">Detalles</a>
+                                <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@producto.Id">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <p class="text-muted fst-italic">No hay productos disponibles.</p>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function () {
+            const filter = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#productosTable tbody tr');
+            rows.forEach(row => {
+                const nombre = row.querySelector('.nombre-articulo').textContent.toLowerCase();
+                row.style.display = nombre.includes(filter) ? '' : 'none';
+            });
+        });
+    </script>
 }

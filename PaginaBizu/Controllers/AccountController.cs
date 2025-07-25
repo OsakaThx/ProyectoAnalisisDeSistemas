@@ -1,8 +1,6 @@
-﻿// Controllers/AccountController.cs
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PaginaBizu.Models;
-
 
 namespace PaginaBizu.Controllers
 {
@@ -25,6 +23,11 @@ namespace PaginaBizu.Controllers
 		[HttpGet]
 		public IActionResult SingIn()
 		{
+			if (User.Identity.IsAuthenticated)
+			{
+				return RedirectToAction("Index", "Home");
+			}
+
 			return View("~/Views/Shared/_SingIn.cshtml");
 		}
 
@@ -35,7 +38,6 @@ namespace PaginaBizu.Controllers
 			if (!ModelState.IsValid)
 				return View("~/Views/Shared/_SingIn.cshtml", model);
 
-			// Validar si el correo ya existe
 			var existingUser = await _userManager.FindByEmailAsync(model.Email);
 			if (existingUser != null)
 			{
@@ -43,14 +45,12 @@ namespace PaginaBizu.Controllers
 				return View("~/Views/Shared/_SingIn.cshtml", model);
 			}
 
-			// Validar que las contraseñas coincidan
 			if (model.Password != model.ConfirmPassword)
 			{
 				ModelState.AddModelError("ConfirmPassword", "Las contraseñas no coinciden.");
 				return View("~/Views/Shared/_SingIn.cshtml", model);
 			}
 
-			// Crear el usuario
 			var user = new ApplicationUser
 			{
 				UserName = model.Email,
@@ -59,7 +59,6 @@ namespace PaginaBizu.Controllers
 
 			var result = await _userManager.CreateAsync(user, model.Password);
 
-			// Si falla la creación, mostrar errores (ej. contraseña débil)
 			if (!result.Succeeded)
 			{
 				foreach (var e in result.Errors)
@@ -68,7 +67,6 @@ namespace PaginaBizu.Controllers
 				return View("~/Views/Shared/_SingIn.cshtml", model);
 			}
 
-			// Verificar si el rol 'user' existe; si no, lo crea
 			if (!await _roleManager.RoleExistsAsync("user"))
 			{
 				var roleResult = await _roleManager.CreateAsync(new IdentityRole("user"));
@@ -79,13 +77,9 @@ namespace PaginaBizu.Controllers
 				}
 			}
 
-			// Asignar el rol al usuario
 			await _userManager.AddToRoleAsync(user, "user");
-
-			// Iniciar sesión automáticamente
 			await _signInManager.SignInAsync(user, isPersistent: false);
 
-			// Redirigir a la página principal
 			return RedirectToAction("Index", "Home");
 		}
 
@@ -96,11 +90,18 @@ namespace PaginaBizu.Controllers
 			await _signInManager.SignOutAsync();
 			return RedirectToAction("Index", "Home");
 		}
+
 		[HttpGet]
 		public IActionResult Login()
 		{
+			if (User.Identity.IsAuthenticated)
+			{
+				return RedirectToAction("Index", "Home");
+			}
+
 			return View("~/Views/Shared/_LoginPartialUser.cshtml");
 		}
+
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Login(string email, string password, bool rememberMe)
@@ -118,7 +119,5 @@ namespace PaginaBizu.Controllers
 			ModelState.AddModelError(string.Empty, "Correo o contraseña incorrectos.");
 			return View("~/Views/Shared/_LoginPartialUser.cshtml");
 		}
-
-
 	}
 }

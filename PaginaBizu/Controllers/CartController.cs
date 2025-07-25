@@ -62,6 +62,15 @@ namespace PaginaBizu.Controllers
 			return Json(new { success = true, count = cart.Sum(c => c.Cantidad) });
 		}
 
+		[HttpGet]
+		public IActionResult CartCount()
+		{
+			var cart = HttpContext.Session.GetObject<List<CartItem>>("Cart") ?? new List<CartItem>();
+			int totalItems = cart.Sum(c => c.Cantidad);
+			return Json(totalItems);
+		}
+
+
 
 	}
 }

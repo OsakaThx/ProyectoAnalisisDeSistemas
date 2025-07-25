@@ -1,9 +1,129 @@
-﻿.addtocart {
+﻿:root {
+    --color-primary: #000; /* negro elegante */
+    --color-secondary: #d4af37; /* dorado Gucci */
+    --color-bg: #fff;
+    --color-text: #333;
+}
+
+/* ---------- Estilos para vista SHOP ---------- */
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #fdfcf9;
+}
+
+/* Contenedor principal */
+.gucci-grid {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Buscador elegante */
+.gucci-search {
+    width: 60%;
+    margin: 0 auto 2rem auto;
+    padding: 12px 20px;
+    border: 2px solid #ccc;
+    border-radius: 30px;
+    font-size: 1rem;
+    display: block;
+    transition: border-color 0.3s ease;
+}
+
+    .gucci-search:focus {
+        outline: none;
+        border-color: var(--color-primary);
+    }
+
+/* Tarjetas de producto */
+/* Esta regla combina clases Bootstrap y tu clase para dar más especificidad */
+.card.product-card {
+    border: 1px solid rgba(212, 175, 55, 0.4); /* borde dorado claro */
+    border-radius: 20px !important;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.15);
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+}
+
+    .card.product-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 12px 28px rgba(212, 175, 55, 0.3);
+    }
+
+    .card.product-card img.card-img-top {
+        height: 220px;
+        object-fit: cover;
+        border-bottom: 1px solid #eee;
+        transition: transform 0.3s ease;
+        border-radius: 0; /* elimina radio de la imagen para que encaje con la card */
+    }
+
+    .card.product-card:hover img.card-img-top {
+        transform: scale(1.05);
+    }
+
+    .card.product-card .card-body {
+        display: flex;
+        flex-direction: column;
+        padding: 1.2rem 1.5rem;
+        flex-grow: 1;
+    }
+
+    .card.product-card .card-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.6rem;
+        color: var(--color-primary);
+        font-family: 'Playfair Display', serif;
+        letter-spacing: 0.04em;
+    }
+
+    .card.product-card .card-text {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 1.1rem;
+        flex-grow: 1;
+    }
+
+    .card.product-card .precio {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--color-secondary);
+        margin-bottom: 1rem;
+        letter-spacing: 0.05em;
+    }
+
+    .card.product-card .btn-vermas {
+        background-color: var(--color-secondary);
+        color: white;
+        border-radius: 25px;
+        border: none;
+        padding: 10px 0;
+        font-weight: 600;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 3px 6px rgba(212, 175, 55, 0.5);
+        cursor: pointer;
+    }
+
+        .card.product-card .btn-vermas:hover {
+            background-color: #b8962f;
+            box-shadow: 0 6px 12px rgba(184, 150, 92, 0.8);
+        }
+
+/* ---------- Botón Add to Cart Gucci ---------- */
+.addtocart {
     position: relative;
     overflow: hidden;
     border: none;
     cursor: pointer;
-    background: #d4af37; /* dorado */
+    background: var(--color-secondary);
     color: white;
     font-weight: 600;
     letter-spacing: 1px;
@@ -32,7 +152,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #339933; /* verde */
+        background-color: #339933;
         color: white;
         transform: translate(-110%) skew(-40deg);
         display: flex;
@@ -54,3 +174,45 @@
         .addtocart .done i {
             font-size: 1rem;
         }
+
+/* ---------- Estilo de tabla si aplica en esta vista ---------- */
+.table {
+    border-collapse: separate;
+    border-spacing: 0 1rem;
+    width: 100%;
+    font-weight: 500;
+}
+
+    .table thead th {
+        color: var(--color-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding-bottom: 0.5rem;
+    }
+
+    .table tbody tr {
+        background-color: #fafafa;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s ease;
+    }
+
+        .table tbody tr:hover {
+            box-shadow: 0 6px 15px rgba(166, 124, 0, 0.3);
+            background-color: #fff;
+        }
+
+    .table tbody td {
+        padding: 1rem 0.75rem;
+        vertical-align: middle;
+        color: var(--color-text);
+    }
+
+/* Imágenes pequeñas */
+.product-image {
+    max-width: 80px;
+    max-height: 80px;
+    object-fit: contain;
+    border: 1px solid #ddd;
+    padding: 2px;
+    background: white;
+}

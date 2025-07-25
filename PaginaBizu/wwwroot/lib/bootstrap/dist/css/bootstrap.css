@@ -4441,7 +4441,8 @@ textarea.form-control-lg {
   color: #fff;
 }
 
-.card {
+
+{
   position: relative;
   display: flex;
   flex-direction: column;

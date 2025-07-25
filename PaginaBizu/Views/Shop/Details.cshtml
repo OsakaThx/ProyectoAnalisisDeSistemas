@@ -1,152 +1,365 @@
 ﻿@model PaginaBizu.Models.DetalleProductoViewModel
-
 @{
     ViewData["Title"] = Model.Producto.NombreArticulo;
     var precioFormateado = $"₡{Model.Producto.Precio:N0}".Replace(",", " ");
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = null;  /* Renderizamos toda la página aquí */
 }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - PaginaBizu</title>
 
-@section Styles {
-    <link rel="stylesheet" href="~/css/product-details.css" />
-}
+    <!-- Bootstrap CSS + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
 
-<h1>@Model.Producto.NombreArticulo</h1>
-
-<div class="row">
-    <div class="col-md-6 mb-4">
-        <img src="@Url.Content("~/images/" + Model.Producto.ImagenUrl)" alt="@Model.Producto.NombreArticulo" class="img-fluid shadow" />
-    </div>
-    <div class="col-md-6">
-        <p>@Model.Producto.Descripcion</p>
-        <p class="h4 text-primary">@Html.Raw(precioFormateado)</p>
-
-        <button class="btn btn-outline-primary mb-4" onclick="agregarAlCarrito(@Model.Producto.Id)">Agregar al carrito</button>
-
-        <a asp-controller="Shop" asp-action="Index" class="btn btn-outline-secondary mb-4 ms-2">Volver a la tienda</a>
-    </div>
-</div>
-
-<hr />
-
-<h3>Comentarios</h3>
-
-@if (TempData["ComentarioError"] != null)
-{
-    <div class="alert alert-danger">
-        @TempData["ComentarioError"]
-    </div>
-}
-
-@if (Model.Comentarios.Any())
-{
-    <ul class="list-group mb-4">
-        @foreach (var comentario in Model.Comentarios)
-        {
-            <li class="list-group-item">
-                <strong>@(comentario.Usuario?.UserName ?? "Anónimo")</strong>
-                <span class="text-warning">
-                    @for (int i = 1; i <= 5; i++)
-                    {
-                        if (i <= comentario.Calificacion)
-                        {
-                            <span>&#9733;</span>
-                        }
-                        else
-                        {
-                            <span style="color:#ddd;">&#9733;</span>
-                        }
-                    }
-                </span>
-                <br />
-                <small class="text-muted">@comentario.Fecha.ToString("dd/MM/yyyy HH:mm")</small>
-                <p>@comentario.Contenido</p>
-            </li>
+    <style>
+        /* Reset de body */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            box-sizing: border-box;
         }
-    </ul>
-}
-else
-{
-    <p class="text-muted">No hay comentarios aún.</p>
-}
+        /* Navbar full width */
+        nav.navbar {
+            background-color: #fff;
+            border-bottom: 1px solid #e9ecef;
+        }
 
-@if (User.Identity.IsAuthenticated)
-{
-    <form id="comentarioForm" asp-action="Crear" asp-controller="Comentarios" method="post" class="mb-5">
-        <input type="hidden" name="ProductoId" value="@Model.Producto.Id" />
-        <div class="mb-3">
-            <label for="Contenido" class="form-label">Escribe tu comentario:</label>
-            <textarea id="Contenido" name="Contenido" class="form-control" required></textarea>
-        </div>
+        .navbar .container-fluid {
+            max-width: 100%;
+            padding: 0 120px;
+        }
 
-        <div class="mb-3">
-            <label class="form-label">Calificación:</label>
-            <div class="star-rating">
-                @for (int i = 5; i >= 1; i--)
-                {
-                    <input type="radio" id="estrella-@i" name="Calificacion" value="@i" />
-                    <label for="estrella-@i" title="@i estrellas">&#9733;</label>
+        .navbar-brand, .nav-link {
+            color: #181a1b !important;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+            .nav-link:hover {
+                color: #b7950b !important;
+            }
+
+        /* Contenedor de producto */
+        .product-details {
+            max-width: 1000px;
+            margin: 40px auto 80px;
+            padding: 0 20px;
+        }
+
+        /* Layout horizontal */
+        .product-layout {
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+            .product-layout .img-fluid {
+                flex: 1 1 40%;
+                max-width: 400px;
+                border: none !important;
+                box-shadow: none !important;
+                background: none !important;
+                margin: 0 auto;
+            }
+
+        .product-info {
+            flex: 1 1 55%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: .8rem;
+        }
+
+        .product-description {
+            font-size: 1.1rem;
+            color: #495057;
+            margin-bottom: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 1.8rem;
+        }
+
+        /* Botones en línea */
+        .button-row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .btn-black, .btn-black-secondary {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 14px 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color .2s;
+            text-decoration: none;
+        }
+
+            .btn-black:hover, .btn-black-secondary:hover {
+                background-color: #333;
+            }
+
+        /* Comentarios estilo YouTube: ancho completo debajo */
+        .comments-section {
+            margin-top: 3rem;
+        }
+
+            .comments-section h3 {
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+
+        .list-group-item {
+            border: none;
+            border-bottom: 1px solid #e9ecef;
+            padding: .75rem 0;
+            font-size: .9rem;
+            color: #222;
+        }
+
+            .list-group-item strong {
+                font-weight: 700;
+                color: #181a1b;
+            }
+
+        /* Formulario */
+        #comentarioForm {
+            margin-top: 2rem;
+        }
+
+            #comentarioForm textarea {
+                width: 100%;
+                min-height: 100px;
+                border: 1px solid #e9ecef;
+                border-radius: 6px;
+                padding: .75rem;
+                margin-bottom: 1rem;
+                resize: vertical;
+            }
+
+            #comentarioForm button[type="submit"] {
+                width: 100%;
+                background-color: #000;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                padding: .75rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: background-color .2s;
+            }
+
+                #comentarioForm button[type="submit"]:hover {
+                    background-color: #333;
                 }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">PaginaBizu</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#mainNav"
+                    aria-controls="mainNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Home/Privacy">Privacy</a></li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item position-relative me-4">
+                        <a class="nav-link" href="/Cart/Index">
+                            <i class="bi bi-cart"></i>
+                            <span id="cart-count" class="badge bg-dark text-white rounded-pill">0</span>
+                        </a>
+                    </li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDrop"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                @User.Identity.Name
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDrop">
+                                <li class="dropdown-item-text">¿Cerrar sesión?</li>
+                                <li>
+                                    <form asp-controller="Account" asp-action="Logout" method="post">
+                                        <button type="submit" class="btn btn-danger w-100">Logout</button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="btn btn-outline-primary" href="/Account/SignIn">Login</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PRODUCT DETAIL -->
+    <div class="product-details">
+        <div class="product-layout">
+            <img src="@Url.Content("~/images/" + Model.Producto.ImagenUrl)"
+                 alt="@Model.Producto.NombreArticulo"
+                 class="img-fluid" />
+
+            <div class="product-info">
+                <h1 class="product-title">@Model.Producto.NombreArticulo</h1>
+                <p class="product-description">@Model.Producto.Descripcion</p>
+                <p class="product-price">@Html.Raw(precioFormateado)</p>
+
+                <div class="button-row">
+                    <button class="btn-black"
+                            onclick="agregarAlCarrito(@Model.Producto.Id)">
+                        Agregar al carrito
+                    </button>
+                    <a asp-controller="Shop"
+                       asp-action="Index"
+                       class="btn-black-secondary">
+                        Volver a la tienda
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div id="errorMessages" class="text-danger mb-3"></div>
+        <div class="comments-section">
+            <h3>Comentarios</h3>
+            @if (Model.Comentarios.Any())
+            {
+                <ul class="list-group">
+                    @foreach (var c in Model.Comentarios)
+                    {
+                        <li class="list-group-item">
+                            <strong>@(c.Usuario?.UserName ?? "Anónimo")</strong>
+                            <span class="text-warning">
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    if (i <= c.Calificacion)
+                                    {
+                                        <span>&#9733;</span>
+                                    }
+                                    else
+                                    {
 
-        <button type="submit" class="btn btn-success">Enviar Comentario</button>
-    </form>
-}
-else
-{
-    <p class="text-muted">
-        Debes <a asp-controller="Account" asp-action="Login">iniciar sesión</a> para dejar un comentario.
-    </p>
-}
+                                        <span style="color:#ddd;">&#9733;</span>
+                                    }
+                                }
+                            </span>
+                            <br />
+                            <small class="text-muted">@c.Fecha.ToString("dd/MM/yyyy HH:mm")</small>
+                            <p>@c.Contenido</p>
+                        </li>
+                    }
+                </ul>
+            }
+            else
+            {
+                <p class="text-muted">No hay comentarios aún.</p>
+            }
 
-<script>
-    function agregarAlCarrito(productoId) {
-        const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+            @if (User.Identity.IsAuthenticated)
+            {
+                <form id="comentarioForm"
+                      asp-controller="Comentarios"
+                      asp-action="Crear"
+                      method="post">
+                    <input type="hidden" name="ProductoId" value="@Model.Producto.Id" />
 
-        fetch('/Cart/AddToCart', {
+                    <label for="Contenido" class="form-label">Escribe tu comentario:</label>
+                    <textarea id="Contenido" name="Contenido" class="form-control" required></textarea>
+
+                    <label class="form-label mt-3">Calificación:</label>
+                    <div class="star-rating mb-3">
+                        @for (int i = 5; i >= 1; i--)
+                        {
+                            <input type="radio" id="estrella-@i" name="Calificacion" value="@i" />
+                            <label for="estrella-@i" title="@i estrellas">&#9733;</label>
+                        }
+                    </div>
+
+                    <button type="submit" class="btn-black">Enviar Comentario</button>
+                    <div id="errorMessages" class="text-danger mt-2"></div>
+                </form>
+            }
+            else
+            {
+                <p class="text-muted">
+                    Debes <a asp-controller="Account" asp-action="Login">iniciar sesión</a> para comentar.
+                </p>
+            }
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function agregarAlCarrito(productoId) {
+          const token = document.querySelector('input[name="__RequestVerificationToken"]').value;
+          fetch('/Cart/AddToCart', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'RequestVerificationToken': token
+              'Content-Type': 'application/json',
+              'RequestVerificationToken': token
             },
             body: JSON.stringify({ id: productoId })
-        })
-        .then(response => response.json())
-        .then(data => {
+          })
+          .then(r => r.json())
+          .then(data => {
             if (data.success) {
-                document.getElementById("cart-count").innerText = data.count;
+              document.getElementById("cart-count").innerText = data.count;
             } else {
-                alert('No se pudo agregar el producto al carrito.');
+              alert('Error al agregar al carrito.');
             }
-        })
-        .catch(error => {
-            console.error('Error al agregar al carrito:', error);
+          })
+          .catch(console.error);
+        }
+
+        document.getElementById("comentarioForm")?.addEventListener("submit", function(e){
+          const contenido = document.getElementById("Contenido").value.trim();
+          const estrellas = document.querySelector('input[name="Calificacion"]:checked');
+          const errDiv = document.getElementById("errorMessages");
+          let errs = [];
+          if (!contenido) errs.push("Escribe un comentario.");
+          if (!estrellas) errs.push("Selecciona una calificación.");
+          if (errs.length){
+            e.preventDefault();
+            errDiv.innerHTML = errs.join("<br>");
+          }
         });
-    }
-
-    // Validación cliente del formulario
-    document.getElementById("comentarioForm")?.addEventListener("submit", function (event) {
-        const contenido = document.getElementById("Contenido").value.trim();
-        const estrellas = document.querySelector('input[name="Calificacion"]:checked');
-        const errorDiv = document.getElementById("errorMessages");
-
-        let errores = [];
-
-        if (!contenido) {
-            errores.push("Tienes que escribir un comentario.");
-        }
-
-        if (!estrellas) {
-            errores.push("Tienes que puntuar el producto.");
-        }
-
-        if (errores.length > 0) {
-            event.preventDefault(); // evita enviar el formulario
-            errorDiv.innerHTML = errores.join("<br>");
-        } else {
-            errorDiv.innerHTML = "";
-        }
-    });
-</script>
+    </script>
+</body>
+</html>
