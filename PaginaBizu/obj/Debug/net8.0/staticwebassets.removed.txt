@@ -1,2 +1,0 @@
-C:\Users\hoshu\source\repos\PaginaBizu\PaginaBizu\wwwroot\css\tailwind.css
-C:\Users\hoshu\source\repos\PaginaBizu\PaginaBizu\wwwroot\js\site.js
