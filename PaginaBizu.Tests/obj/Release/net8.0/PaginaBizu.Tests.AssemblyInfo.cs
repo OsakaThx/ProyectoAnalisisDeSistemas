@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PaginaBizu.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1d15a22dbe108299ae15c28dc59fb8d90ee3ceb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb8213b395b531470954b460cc554dff2563231a")]
 [assembly: System.Reflection.AssemblyProductAttribute("PaginaBizu.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PaginaBizu.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

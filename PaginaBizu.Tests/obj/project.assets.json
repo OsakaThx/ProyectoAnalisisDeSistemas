@@ -568,20 +568,16 @@
           }
         }
       },
-      "Selenium.WebDriver/4.18.0": {
+      "Selenium.WebDriver/4.11.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "lib/netstandard2.0/WebDriver.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/WebDriver.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/WebDriver.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/WebDriver.dll": {}
         },
         "build": {
           "buildTransitive/Selenium.WebDriver.targets": {}
@@ -2403,23 +2399,28 @@
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
       ]
     },
-    "Selenium.WebDriver/4.18.0": {
-      "sha512": "x1I+gPxgHnhW5H98QVqBsxiZUSjsEY4TBKC7nbG/RnnkUlWIT1F2h4E/XcrutXyt5ViypYuTiRdPVOLxsvGVTw==",
+    "Selenium.WebDriver/4.11.0": {
+      "sha512": "V8o+Nvi9/3Ix12ZzMGg+fI7sfu+HrflZkMGq8Orr+j0INbfpEEyM6KR9oaaHlm0WUXcn7dTYwyWrJxYsi6eniw==",
       "type": "package",
-      "path": "selenium.webdriver/4.18.0",
+      "path": "selenium.webdriver/4.11.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "README.md",
         "build/Selenium.WebDriver.targets",
         "buildTransitive/Selenium.WebDriver.targets",
-        "icon.png",
+        "images/icon.png",
+        "lib/net45/WebDriver.dll",
+        "lib/net46/WebDriver.dll",
+        "lib/net47/WebDriver.dll",
+        "lib/net48/WebDriver.dll",
+        "lib/net5.0/WebDriver.dll",
+        "lib/net6.0/WebDriver.dll",
         "lib/netstandard2.0/WebDriver.dll",
-        "lib/netstandard2.0/WebDriver.xml",
+        "lib/netstandard2.1/WebDriver.dll",
         "manager/linux/selenium-manager",
         "manager/macos/selenium-manager",
         "manager/windows/selenium-manager.exe",
-        "selenium.webdriver.4.18.0.nupkg.sha512",
+        "selenium.webdriver.4.11.0.nupkg.sha512",
         "selenium.webdriver.nuspec"
       ]
     },
@@ -5581,8 +5582,8 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.NET.Test.Sdk >= 17.6.0",
-      "Selenium.WebDriver >= 4.18.0",
-      "Selenium.WebDriver.ChromeDriver >= 138.0.0",
+      "Selenium.WebDriver >= 4.11.0",
+      "Selenium.WebDriver.ChromeDriver >= 138.0.7204.4900",
       "coverlet.collector >= 6.0.0",
       "xunit >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.5"
@@ -5645,11 +5646,11 @@
           },
           "Selenium.WebDriver": {
             "target": "Package",
-            "version": "[4.18.0, )"
+            "version": "[4.11.0, )"
           },
           "Selenium.WebDriver.ChromeDriver": {
             "target": "Package",
-            "version": "[138.0.0, )"
+            "version": "[138.0.7204.4900, )"
           },
           "coverlet.collector": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -5687,17 +5688,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1603",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "PaginaBizu.Tests depends on Selenium.WebDriver.ChromeDriver (>= 138.0.0) but Selenium.WebDriver.ChromeDriver 138.0.0 was not found. Selenium.WebDriver.ChromeDriver 138.0.7204.4900 was resolved instead.",
-      "libraryId": "Selenium.WebDriver.ChromeDriver",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

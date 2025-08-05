@@ -9,7 +9,7 @@
       "PaginaBizu.Tests/1.0.0": {
         "dependencies": {
           "Microsoft.NET.Test.Sdk": "17.6.0",
-          "Selenium.WebDriver": "4.18.0",
+          "Selenium.WebDriver": "4.11.0",
           "Selenium.WebDriver.ChromeDriver": "138.0.7204.4900",
           "coverlet.collector": "6.0.0",
           "xunit": "2.4.2",
@@ -402,12 +402,12 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
-      "Selenium.WebDriver/4.18.0": {
+      "Selenium.WebDriver/4.11.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
         "runtime": {
-          "lib/netstandard2.0/WebDriver.dll": {
+          "lib/net6.0/WebDriver.dll": {
             "assemblyVersion": "4.0.0.0",
             "fileVersion": "4.0.0.0"
           }
@@ -1231,12 +1231,12 @@
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
     },
-    "Selenium.WebDriver/4.18.0": {
+    "Selenium.WebDriver/4.11.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-x1I+gPxgHnhW5H98QVqBsxiZUSjsEY4TBKC7nbG/RnnkUlWIT1F2h4E/XcrutXyt5ViypYuTiRdPVOLxsvGVTw==",
-      "path": "selenium.webdriver/4.18.0",
-      "hashPath": "selenium.webdriver.4.18.0.nupkg.sha512"
+      "sha512": "sha512-V8o+Nvi9/3Ix12ZzMGg+fI7sfu+HrflZkMGq8Orr+j0INbfpEEyM6KR9oaaHlm0WUXcn7dTYwyWrJxYsi6eniw==",
+      "path": "selenium.webdriver/4.11.0",
+      "hashPath": "selenium.webdriver.4.11.0.nupkg.sha512"
     },
     "Selenium.WebDriver.ChromeDriver/138.0.7204.4900": {
       "type": "package",
