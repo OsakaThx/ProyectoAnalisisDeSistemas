@@ -20,7 +20,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
           "Newtonsoft.Json": "13.0.3",
           "Selenium.WebDriver": "4.18.0",
-          "Selenium.WebDriver.ChromeDriver": "118.0.5993.7000",
+          "Selenium.WebDriver.ChromeDriver": "138.0.7204.4900",
           "Serilog.AspNetCore": "9.0.0",
           "Serilog.Sinks.Console": "6.0.1-dev-00953",
           "Serilog.Sinks.File": "7.0.0",
@@ -2155,7 +2155,7 @@
           }
         }
       },
-      "Selenium.WebDriver.ChromeDriver/118.0.5993.7000": {},
+      "Selenium.WebDriver.ChromeDriver/138.0.7204.4900": {},
       "Serilog/4.2.0": {
         "runtime": {
           "lib/net8.0/Serilog.dll": {
@@ -3799,12 +3799,12 @@
       "path": "selenium.webdriver/4.18.0",
       "hashPath": "selenium.webdriver.4.18.0.nupkg.sha512"
     },
-    "Selenium.WebDriver.ChromeDriver/118.0.5993.7000": {
+    "Selenium.WebDriver.ChromeDriver/138.0.7204.4900": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-P+oMf57Rbt2mKr3k2OFijtg+Vm3xHYe147LWQLqB0aumjKuWxoZVZw1+K7rr9KqdGe646kvIVjtQH0+eheCawA==",
-      "path": "selenium.webdriver.chromedriver/118.0.5993.7000",
-      "hashPath": "selenium.webdriver.chromedriver.118.0.5993.7000.nupkg.sha512"
+      "sha512": "sha512-tR4mKjX+rFJ1nzlWTQWzAbzXMIm8CG85dTSQOIKisZRQBlPM8nxKnfYxjPnH6W1KBYNtzIjoL77Y4YH+iqASyw==",
+      "path": "selenium.webdriver.chromedriver/138.0.7204.4900",
+      "hashPath": "selenium.webdriver.chromedriver.138.0.7204.4900.nupkg.sha512"
     },
     "Serilog/4.2.0": {
       "type": "package",

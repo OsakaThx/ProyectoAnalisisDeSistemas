@@ -2698,7 +2698,7 @@
           "buildTransitive/Selenium.WebDriver.targets": {}
         }
       },
-      "Selenium.WebDriver.ChromeDriver/118.0.5993.7000": {
+      "Selenium.WebDriver.ChromeDriver/138.0.7204.4900": {
         "type": "package",
         "build": {
           "build/Selenium.WebDriver.ChromeDriver.targets": {}
@@ -8255,13 +8255,14 @@
         "selenium.webdriver.nuspec"
       ]
     },
-    "Selenium.WebDriver.ChromeDriver/118.0.5993.7000": {
-      "sha512": "P+oMf57Rbt2mKr3k2OFijtg+Vm3xHYe147LWQLqB0aumjKuWxoZVZw1+K7rr9KqdGe646kvIVjtQH0+eheCawA==",
+    "Selenium.WebDriver.ChromeDriver/138.0.7204.4900": {
+      "sha512": "tR4mKjX+rFJ1nzlWTQWzAbzXMIm8CG85dTSQOIKisZRQBlPM8nxKnfYxjPnH6W1KBYNtzIjoL77Y4YH+iqASyw==",
       "type": "package",
-      "path": "selenium.webdriver.chromedriver/118.0.5993.7000",
+      "path": "selenium.webdriver.chromedriver/138.0.7204.4900",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "LICENSE",
         "README.md",
         "build/DefinePropertiesChromeDriver.targets",
         "build/Selenium.WebDriver.ChromeDriver.targets",
@@ -8274,7 +8275,7 @@
         "driver/win32/LICENSE.chromedriver",
         "driver/win32/chromedriver.exe",
         "nupkg-icon.png",
-        "selenium.webdriver.chromedriver.118.0.5993.7000.nupkg.sha512",
+        "selenium.webdriver.chromedriver.138.0.7204.4900.nupkg.sha512",
         "selenium.webdriver.chromedriver.nuspec"
       ]
     },
@@ -10035,7 +10036,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.7",
       "Newtonsoft.Json >= 13.0.3",
       "Selenium.WebDriver >= 4.18.0",
-      "Selenium.WebDriver.ChromeDriver >= 118.0.5993.7000",
+      "Selenium.WebDriver.ChromeDriver >= 138.0.0",
       "Serilog.AspNetCore >= 9.0.0",
       "Serilog.Sinks.Console >= 6.0.1-dev-00953",
       "Serilog.Sinks.File >= 7.0.0",
@@ -10147,7 +10148,7 @@
           },
           "Selenium.WebDriver.ChromeDriver": {
             "target": "Package",
-            "version": "[118.0.5993.7000, )"
+            "version": "[138.0.0, )"
           },
           "Serilog.AspNetCore": {
             "target": "Package",
@@ -10196,5 +10197,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "PaginaBizu depends on Selenium.WebDriver.ChromeDriver (>= 138.0.0) but Selenium.WebDriver.ChromeDriver 138.0.0 was not found. Selenium.WebDriver.ChromeDriver 138.0.7204.4900 was resolved instead.",
+      "libraryId": "Selenium.WebDriver.ChromeDriver",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

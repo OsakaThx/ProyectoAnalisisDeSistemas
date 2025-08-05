@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "L5D57zJ8WJk=",
+  "dgSpecHash": "MGKl2Tpf5Gs=",
   "success": true,
   "projectFilePath": "C:\\Users\\hoshu\\OneDrive\\Desktop\\ProyectoAnalisisDeSistemas-master\\ProyectoAnalisisDeSistemas-master\\PaginaBizu\\PaginaBizu.csproj",
   "expectedPackageFiles": [
@@ -150,7 +150,7 @@
     "C:\\Users\\hoshu\\.nuget\\packages\\nuget.protocol\\6.11.0\\nuget.protocol.6.11.0.nupkg.sha512",
     "C:\\Users\\hoshu\\.nuget\\packages\\nuget.versioning\\6.11.0\\nuget.versioning.6.11.0.nupkg.sha512",
     "C:\\Users\\hoshu\\.nuget\\packages\\selenium.webdriver\\4.18.0\\selenium.webdriver.4.18.0.nupkg.sha512",
-    "C:\\Users\\hoshu\\.nuget\\packages\\selenium.webdriver.chromedriver\\118.0.5993.7000\\selenium.webdriver.chromedriver.118.0.5993.7000.nupkg.sha512",
+    "C:\\Users\\hoshu\\.nuget\\packages\\selenium.webdriver.chromedriver\\138.0.7204.4900\\selenium.webdriver.chromedriver.138.0.7204.4900.nupkg.sha512",
     "C:\\Users\\hoshu\\.nuget\\packages\\serilog\\4.2.0\\serilog.4.2.0.nupkg.sha512",
     "C:\\Users\\hoshu\\.nuget\\packages\\serilog.aspnetcore\\9.0.0\\serilog.aspnetcore.9.0.0.nupkg.sha512",
     "C:\\Users\\hoshu\\.nuget\\packages\\serilog.extensions.hosting\\9.0.0\\serilog.extensions.hosting.9.0.0.nupkg.sha512",
@@ -210,5 +210,18 @@
     "C:\\Users\\hoshu\\.nuget\\packages\\xunit.assert\\2.9.3\\xunit.assert.2.9.3.nupkg.sha512",
     "C:\\Users\\hoshu\\.nuget\\packages\\xunit.extensibility.core\\2.9.3\\xunit.extensibility.core.2.9.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "message": "PaginaBizu depends on Selenium.WebDriver.ChromeDriver (>= 138.0.0) but Selenium.WebDriver.ChromeDriver 138.0.0 was not found. Selenium.WebDriver.ChromeDriver 138.0.7204.4900 was resolved instead.",
+      "projectPath": "C:\\Users\\hoshu\\OneDrive\\Desktop\\ProyectoAnalisisDeSistemas-master\\ProyectoAnalisisDeSistemas-master\\PaginaBizu\\PaginaBizu.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\hoshu\\OneDrive\\Desktop\\ProyectoAnalisisDeSistemas-master\\ProyectoAnalisisDeSistemas-master\\PaginaBizu\\PaginaBizu.csproj",
+      "libraryId": "Selenium.WebDriver.ChromeDriver",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
