@@ -1,0 +1,255 @@
+﻿namespace PaginaBizu.wwwroot.css
+/* Estilo general lujoso para la tienda */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f8f7; /* Gris muy claro, elegante */
+    color: #2c2c2c;
+    margin: 0;
+    padding: 0;
+}
+
+/* Títulos con estilo refinado */
+h1, h2, h4, h5 {
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+/* Contenedor general */
+.product-list-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    background: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+/* Título principal */
+.title {
+    font-size: 3.2rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2b2b2b;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Botones principales */
+.action-buttons .btn {
+    padding: 0.75rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 40px;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons .btn-primary {
+    background-color: #121212;
+    border: none;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    .action-buttons .btn-primary:hover {
+        background-color: #444444;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+    }
+
+.action-buttons .btn-info {
+    background-color: #9d7466; /* Marrón lujoso */
+    border: none;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    .action-buttons .btn-info:hover {
+        background-color: #7a5a4c;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+    }
+
+/* Buscador elegante */
+.search-container {
+    max-width: 450px;
+    margin: 0 auto 3rem;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 50px 14px 20px;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    border: 2px solid #d3c6b8; /* beige suave */
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .search-input::placeholder {
+        color: #a4998a;
+        font-style: italic;
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: #9d7466;
+        box-shadow: 0 0 10px #9d7466;
+    }
+
+/* Icono de búsqueda */
+.search-container::after {
+    content: '\1F50D'; /* Unicode lupa 🔍 */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #9d7466;
+    pointer-events: none;
+}
+
+/* Tabla refinada */
+.table-responsive {
+    overflow-x: auto;
+}
+
+table.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    background-color: transparent;
+}
+
+    table.table thead tr {
+        background-color: transparent;
+        color: #5a4a3e;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        font-size: 1.1rem;
+        border-bottom: 2px solid #9d7466;
+    }
+
+    table.table thead th {
+        padding: 15px 20px;
+        text-align: left;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    table.table tbody tr {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        cursor: default;
+    }
+
+        table.table tbody tr:hover {
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-3px);
+        }
+
+    table.table tbody td {
+        padding: 18px 25px;
+        vertical-align: middle;
+        font-family: 'Montserrat', sans-serif;
+        color: #4a4a4a;
+    }
+
+/* Imagen del producto */
+.product-image {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones en acciones */
+.actions-cell .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.actions-cell .btn-warning {
+    background-color: #a67c52;
+    border: none;
+    color: #fff;
+}
+
+    .actions-cell .btn-warning:hover {
+        background-color: #845e37;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+.actions-cell .btn-info {
+    background-color: #4b3b2b;
+    border: none;
+    color: #fff;
+}
+
+    .actions-cell .btn-info:hover {
+        background-color: #392e23;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+.actions-cell .btn-danger {
+    background-color: #9c1a17;
+    border: none;
+    color: #fff;
+}
+
+    .actions-cell .btn-danger:hover {
+        background-color: #7c1210;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+/* Mensaje cuando no hay productos */
+.no-products-message {
+    text-align: center;
+    font-size: 1.4rem;
+    color: #8c7a6b;
+    margin-top: 4rem;
+    font-style: italic;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .product-list-container {
+        padding: 1rem;
+        margin: 2rem 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    table.table tbody td, table.table thead th {
+        padding: 12px 10px;
+    }
+
+    .product-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .actions-cell .btn {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .action-buttons .btn {
+        font-size: 1rem;
+        padding: 0.6rem 2rem;
+    }
+}

@@ -1,0 +1,307 @@
+2025-08-05 12:31:19.401 -06:00 [INF] User profile is available. Using 'C:\Users\hoshu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 12:31:20.000 -06:00 [WRN] The WebRootPath was not found: C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalisisDeSistemas-master\PaginaBizu\bin\Debug\net8.0\wwwroot. Static files may be unavailable.
+2025-08-05 12:31:20.122 -06:00 [INF] Now listening on: http://localhost:5000
+2025-08-05 12:31:20.130 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 12:31:20.134 -06:00 [INF] Hosting environment: Production
+2025-08-05 12:31:20.138 -06:00 [INF] Content root path: C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalisisDeSistemas-master\PaginaBizu\bin\Debug\net8.0
+2025-08-05 12:31:53.405 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-05 12:31:53.428 -06:00 [WRN] Failed to determine the https port for redirect.
+2025-08-05 12:31:53.500 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-05 12:31:53.561 -06:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.HomeController (PaginaBizu).
+2025-08-05 12:31:53.579 -06:00 [INF] ➡️ Acción ejecutándose: Home/Index | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-05T12:31:53.5787054-06:00"
+2025-08-05 12:31:53.589 -06:00 [INF] ✅ Acción ejecutada: Home/Index | Hora: "2025-08-05T12:31:53.5889612-06:00"
+2025-08-05 12:31:53.605 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-05 12:31:53.998 -06:00 [INF] Executed ViewResult - view Index executed in 397.3998ms.
+2025-08-05 12:31:54.003 -06:00 [INF] Executed action PaginaBizu.Controllers.HomeController.Index (PaginaBizu) in 433.7691ms
+2025-08-05 12:31:54.007 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-05 12:31:54.025 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 654.1159ms
+2025-08-05 12:31:54.083 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/style.css - null null
+2025-08-05 12:31:54.098 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css - null null
+2025-08-05 12:31:54.136 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/css/vanilla-zoom.min.css - null null
+2025-08-05 12:31:54.151 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/style.css - 404 0 null 69.2019ms
+2025-08-05 12:31:54.151 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css - 404 0 null 53.4561ms
+2025-08-05 12:31:54.115 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/css/baguetteBox.min.css - null null
+2025-08-05 12:31:54.129 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/fonts/simple-line-icons.min.css - null null
+2025-08-05 12:31:54.144 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/glow-form.css - null null
+2025-08-05 12:31:54.196 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/css/vanilla-zoom.min.css - 404 0 null 59.9932ms
+2025-08-05 12:31:54.202 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/css/style.css, Response status code: 404
+2025-08-05 12:31:54.211 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css, Response status code: 404
+2025-08-05 12:31:54.221 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/css/baguetteBox.min.css - 404 0 null 106.4768ms
+2025-08-05 12:31:54.228 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/fonts/simple-line-icons.min.css - 404 0 null 98.8728ms
+2025-08-05 12:31:54.236 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/glow-form.css - 404 0 null 91.5543ms
+2025-08-05 12:31:54.245 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/css/vanilla-zoom.min.css, Response status code: 404
+2025-08-05 12:31:54.250 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - null null
+2025-08-05 12:31:54.256 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - null null
+2025-08-05 12:31:54.265 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/css/baguetteBox.min.css, Response status code: 404
+2025-08-05 12:31:54.275 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/fonts/simple-line-icons.min.css, Response status code: 404
+2025-08-05 12:31:54.302 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - 404 0 null 52.2479ms
+2025-08-05 12:31:54.312 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - 404 0 null 55.9626ms
+2025-08-05 12:31:54.285 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/css/glow-form.css, Response status code: 404
+2025-08-05 12:31:54.336 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg, Response status code: 404
+2025-08-05 12:31:54.346 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg, Response status code: 404
+2025-08-05 12:31:54.842 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg - null null
+2025-08-05 12:31:54.849 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - null null
+2025-08-05 12:31:54.849 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - null null
+2025-08-05 12:31:54.850 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/theme.js - null null
+2025-08-05 12:31:54.850 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/baguetteBox.min.js - null null
+2025-08-05 12:31:54.850 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/vanilla-zoom.js - null null
+2025-08-05 12:31:54.860 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg - 404 0 null 18.5305ms
+2025-08-05 12:31:54.871 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - 404 0 null 22.0193ms
+2025-08-05 12:31:54.880 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - 404 0 null 31.4374ms
+2025-08-05 12:31:54.888 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/theme.js - 404 0 null 38.2052ms
+2025-08-05 12:31:54.897 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/baguetteBox.min.js - 404 0 null 47.2615ms
+2025-08-05 12:31:54.906 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/vanilla-zoom.js - 404 0 null 56.211ms
+2025-08-05 12:31:54.915 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg, Response status code: 404
+2025-08-05 12:31:54.927 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg, Response status code: 404
+2025-08-05 12:31:54.938 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg, Response status code: 404
+2025-08-05 12:31:54.951 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/theme.js, Response status code: 404
+2025-08-05 12:31:54.963 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/baguetteBox.min.js, Response status code: 404
+2025-08-05 12:31:54.973 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/vanilla-zoom.js, Response status code: 404
+2025-08-05 12:31:54.979 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - null null
+2025-08-05 12:31:54.992 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - null null
+2025-08-05 12:31:55.017 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - 404 0 null 37.5312ms
+2025-08-05 12:31:55.026 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - 404 0 null 33.2489ms
+2025-08-05 12:31:55.035 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg, Response status code: 404
+2025-08-05 12:31:55.046 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg, Response status code: 404
+2025-08-05 12:31:56.260 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2025-08-05 12:31:56.271 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 404 0 null 10.8844ms
+2025-08-05 12:31:56.283 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/favicon.ico, Response status code: 404
+2025-08-05 12:32:01.132 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-05 12:32:01.146 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-05 12:32:01.152 -06:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.HomeController (PaginaBizu).
+2025-08-05 12:32:01.163 -06:00 [INF] ➡️ Acción ejecutándose: Home/Index | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-05T12:32:01.1637915-06:00"
+2025-08-05 12:32:01.178 -06:00 [INF] ✅ Acción ejecutada: Home/Index | Hora: "2025-08-05T12:32:01.1784440-06:00"
+2025-08-05 12:32:01.185 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-05 12:32:01.241 -06:00 [INF] Executed ViewResult - view Index executed in 55.7758ms.
+2025-08-05 12:32:01.247 -06:00 [INF] Executed action PaginaBizu.Controllers.HomeController.Index (PaginaBizu) in 84.1824ms
+2025-08-05 12:32:01.251 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-05 12:32:01.254 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 121.4665ms
+2025-08-05 12:32:01.284 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/style.css - null null
+2025-08-05 12:32:01.286 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css - null null
+2025-08-05 12:32:01.286 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/fonts/simple-line-icons.min.css - null null
+2025-08-05 12:32:01.287 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/css/baguetteBox.min.css - null null
+2025-08-05 12:32:01.287 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/css/vanilla-zoom.min.css - null null
+2025-08-05 12:32:01.287 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/glow-form.css - null null
+2025-08-05 12:32:01.295 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/style.css - 404 0 null 10.6101ms
+2025-08-05 12:32:01.301 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css - 404 0 null 15.1776ms
+2025-08-05 12:32:01.308 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/fonts/simple-line-icons.min.css - 404 0 null 21.2279ms
+2025-08-05 12:32:01.317 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/css/baguetteBox.min.css - 404 0 null 29.581ms
+2025-08-05 12:32:01.323 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/css/vanilla-zoom.min.css - 404 0 null 35.9724ms
+2025-08-05 12:32:01.331 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/glow-form.css - 404 0 null 43.6818ms
+2025-08-05 12:32:01.338 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/css/style.css, Response status code: 404
+2025-08-05 12:32:01.347 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css, Response status code: 404
+2025-08-05 12:32:01.355 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/fonts/simple-line-icons.min.css, Response status code: 404
+2025-08-05 12:32:01.366 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/css/baguetteBox.min.css, Response status code: 404
+2025-08-05 12:32:01.382 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/css/vanilla-zoom.min.css, Response status code: 404
+2025-08-05 12:32:01.390 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/css/glow-form.css, Response status code: 404
+2025-08-05 12:32:01.398 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - null null
+2025-08-05 12:32:01.406 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - null null
+2025-08-05 12:32:01.432 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - 404 0 null 34.087ms
+2025-08-05 12:32:01.438 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - 404 0 null 32.2713ms
+2025-08-05 12:32:01.448 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg, Response status code: 404
+2025-08-05 12:32:01.456 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg, Response status code: 404
+2025-08-05 12:32:01.603 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg - null null
+2025-08-05 12:32:01.604 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - null null
+2025-08-05 12:32:01.605 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - null null
+2025-08-05 12:32:01.605 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/vanilla-zoom.js - null null
+2025-08-05 12:32:01.605 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/baguetteBox.min.js - null null
+2025-08-05 12:32:01.606 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/theme.js - null null
+2025-08-05 12:32:01.614 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg - 404 0 null 11.3695ms
+2025-08-05 12:32:01.621 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - 404 0 null 16.0411ms
+2025-08-05 12:32:01.632 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - 404 0 null 27.5806ms
+2025-08-05 12:32:01.639 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/vanilla-zoom.js - 404 0 null 34.1623ms
+2025-08-05 12:32:01.648 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/baguetteBox.min.js - 404 0 null 42.934ms
+2025-08-05 12:32:01.653 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/theme.js - 404 0 null 46.7274ms
+2025-08-05 12:32:01.663 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg, Response status code: 404
+2025-08-05 12:32:01.671 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg, Response status code: 404
+2025-08-05 12:32:01.681 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg, Response status code: 404
+2025-08-05 12:32:01.688 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/vanilla-zoom.js, Response status code: 404
+2025-08-05 12:32:01.698 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/baguetteBox.min.js, Response status code: 404
+2025-08-05 12:32:01.705 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/theme.js, Response status code: 404
+2025-08-05 12:32:01.712 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - null null
+2025-08-05 12:32:01.716 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - null null
+2025-08-05 12:32:01.755 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - 404 0 null 43.8606ms
+2025-08-05 12:32:01.766 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - 404 0 null 49.8568ms
+2025-08-05 12:32:01.774 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg, Response status code: 404
+2025-08-05 12:32:01.788 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg, Response status code: 404
+2025-08-05 12:32:37.972 -06:00 [INF] User profile is available. Using 'C:\Users\hoshu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 12:32:38.317 -06:00 [WRN] The WebRootPath was not found: C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalisisDeSistemas-master\PaginaBizu\bin\Debug\net8.0\wwwroot. Static files may be unavailable.
+2025-08-05 12:32:38.406 -06:00 [INF] Now listening on: http://localhost:5000
+2025-08-05 12:32:38.413 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 12:32:38.416 -06:00 [INF] Hosting environment: Production
+2025-08-05 12:32:38.419 -06:00 [INF] Content root path: C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalisisDeSistemas-master\PaginaBizu\bin\Debug\net8.0
+2025-08-05 12:32:50.381 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-05 12:32:50.402 -06:00 [WRN] Failed to determine the https port for redirect.
+2025-08-05 12:32:50.498 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-05 12:32:50.558 -06:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.HomeController (PaginaBizu).
+2025-08-05 12:32:50.573 -06:00 [INF] ➡️ Acción ejecutándose: Home/Index | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-05T12:32:50.5728522-06:00"
+2025-08-05 12:32:50.586 -06:00 [INF] ✅ Acción ejecutada: Home/Index | Hora: "2025-08-05T12:32:50.5863629-06:00"
+2025-08-05 12:32:50.604 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-05 12:32:51.084 -06:00 [INF] Executed ViewResult - view Index executed in 480.7405ms.
+2025-08-05 12:32:51.093 -06:00 [INF] Executed action PaginaBizu.Controllers.HomeController.Index (PaginaBizu) in 526.3588ms
+2025-08-05 12:32:51.101 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-05 12:32:51.132 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 760.3387ms
+2025-08-05 12:32:51.168 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/style.css - null null
+2025-08-05 12:32:51.176 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/css/vanilla-zoom.min.css - null null
+2025-08-05 12:32:51.168 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/fonts/simple-line-icons.min.css - null null
+2025-08-05 12:32:51.168 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/css/baguetteBox.min.css - null null
+2025-08-05 12:32:51.168 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css - null null
+2025-08-05 12:32:51.182 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/glow-form.css - null null
+2025-08-05 12:32:51.218 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/style.css - 404 0 null 61.097ms
+2025-08-05 12:32:51.222 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/css/vanilla-zoom.min.css - 404 0 null 52.6577ms
+2025-08-05 12:32:51.228 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/fonts/simple-line-icons.min.css - 404 0 null 74.4531ms
+2025-08-05 12:32:51.238 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/css/baguetteBox.min.css - 404 0 null 83.871ms
+2025-08-05 12:32:51.242 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css - 404 0 null 84.8182ms
+2025-08-05 12:32:51.251 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/glow-form.css - 404 0 null 70.2912ms
+2025-08-05 12:32:51.264 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/css/style.css, Response status code: 404
+2025-08-05 12:32:51.270 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/css/vanilla-zoom.min.css, Response status code: 404
+2025-08-05 12:32:51.279 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/fonts/simple-line-icons.min.css, Response status code: 404
+2025-08-05 12:32:51.286 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/css/baguetteBox.min.css, Response status code: 404
+2025-08-05 12:32:51.312 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - null null
+2025-08-05 12:32:51.295 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css, Response status code: 404
+2025-08-05 12:32:51.307 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - null null
+2025-08-05 12:32:51.302 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/css/glow-form.css, Response status code: 404
+2025-08-05 12:32:51.332 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - 404 0 null 20.5421ms
+2025-08-05 12:32:51.344 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - 404 0 null 37.2228ms
+2025-08-05 12:32:51.359 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg, Response status code: 404
+2025-08-05 12:32:51.367 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg, Response status code: 404
+2025-08-05 12:32:51.516 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg - null null
+2025-08-05 12:32:51.517 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - null null
+2025-08-05 12:32:51.517 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - null null
+2025-08-05 12:32:51.517 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/baguetteBox.min.js - null null
+2025-08-05 12:32:51.518 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/vanilla-zoom.js - null null
+2025-08-05 12:32:51.518 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/theme.js - null null
+2025-08-05 12:32:51.523 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg - 404 0 null 7.5607ms
+2025-08-05 12:32:51.530 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - 404 0 null 13.6974ms
+2025-08-05 12:32:51.536 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - 404 0 null 19.3858ms
+2025-08-05 12:32:51.542 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/baguetteBox.min.js - 404 0 null 25.4613ms
+2025-08-05 12:32:51.551 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/vanilla-zoom.js - 404 0 null 32.673ms
+2025-08-05 12:32:51.557 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/theme.js - 404 0 null 39.0303ms
+2025-08-05 12:32:51.567 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg, Response status code: 404
+2025-08-05 12:32:51.574 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg, Response status code: 404
+2025-08-05 12:32:51.583 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg, Response status code: 404
+2025-08-05 12:32:51.590 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/baguetteBox.min.js, Response status code: 404
+2025-08-05 12:32:51.598 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/vanilla-zoom.js, Response status code: 404
+2025-08-05 12:32:51.604 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/theme.js, Response status code: 404
+2025-08-05 12:32:51.607 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - null null
+2025-08-05 12:32:51.611 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - null null
+2025-08-05 12:32:51.634 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - 404 0 null 26.8577ms
+2025-08-05 12:32:51.639 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - 404 0 null 28.4366ms
+2025-08-05 12:32:51.645 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg, Response status code: 404
+2025-08-05 12:32:51.651 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg, Response status code: 404
+2025-08-05 12:32:53.541 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-05 12:32:53.559 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-05 12:32:53.567 -06:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.HomeController (PaginaBizu).
+2025-08-05 12:32:53.577 -06:00 [INF] ➡️ Acción ejecutándose: Home/Index | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-05T12:32:53.5771641-06:00"
+2025-08-05 12:32:53.588 -06:00 [INF] ✅ Acción ejecutada: Home/Index | Hora: "2025-08-05T12:32:53.5884271-06:00"
+2025-08-05 12:32:53.596 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-05 12:32:53.654 -06:00 [INF] Executed ViewResult - view Index executed in 58.4339ms.
+2025-08-05 12:32:53.665 -06:00 [INF] Executed action PaginaBizu.Controllers.HomeController.Index (PaginaBizu) in 88.4355ms
+2025-08-05 12:32:53.672 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-05 12:32:53.678 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 136.2963ms
+2025-08-05 12:32:53.697 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/style.css - null null
+2025-08-05 12:32:53.700 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css - null null
+2025-08-05 12:32:53.701 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/fonts/simple-line-icons.min.css - null null
+2025-08-05 12:32:53.702 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/css/baguetteBox.min.css - null null
+2025-08-05 12:32:53.702 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/css/vanilla-zoom.min.css - null null
+2025-08-05 12:32:53.702 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/glow-form.css - null null
+2025-08-05 12:32:53.707 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/style.css - 404 0 null 10.1751ms
+2025-08-05 12:32:53.719 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css - 404 0 null 18.3861ms
+2025-08-05 12:32:53.724 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/fonts/simple-line-icons.min.css - 404 0 null 23.1133ms
+2025-08-05 12:32:53.733 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/css/baguetteBox.min.css - 404 0 null 31.6698ms
+2025-08-05 12:32:53.741 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/css/vanilla-zoom.min.css - 404 0 null 38.8503ms
+2025-08-05 12:32:53.750 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/glow-form.css - 404 0 null 47.4506ms
+2025-08-05 12:32:53.756 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/css/style.css, Response status code: 404
+2025-08-05 12:32:53.765 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css, Response status code: 404
+2025-08-05 12:32:53.773 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/fonts/simple-line-icons.min.css, Response status code: 404
+2025-08-05 12:32:53.783 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/css/baguetteBox.min.css, Response status code: 404
+2025-08-05 12:32:53.793 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/css/vanilla-zoom.min.css, Response status code: 404
+2025-08-05 12:32:53.803 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/css/glow-form.css, Response status code: 404
+2025-08-05 12:32:53.810 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - null null
+2025-08-05 12:32:53.815 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - null null
+2025-08-05 12:32:53.846 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - 404 0 null 36.1321ms
+2025-08-05 12:32:53.853 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - 404 0 null 38.0748ms
+2025-08-05 12:32:53.861 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg, Response status code: 404
+2025-08-05 12:32:53.869 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg, Response status code: 404
+2025-08-05 12:32:54.014 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg - null null
+2025-08-05 12:32:54.016 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - null null
+2025-08-05 12:32:54.016 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - null null
+2025-08-05 12:32:54.016 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/baguetteBox.min.js - null null
+2025-08-05 12:32:54.016 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/vanilla-zoom.js - null null
+2025-08-05 12:32:54.016 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/theme.js - null null
+2025-08-05 12:32:54.023 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg - 404 0 null 9.245ms
+2025-08-05 12:32:54.031 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - 404 0 null 15.0163ms
+2025-08-05 12:32:54.039 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - 404 0 null 22.9763ms
+2025-08-05 12:32:54.049 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/baguetteBox.min.js - 404 0 null 32.6507ms
+2025-08-05 12:32:54.054 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/vanilla-zoom.js - 404 0 null 37.7884ms
+2025-08-05 12:32:54.063 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/theme.js - 404 0 null 46.2157ms
+2025-08-05 12:32:54.072 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg, Response status code: 404
+2025-08-05 12:32:54.082 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg, Response status code: 404
+2025-08-05 12:32:54.092 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg, Response status code: 404
+2025-08-05 12:32:54.100 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/baguetteBox.min.js, Response status code: 404
+2025-08-05 12:32:54.107 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/vanilla-zoom.js, Response status code: 404
+2025-08-05 12:32:54.115 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/theme.js, Response status code: 404
+2025-08-05 12:32:54.119 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - null null
+2025-08-05 12:32:54.124 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - null null
+2025-08-05 12:32:54.151 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - 404 0 null 32.4067ms
+2025-08-05 12:32:54.160 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - 404 0 null 35.9645ms
+2025-08-05 12:32:54.167 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg, Response status code: 404
+2025-08-05 12:32:54.174 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg, Response status code: 404
+2025-08-05 12:32:56.307 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/ - null null
+2025-08-05 12:32:56.324 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-05 12:32:56.330 -06:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.HomeController (PaginaBizu).
+2025-08-05 12:32:56.342 -06:00 [INF] ➡️ Acción ejecutándose: Home/Index | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-05T12:32:56.3426700-06:00"
+2025-08-05 12:32:56.358 -06:00 [INF] ✅ Acción ejecutada: Home/Index | Hora: "2025-08-05T12:32:56.3581882-06:00"
+2025-08-05 12:32:56.368 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-05 12:32:56.401 -06:00 [INF] Executed ViewResult - view Index executed in 33.1548ms.
+2025-08-05 12:32:56.412 -06:00 [INF] Executed action PaginaBizu.Controllers.HomeController.Index (PaginaBizu) in 70.4044ms
+2025-08-05 12:32:56.421 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-05 12:32:56.427 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/ - 200 null text/html; charset=utf-8 120.3778ms
+2025-08-05 12:32:56.451 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/style.css - null null
+2025-08-05 12:32:56.452 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/fonts/simple-line-icons.min.css - null null
+2025-08-05 12:32:56.452 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css - null null
+2025-08-05 12:32:56.452 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/css/baguetteBox.min.css - null null
+2025-08-05 12:32:56.452 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/css/vanilla-zoom.min.css - null null
+2025-08-05 12:32:56.453 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/css/glow-form.css - null null
+2025-08-05 12:32:56.460 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/style.css - 404 0 null 8.9391ms
+2025-08-05 12:32:56.469 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/fonts/simple-line-icons.min.css - 404 0 null 17.0337ms
+2025-08-05 12:32:56.477 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css - 404 0 null 24.8921ms
+2025-08-05 12:32:56.484 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/css/baguetteBox.min.css - 404 0 null 31.5977ms
+2025-08-05 12:32:56.491 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/css/vanilla-zoom.min.css - 404 0 null 38.0952ms
+2025-08-05 12:32:56.498 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/css/glow-form.css - 404 0 null 45.548ms
+2025-08-05 12:32:56.505 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/css/style.css, Response status code: 404
+2025-08-05 12:32:56.514 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/fonts/simple-line-icons.min.css, Response status code: 404
+2025-08-05 12:32:56.520 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/bootstrap/css/bootstrap.min.css, Response status code: 404
+2025-08-05 12:32:56.532 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/css/baguetteBox.min.css, Response status code: 404
+2025-08-05 12:32:56.543 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/css/vanilla-zoom.min.css, Response status code: 404
+2025-08-05 12:32:56.551 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/css/glow-form.css, Response status code: 404
+2025-08-05 12:32:56.556 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - null null
+2025-08-05 12:32:56.561 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - null null
+2025-08-05 12:32:56.587 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - 404 0 null 31.1226ms
+2025-08-05 12:32:56.592 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - 404 0 null 31.7195ms
+2025-08-05 12:32:56.601 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg, Response status code: 404
+2025-08-05 12:32:56.607 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg, Response status code: 404
+2025-08-05 12:32:56.724 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg - null null
+2025-08-05 12:32:56.725 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - null null
+2025-08-05 12:32:56.725 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/vanilla-zoom.js - null null
+2025-08-05 12:32:56.725 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - null null
+2025-08-05 12:32:56.725 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/baguetteBox.min.js - null null
+2025-08-05 12:32:56.725 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/js/theme.js - null null
+2025-08-05 12:32:56.733 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg - 404 0 null 8.9894ms
+2025-08-05 12:32:56.741 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - 404 0 null 15.6672ms
+2025-08-05 12:32:56.749 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/vanilla-zoom.js - 404 0 null 23.8083ms
+2025-08-05 12:32:56.755 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - 404 0 null 29.7746ms
+2025-08-05 12:32:56.765 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/baguetteBox.min.js - 404 0 null 40.3596ms
+2025-08-05 12:32:56.773 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/js/theme.js - 404 0 null 47.4473ms
+2025-08-05 12:32:56.782 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/pulsera-aine-stone-gold.jpg, Response status code: 404
+2025-08-05 12:32:56.790 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg, Response status code: 404
+2025-08-05 12:32:56.799 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/vanilla-zoom.js, Response status code: 404
+2025-08-05 12:32:56.807 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg, Response status code: 404
+2025-08-05 12:32:56.815 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/baguetteBox.min.js, Response status code: 404
+2025-08-05 12:32:56.822 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/js/theme.js, Response status code: 404
+2025-08-05 12:32:56.830 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - null null
+2025-08-05 12:32:56.834 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - null null
+2025-08-05 12:32:56.864 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - 404 0 null 34.2808ms
+2025-08-05 12:32:56.870 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - 404 0 null 36.5876ms
+2025-08-05 12:32:56.881 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg, Response status code: 404
+2025-08-05 12:32:56.889 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg, Response status code: 404

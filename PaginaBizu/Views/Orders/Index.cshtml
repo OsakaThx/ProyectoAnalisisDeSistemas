@@ -1,0 +1,54 @@
+﻿@model IEnumerable<PaginaBizu.Models.Order>
+
+@{
+    ViewData["Title"] = "Lista de Pedidos";
+    var primerPedido = Model.FirstOrDefault();
+    var isAdmin = User.IsInRole("Admin");
+}
+
+<h1>Lista de Pedidos</h1>
+
+@if (isAdmin)
+{
+    <p>
+        <a asp-controller="Orders" asp-action="CrearPedidoPrueba" class="btn btn-warning">
+            Crear pedido de prueba
+        </a>
+    </p>
+}
+
+@if (Model.Any())
+{
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(_ => primerPedido.Id)</th>
+                <th>@Html.DisplayNameFor(_ => primerPedido.Fecha)</th>
+                <th>@Html.DisplayNameFor(_ => primerPedido.UsuarioId)</th>
+                <th>@Html.DisplayNameFor(_ => primerPedido.Estado)</th>
+                <th>@Html.DisplayNameFor(_ => primerPedido.Total)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pedido in Model)
+            {
+                <tr>
+                    <td>@pedido.Id</td>
+                    <td>@pedido.Fecha.ToShortDateString()</td>
+                    <td>@pedido.UsuarioId</td>
+                    <td>@pedido.Estado</td>
+                    <td>@pedido.Total.ToString("C")</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@pedido.Id">Detalles</a> |
+                        <a asp-action="Edit" asp-route-id="@pedido.Id">Editar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay pedidos registrados.</p>
+}

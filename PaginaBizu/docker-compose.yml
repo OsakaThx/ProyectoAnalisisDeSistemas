@@ -1,0 +1,30 @@
+﻿
+services:
+
+  mvc_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mvc_app
+    ports:
+      - "80:80"                             # host:container
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Docker      # para que lea appsettings.Docker.json
+      - ASPNETCORE_URLS=http://+:80        # 🔧 escucha en puerto 80 dentro del contenedor
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=Bizuteria;User Id=sa;Password=Joshua0905.;TrustServerCertificate=True;
+    depends_on:
+      - sqlserver
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Joshua0905.
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserverdata:/var/opt/mssql
+
+volumes:
+  sqlserverdata:

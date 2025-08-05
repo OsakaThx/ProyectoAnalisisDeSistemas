@@ -1,0 +1,120 @@
+2025-07-28 18:02:21.310 -06:00 [INF] User profile is available. Using 'C:\Users\hoshu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-28 18:02:22.930 -06:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-28 18:02:22.940 -06:00 [WRN] No store type was specified for the decimal property 'PrecioUnitario' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-28 18:02:22.946 -06:00 [WRN] No store type was specified for the decimal property 'Precio' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-28 18:02:24.786 -06:00 [INF] Executed DbCommand (173ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-07-28 18:02:24.960 -06:00 [INF] Executed DbCommand (57ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-07-28 18:02:25.061 -06:00 [INF] Executed DbCommand (28ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-07-28 18:02:25.109 -06:00 [INF] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-07-28 18:02:25.137 -06:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-07-28 18:02:25.147 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-07-28 18:02:25.152 -06:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-07-28 18:02:25.157 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-07-28 18:02:25.164 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-07-28 18:02:25.172 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-07-28 18:02:25.888 -06:00 [INF] Now listening on: http://localhost:5116
+2025-07-28 18:02:26.009 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-28 18:02:26.013 -06:00 [INF] Hosting environment: Development
+2025-07-28 18:02:26.018 -06:00 [INF] Content root path: C:\Users\hoshu\source\repos\PaginaBizu\PaginaBizu
+2025-07-28 18:02:26.946 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/ - null null
+2025-07-28 18:02:27.168 -06:00 [WRN] Failed to determine the https port for redirect.
+2025-07-28 18:02:27.200 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-07-28 18:02:27.219 -06:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.HomeController (PaginaBizu).
+2025-07-28 18:02:27.227 -06:00 [INF] ➡️ Acción ejecutándose: Home/Index | Usuario: No autenticado | IP: ::1 | Hora: "2025-07-28T18:02:27.2272718-06:00"
+2025-07-28 18:02:27.236 -06:00 [INF] ✅ Acción ejecutada: Home/Index | Hora: "2025-07-28T18:02:27.2366137-06:00"
+2025-07-28 18:02:27.243 -06:00 [INF] Executing ViewResult, running view Index.
+2025-07-28 18:02:27.379 -06:00 [INF] Executed ViewResult - view Index executed in 135.5167ms.
+2025-07-28 18:02:27.386 -06:00 [INF] Executed action PaginaBizu.Controllers.HomeController.Index (PaginaBizu) in 162.6057ms
+2025-07-28 18:02:27.391 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-07-28 18:02:27.407 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/ - 200 null text/html; charset=utf-8 477.339ms
+2025-07-28 18:02:27.433 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/style.css - null null
+2025-07-28 18:02:27.449 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/fonts/simple-line-icons.min.css - null null
+2025-07-28 18:02:27.440 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/bootstrap/css/bootstrap.min.css - null null
+2025-07-28 18:02:27.456 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/css/vanilla-zoom.min.css - null null
+2025-07-28 18:02:27.452 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/css/baguetteBox.min.css - null null
+2025-07-28 18:02:27.469 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/glow-form.css - null null
+2025-07-28 18:02:27.475 -06:00 [INF] The file /css/style.css was not modified
+2025-07-28 18:02:27.476 -06:00 [INF] The file /assets/fonts/simple-line-icons.min.css was not modified
+2025-07-28 18:02:27.483 -06:00 [INF] The file /assets/bootstrap/css/bootstrap.min.css was not modified
+2025-07-28 18:02:27.489 -06:00 [INF] The file /assets/css/vanilla-zoom.min.css was not modified
+2025-07-28 18:02:27.505 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/style.css - 304 null text/css 72.35ms
+2025-07-28 18:02:27.495 -06:00 [INF] The file /assets/css/baguetteBox.min.css was not modified
+2025-07-28 18:02:27.502 -06:00 [INF] The file /css/glow-form.css was not modified
+2025-07-28 18:02:27.518 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/fonts/simple-line-icons.min.css - 304 null text/css 68.9372ms
+2025-07-28 18:02:27.520 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/bootstrap/css/bootstrap.min.css - 304 null text/css 80.4851ms
+2025-07-28 18:02:27.522 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/css/vanilla-zoom.min.css - 304 null text/css 65.827ms
+2025-07-28 18:02:27.532 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/css/baguetteBox.min.css - 304 null text/css 80.4226ms
+2025-07-28 18:02:27.535 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/glow-form.css - 304 null text/css 67.7958ms
+2025-07-28 18:02:27.564 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - null null
+2025-07-28 18:02:27.571 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - null null
+2025-07-28 18:02:27.577 -06:00 [INF] The file /assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg was not modified
+2025-07-28 18:02:27.584 -06:00 [INF] The file /assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg was not modified
+2025-07-28 18:02:27.587 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - 304 null image/jpeg 22.1225ms
+2025-07-28 18:02:27.589 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - 304 null image/jpeg 18.0408ms
+2025-07-28 18:02:27.885 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/pulsera-aine-stone-gold.jpg - null null
+2025-07-28 18:02:27.887 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - null null
+2025-07-28 18:02:27.888 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/js/vanilla-zoom.js - null null
+2025-07-28 18:02:27.888 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - null null
+2025-07-28 18:02:27.888 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/js/baguetteBox.min.js - null null
+2025-07-28 18:02:27.888 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/js/theme.js - null null
+2025-07-28 18:02:27.899 -06:00 [INF] The file /assets/img/scenery/pulsera-aine-stone-gold.jpg was not modified
+2025-07-28 18:02:27.910 -06:00 [INF] The file /assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg was not modified
+2025-07-28 18:02:27.916 -06:00 [INF] The file /assets/js/vanilla-zoom.js was not modified
+2025-07-28 18:02:27.928 -06:00 [INF] The file /assets/js/baguetteBox.min.js was not modified
+2025-07-28 18:02:27.935 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/pulsera-aine-stone-gold.jpg - 304 null image/jpeg 50.1069ms
+2025-07-28 18:02:27.923 -06:00 [INF] The file /assets/img/scenery/il_570xN.2179198790_o9bo.jpeg was not modified
+2025-07-28 18:02:27.943 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - 304 null image/jpeg 55.5508ms
+2025-07-28 18:02:27.951 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/js/vanilla-zoom.js - 304 null text/javascript 63.3199ms
+2025-07-28 18:02:27.954 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/js/baguetteBox.min.js - 304 null text/javascript 66.2947ms
+2025-07-28 18:02:27.963 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/images/bg.png - null null
+2025-07-28 18:02:27.967 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - 304 null image/jpeg 79.207ms
+2025-07-28 18:02:28.005 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - null null
+2025-07-28 18:02:27.993 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_vs/browserLink - null null
+2025-07-28 18:02:28.037 -06:00 [INF] The file /assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg was not modified
+2025-07-28 18:02:28.022 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/images/bg.png - 404 0 null 58.821ms
+2025-07-28 18:02:28.055 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - 304 null image/jpeg 49.8163ms
+2025-07-28 18:02:28.050 -06:00 [INF] Sending file. Request path: '/assets/js/theme.js'. Physical path: 'C:\Users\hoshu\source\repos\PaginaBizu\PaginaBizu\wwwroot\assets\js\theme.js'
+2025-07-28 18:02:28.079 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/images/bg.png, Response status code: 404
+2025-07-28 18:02:28.098 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/js/theme.js - 200 311 text/javascript 209.6321ms
+2025-07-28 18:02:28.108 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/tailwindcss - null null
+2025-07-28 18:02:27.974 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - null null
+2025-07-28 18:02:28.134 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/tailwindcss - 404 0 null 26.2482ms
+2025-07-28 18:02:28.145 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/css/tailwindcss, Response status code: 404
+2025-07-28 18:02:28.139 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 165.1794ms
+2025-07-28 18:02:28.171 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_vs/browserLink - 200 null text/javascript; charset=UTF-8 177.534ms
+2025-07-28 18:02:28.183 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - null null
+2025-07-28 18:02:28.191 -06:00 [INF] The file /assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg was not modified
+2025-07-28 18:02:28.193 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - 304 null image/jpeg 10.0761ms
+2025-07-28 18:02:28.222 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/fonts/Simple-Line-Icons.woff2?v=2.4.0 - null null
+2025-07-28 18:02:28.229 -06:00 [INF] The file /assets/fonts/Simple-Line-Icons.woff2 was not modified
+2025-07-28 18:02:28.232 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/fonts/Simple-Line-Icons.woff2?v=2.4.0 - 304 null font/woff2 10.2568ms

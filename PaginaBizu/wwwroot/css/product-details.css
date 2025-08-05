@@ -1,0 +1,196 @@
+﻿body.product-details {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.product-details {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+    .product-details .product-title {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: #212529;
+        margin-bottom: 1.2rem;
+        text-transform: none;
+        letter-spacing: normal;
+    }
+
+    .product-details .product-description {
+        font-size: 1rem;
+        color: #495057;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .product-details .product-price {
+        font-size: 1.6rem;
+        color: #212529;
+        font-weight: 600;
+        margin: 1.5rem 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .product-details img.img-fluid {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 0 auto 1.5rem;
+        display: block;
+    }
+
+    /* Buttons */
+    .product-details button.btn-black,
+    .product-details a.btn-black-secondary {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 24px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        width: 100%;
+        margin-bottom: 12px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .product-details button.btn-black:hover,
+        .product-details a.btn-black-secondary:hover {
+            background-color: #333;
+            color: #fff;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+    /* Comments section */
+    .product-details h3 {
+        font-weight: 700;
+        color: #212529;
+        margin: 2rem 0 1.5rem;
+        text-transform: none;
+        font-size: 1.4rem;
+    }
+
+.list-group-item {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+/* Star rating */
+.star-rating {
+    direction: rtl;
+    font-size: 1.5rem;
+    display: inline-flex;
+    margin: 0.5rem 0;
+}
+
+    .star-rating label {
+        color: #e9ecef;
+        cursor: pointer;
+        padding: 0 2px;
+    }
+
+        .star-rating input[type="radio"]:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #e9ecef;
+        }
+
+/* Comment form */
+#comentarioForm {
+    margin-top: 2rem;
+    text-align: left;
+}
+
+    #comentarioForm textarea.form-control {
+        border: 1px solid #e9ecef;
+        border-radius: 6px;
+        padding: 12px;
+        margin: 8px 0 16px;
+        width: 100%;
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    #comentarioForm button[type="submit"] {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        padding: 12px 24px;
+        font-weight: 600;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+        #comentarioForm button[type="submit"]:hover {
+            background-color: #333;
+            transform: translateY(-1px);
+        }
+
+/* Utility classes */
+.text-muted {
+    color: #6c757d !important;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+hr {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid #e9ecef;
+}
+
+.list-group-item {
+    font-size: 0.85rem;
+    color: #222;
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 0.75rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+    .list-group-item strong {
+        font-weight: 700;
+        color: #181a1b;
+    }
+
+#errorMessages {
+    font-weight: 600;
+}

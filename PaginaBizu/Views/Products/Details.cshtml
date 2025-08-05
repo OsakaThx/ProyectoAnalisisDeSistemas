@@ -1,0 +1,22 @@
+﻿@model PaginaBizu.Models.Product
+
+@{
+    ViewData["Title"] = Model.NombreArticulo;
+    var precioFormateado = $"₡{Model.Precio:N0}".Replace(",", " ");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalle del Producto (Administración)</h1>
+
+<div>
+    <img src="@Url.Content("~/images/" + Model.ImagenUrl)" alt="@Model.NombreArticulo" style="max-width:300px;" />
+</div>
+<div>
+    <h2>@Model.NombreArticulo</h2>
+    <p>@Model.Descripcion</p>
+    <p>Precio: @Html.Raw(precioFormateado)</p>
+    <p>Cantidad disponible: @Model.CantidadDisponible</p>
+    <p>Categoría: @Model.Categoria</p>
+</div>
+
+<a asp-controller="Products" asp-action="Index" class="btn btn-primary">Volver a la lista de productos</a>

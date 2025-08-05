@@ -1,0 +1,71 @@
+@* Login pequeno *@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+<link rel="stylesheet" href="~/css/glow-form.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+
+<style>
+.login-container-small .field-check {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: white; /* texto blanco para el recuerdame */
+}
+
+.login-container-small .field-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+.login-container-small .field-check label {
+    cursor: pointer;
+    font-size: 15px;
+    user-select: none;
+}
+
+</style>
+<!-- Contenedor para centrar login -->
+<div class="login-container-small">
+    <div class="login-form-small">
+        <div class="text">INICIAR SESIÓN</div>
+
+        @if (!SignInManager.IsSignedIn(User))
+        {
+           <form method="post" asp-controller="Account" asp-action="Login">
+    @Html.AntiForgeryToken()
+
+    <div class="field">
+        <span class="fas fa-envelope"></span>
+        <input id="email" name="email" type="email" placeholder="Correo electrónico" required />
+    </div>
+
+    <div class="field">
+        <span class="fas fa-lock"></span>
+        <input id="password" name="password" type="password" placeholder="Contraseña" required />
+    </div>
+
+    <div class="field-check">
+        <input id="remember" name="rememberMe" type="checkbox" />
+        <label for="remember">Recordarme</label>
+    </div>
+
+    <button type="submit">Entrar</button>
+</form>
+
+
+            <div class="link">
+                ¿No tienes cuenta?
+                <a asp-controller="Account" asp-action="SignIn">Registrarse</a>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/login-validation.js"></script>
+}

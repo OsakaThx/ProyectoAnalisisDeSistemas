@@ -1,0 +1,46 @@
+﻿@model List<PaginaBizu.Models.CartItem>
+
+<h2>Carrito de compras</h2>
+
+@if (Model.Count == 0)
+{
+    <p>Tu carrito está vacío.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio unitario</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.NombreArticulo</td>
+                    <td>₡@(item.Precio.ToString("N0"))</td>
+                    <td>@item.Cantidad</td>
+                    <td>₡@((item.Precio * item.Cantidad).ToString("N0"))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    var totalCRC = Model.Sum(i => i.Precio * i.Cantidad);
+    var totalUSD = ((double)totalCRC / 540.0).ToString("F2", System.Globalization.CultureInfo.InvariantCulture);
+
+    <h4>Total: ₡@totalCRC.ToString("N0") (~$@totalUSD USD)</h4>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="joshuajiaso@gmail.com">
+        <input type="hidden" name="item_name" value="Compra de Bizutería">
+        <input type="hidden" name="amount" value="@totalUSD">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="submit" value="Pagar con PayPal" class="btn btn-success">
+    </form>
+}

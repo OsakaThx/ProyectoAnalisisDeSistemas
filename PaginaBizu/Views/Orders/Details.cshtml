@@ -1,0 +1,48 @@
+﻿@model PaginaBizu.Models.Order
+
+@{
+    ViewData["Title"] = $"Detalle del Pedido #{Model.Id}";
+}
+
+<h1>Detalle del Pedido #@Model.Id</h1>
+
+<p><strong>Fecha:</strong> @Model.Fecha.ToString("g")</p>
+<p><strong>Usuario:</strong> @Model.UsuarioId</p>
+<p><strong>Estado:</strong> @Model.Estado</p>
+<p><strong>Total:</strong> @Model.Total.ToString("C")</p>
+
+<h2>Productos</h2>
+
+@if (Model.OrderItems != null && Model.OrderItems.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.OrderItems)
+            {
+                <tr>
+                    <td>@item.Producto.NombreArticulo</td>
+                    <td>@item.Cantidad</td>
+                    <td>@item.PrecioUnitario.ToString("C")</td>
+                    <td>@(item.Cantidad* item.PrecioUnitario).ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Este pedido no tiene productos.</p>
+}
+
+<p>
+    <a asp-action="Index">Volver a la lista de pedidos</a> |
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar estado</a>
+</p>

@@ -1,0 +1,32 @@
+﻿@model PaginaBizu.Models.Order
+
+@{
+    ViewData["Title"] = $"Editar Estado Pedido #{Model.Id}";
+
+    // Definir la lista de estados aquí
+    var estados = new List<string> { "Pendiente", "Procesando", "Enviado", "Completado", "Cancelado" };
+    var estadosSelectList = new SelectList(estados);
+}
+
+<h1>Editar Estado Pedido #@Model.Id</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Estado" class="control-label"></label>
+        <select asp-for="Estado" class="form-control" asp-items="estadosSelectList">
+            <option value="">-- Seleccione estado --</option>
+        </select>
+        <span asp-validation-for="Estado" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
