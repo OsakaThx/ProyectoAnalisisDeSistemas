@@ -1,0 +1,364 @@
+2025-08-07 20:11:48.119 -06:00 [INF] User profile is available. Using 'C:\Users\hoshu\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-07 20:11:49.142 -06:00 [WRN] No store type was specified for the decimal property 'Total' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-07 20:11:49.148 -06:00 [WRN] No store type was specified for the decimal property 'PrecioUnitario' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-07 20:11:49.152 -06:00 [WRN] No store type was specified for the decimal property 'Precio' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-07 20:11:50.486 -06:00 [INF] Executed DbCommand (118ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-08-07 20:11:50.623 -06:00 [INF] Executed DbCommand (23ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-08-07 20:11:50.698 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-08-07 20:11:50.760 -06:00 [INF] Executed DbCommand (6ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-08-07 20:11:50.790 -06:00 [INF] Executed DbCommand (8ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-08-07 20:11:50.804 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-08-07 20:11:50.813 -06:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-08-07 20:11:50.831 -06:00 [INF] Executed DbCommand (12ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2025-08-07 20:11:50.845 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedRoleName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedRoleName_0
+2025-08-07 20:11:50.858 -06:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 450), @__p_1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[UserId], [a].[RoleId]
+FROM [AspNetUserRoles] AS [a]
+WHERE [a].[UserId] = @__p_0 AND [a].[RoleId] = @__p_1
+2025-08-07 20:11:51.682 -06:00 [INF] Now listening on: http://localhost:5116
+2025-08-07 20:11:51.789 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-07 20:11:51.795 -06:00 [INF] Hosting environment: Development
+2025-08-07 20:11:51.808 -06:00 [INF] Content root path: C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalisisDeSistemas-master\PaginaBizu
+2025-08-07 20:11:54.638 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/ - null null
+2025-08-07 20:11:55.220 -06:00 [WRN] Failed to determine the https port for redirect.
+2025-08-07 20:11:55.379 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-07 20:11:55.425 -06:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.HomeController (PaginaBizu).
+2025-08-07 20:11:55.450 -06:00 [INF] ➡️ Acción ejecutándose: Home/Index | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-07T20:11:55.4501915-06:00"
+2025-08-07 20:11:55.470 -06:00 [INF] ✅ Acción ejecutada: Home/Index | Hora: "2025-08-07T20:11:55.4701140-06:00"
+2025-08-07 20:11:55.499 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-07 20:11:55.817 -06:00 [INF] Executed ViewResult - view Index executed in 329.3724ms.
+2025-08-07 20:11:55.827 -06:00 [INF] Executed action PaginaBizu.Controllers.HomeController.Index (PaginaBizu) in 391.1008ms
+2025-08-07 20:11:55.850 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-07 20:11:55.917 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/bootstrap/css/bootstrap.min.css - null null
+2025-08-07 20:11:55.917 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/glow-form.css - null null
+2025-08-07 20:11:55.917 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/fonts/simple-line-icons.min.css - null null
+2025-08-07 20:11:55.917 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/css/baguetteBox.min.css - null null
+2025-08-07 20:11:55.917 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/style.css - null null
+2025-08-07 20:11:55.951 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/ - 200 null text/html; charset=utf-8 1328.29ms
+2025-08-07 20:11:55.943 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/css/vanilla-zoom.min.css - null null
+2025-08-07 20:11:55.992 -06:00 [INF] The file /assets/bootstrap/css/bootstrap.min.css was not modified
+2025-08-07 20:11:55.992 -06:00 [INF] The file /css/glow-form.css was not modified
+2025-08-07 20:11:55.996 -06:00 [INF] The file /assets/fonts/simple-line-icons.min.css was not modified
+2025-08-07 20:11:56.005 -06:00 [INF] The file /assets/css/baguetteBox.min.css was not modified
+2025-08-07 20:11:56.014 -06:00 [INF] The file /css/style.css was not modified
+2025-08-07 20:11:56.046 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/fonts/simple-line-icons.min.css - 304 null text/css 128.4397ms
+2025-08-07 20:11:56.049 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/css/baguetteBox.min.css - 304 null text/css 132.943ms
+2025-08-07 20:11:56.039 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/bootstrap/css/bootstrap.min.css - 304 null text/css 122.2381ms
+2025-08-07 20:11:56.084 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - null null
+2025-08-07 20:11:56.072 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/style.css - 304 null text/css 155.2763ms
+2025-08-07 20:11:56.034 -06:00 [INF] The file /assets/css/vanilla-zoom.min.css was not modified
+2025-08-07 20:11:56.125 -06:00 [INF] The file /assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg was not modified
+2025-08-07 20:11:56.042 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/glow-form.css - 304 null text/css 125.545ms
+2025-08-07 20:11:56.149 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/css/vanilla-zoom.min.css - 304 null text/css 206.3301ms
+2025-08-07 20:11:56.161 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg - 304 null image/jpeg 76.9797ms
+2025-08-07 20:11:56.193 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - null null
+2025-08-07 20:11:56.307 -06:00 [INF] The file /assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg was not modified
+2025-08-07 20:11:56.312 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg - 304 null image/jpeg 118.8895ms
+2025-08-07 20:11:57.158 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/pulsera-aine-stone-gold.jpg - null null
+2025-08-07 20:11:57.164 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - null null
+2025-08-07 20:11:57.167 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - null null
+2025-08-07 20:11:57.168 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/js/baguetteBox.min.js - null null
+2025-08-07 20:11:57.170 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/js/vanilla-zoom.js - null null
+2025-08-07 20:11:57.176 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/images/bg.png - null null
+2025-08-07 20:11:57.196 -06:00 [INF] The file /assets/img/scenery/pulsera-aine-stone-gold.jpg was not modified
+2025-08-07 20:11:57.217 -06:00 [INF] The file /assets/img/scenery/il_570xN.2179198790_o9bo.jpeg was not modified
+2025-08-07 20:11:57.255 -06:00 [INF] The file /assets/js/baguetteBox.min.js was not modified
+2025-08-07 20:11:57.228 -06:00 [INF] The file /assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg was not modified
+2025-08-07 20:11:57.284 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/pulsera-aine-stone-gold.jpg - 304 null image/jpeg 125.4912ms
+2025-08-07 20:11:57.298 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/js/baguetteBox.min.js - 304 null text/javascript 129.9967ms
+2025-08-07 20:11:57.295 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/images/bg.png - 404 0 null 118.8772ms
+2025-08-07 20:11:57.287 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/il_570xN.2179198790_o9bo.jpeg - 304 null image/jpeg 122.6021ms
+2025-08-07 20:11:57.305 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg - 304 null image/jpeg 137.2064ms
+2025-08-07 20:11:57.268 -06:00 [INF] The file /assets/js/vanilla-zoom.js was not modified
+2025-08-07 20:11:57.360 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/tailwindcss - null null
+2025-08-07 20:11:57.371 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_vs/browserLink - null null
+2025-08-07 20:11:57.385 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/images/bg.png, Response status code: 404
+2025-08-07 20:11:57.395 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/js/theme.js - null null
+2025-08-07 20:11:57.435 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-07 20:11:57.460 -06:00 [INF] The file /assets/js/theme.js was not modified
+2025-08-07 20:11:57.405 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - null null
+2025-08-07 20:11:57.506 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 71.2112ms
+2025-08-07 20:11:57.515 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/js/theme.js - 304 null text/javascript 120.5392ms
+2025-08-07 20:11:57.539 -06:00 [INF] The file /assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg was not modified
+2025-08-07 20:11:57.428 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/tailwindcss - 404 0 null 67.9143ms
+2025-08-07 20:11:57.614 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/fonts/Simple-Line-Icons.woff2?v=2.4.0 - null null
+2025-08-07 20:11:57.619 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg - 304 null image/jpeg 213.4769ms
+2025-08-07 20:11:57.408 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/js/vanilla-zoom.js - 304 null text/javascript 238.7583ms
+2025-08-07 20:11:57.632 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/css/tailwindcss, Response status code: 404
+2025-08-07 20:11:57.648 -06:00 [INF] The file /assets/fonts/Simple-Line-Icons.woff2 was not modified
+2025-08-07 20:11:57.653 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_vs/browserLink - 200 null text/javascript; charset=UTF-8 282.0294ms
+2025-08-07 20:11:57.719 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - null null
+2025-08-07 20:11:57.734 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/fonts/Simple-Line-Icons.woff2?v=2.4.0 - 304 null font/woff2 118.7079ms
+2025-08-07 20:11:57.943 -06:00 [INF] The file /assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg was not modified
+2025-08-07 20:11:58.101 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg - 304 null image/jpeg 381.9494ms
+2025-08-07 20:12:16.251 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/Shop - null null
+2025-08-07 20:12:16.271 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.ShopController.Index (PaginaBizu)'
+2025-08-07 20:12:16.281 -06:00 [INF] Route matched with {action = "Index", controller = "Shop", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.ShopController (PaginaBizu).
+2025-08-07 20:12:16.290 -06:00 [INF] ➡️ Acción ejecutándose: Shop/Index | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-07T20:12:16.2901241-06:00"
+2025-08-07 20:12:16.496 -06:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CantidadDisponible], [p].[Categoria], [p].[Descripcion], [p].[FechaCreacion], [p].[ImagenUrl], [p].[NombreArticulo], [p].[Precio]
+FROM [Products] AS [p]
+2025-08-07 20:12:16.576 -06:00 [INF] ✅ Acción ejecutada: Shop/Index | Hora: "2025-08-07T20:12:16.5759956-06:00"
+2025-08-07 20:12:16.587 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-07 20:12:16.728 -06:00 [INF] Executed ViewResult - view Index executed in 143.7803ms.
+2025-08-07 20:12:16.732 -06:00 [INF] Executed action PaginaBizu.Controllers.ShopController.Index (PaginaBizu) in 446.1245ms
+2025-08-07 20:12:16.736 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.ShopController.Index (PaginaBizu)'
+2025-08-07 20:12:16.751 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/Shop - 200 null text/html; charset=utf-8 499.7386ms
+2025-08-07 20:12:16.844 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/images/imagenpulseraoro.jpg - null null
+2025-08-07 20:12:16.844 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/PaginaBizu.styles.css?v=u2o_07VtSGrZO3WxHAXzvZBevI20fzSZge8oUb78F-4 - null null
+2025-08-07 20:12:16.844 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/site.css?v=tq5MmRYVOxTwKBolobLEVhlycV0HPFnVWGBXwwh-KzE - null null
+2025-08-07 20:12:16.850 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-08-07 20:12:16.850 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/gucci-style.css - null null
+2025-08-07 20:12:16.850 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/images/pulseraverde.jpg - null null
+2025-08-07 20:12:16.869 -06:00 [INF] The file /images/imagenpulseraoro.jpg was not modified
+2025-08-07 20:12:16.894 -06:00 [INF] The file /PaginaBizu.styles.css was not modified
+2025-08-07 20:12:16.907 -06:00 [INF] The file /css/site.css was not modified
+2025-08-07 20:12:16.914 -06:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-08-07 20:12:16.922 -06:00 [INF] The file /css/gucci-style.css was not modified
+2025-08-07 20:12:16.945 -06:00 [INF] The file /images/pulseraverde.jpg was not modified
+2025-08-07 20:12:16.951 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/images/imagenpulseraoro.jpg - 304 null image/jpeg 106.8882ms
+2025-08-07 20:12:16.953 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/PaginaBizu.styles.css?v=u2o_07VtSGrZO3WxHAXzvZBevI20fzSZge8oUb78F-4 - 304 null text/css 109.163ms
+2025-08-07 20:12:16.966 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/gucci-style.css - 304 null text/css 115.7638ms
+2025-08-07 20:12:16.970 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/images/pulseraverde.jpg - 304 null image/jpeg 119.2892ms
+2025-08-07 20:12:16.963 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 112.9197ms
+2025-08-07 20:12:16.958 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/site.css?v=tq5MmRYVOxTwKBolobLEVhlycV0HPFnVWGBXwwh-KzE - 304 null text/css 114.0104ms
+2025-08-07 20:12:17.406 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/images/imagenpulserrojo.jpg - null null
+2025-08-07 20:12:17.408 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-08-07 20:12:17.408 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/js/shop.js - null null
+2025-08-07 20:12:17.408 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/lib/jquery/dist/jquery.min.js - null null
+2025-08-07 20:12:17.411 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-07 20:12:17.411 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_vs/browserLink - null null
+2025-08-07 20:12:17.417 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/images/imagenpulserrojo.jpg - 404 0 null 10.7985ms
+2025-08-07 20:12:17.448 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 36.6728ms
+2025-08-07 20:12:17.440 -06:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-08-07 20:12:17.431 -06:00 [INF] The file /js/shop.js was not modified
+2025-08-07 20:12:17.498 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/js/shop.js - 304 null text/javascript 89.6006ms
+2025-08-07 20:12:17.476 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_vs/browserLink - 200 null text/javascript; charset=UTF-8 64.5673ms
+2025-08-07 20:12:17.476 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/images/imagenpulserrojo.jpg, Response status code: 404
+2025-08-07 20:12:17.490 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/lib/jquery/dist/jquery.min.js - 304 null text/javascript 81.3215ms
+2025-08-07 20:12:17.424 -06:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-08-07 20:12:17.564 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 155.9819ms
+2025-08-07 20:12:17.600 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/Cart/CartCount - null null
+2025-08-07 20:12:17.614 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:17.624 -06:00 [INF] Route matched with {action = "CartCount", controller = "Cart", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CartCount() on controller PaginaBizu.Controllers.CartController (PaginaBizu).
+2025-08-07 20:12:17.633 -06:00 [INF] ➡️ Acción ejecutándose: Cart/CartCount | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-07T20:12:17.6337878-06:00"
+2025-08-07 20:12:17.662 -06:00 [INF] ✅ Acción ejecutada: Cart/CartCount | Hora: "2025-08-07T20:12:17.6622308-06:00"
+2025-08-07 20:12:17.682 -06:00 [INF] Executing JsonResult, writing value of type 'System.Int32'.
+2025-08-07 20:12:17.697 -06:00 [INF] Executed action PaginaBizu.Controllers.CartController.CartCount (PaginaBizu) in 64.899ms
+2025-08-07 20:12:17.700 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/Cart/CartCount - null null
+2025-08-07 20:12:17.701 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:17.716 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:17.716 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/Cart/CartCount - 200 null application/json; charset=utf-8 116.4747ms
+2025-08-07 20:12:17.722 -06:00 [INF] Route matched with {action = "CartCount", controller = "Cart", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CartCount() on controller PaginaBizu.Controllers.CartController (PaginaBizu).
+2025-08-07 20:12:17.742 -06:00 [INF] ➡️ Acción ejecutándose: Cart/CartCount | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-07T20:12:17.7421474-06:00"
+2025-08-07 20:12:17.748 -06:00 [INF] ✅ Acción ejecutada: Cart/CartCount | Hora: "2025-08-07T20:12:17.7485744-06:00"
+2025-08-07 20:12:17.758 -06:00 [INF] Executing JsonResult, writing value of type 'System.Int32'.
+2025-08-07 20:12:17.763 -06:00 [INF] Executed action PaginaBizu.Controllers.CartController.CartCount (PaginaBizu) in 27.0908ms
+2025-08-07 20:12:17.770 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:17.776 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/Cart/CartCount - 200 null application/json; charset=utf-8 76.9021ms
+2025-08-07 20:12:19.017 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/Shop/Details/1 - null null
+2025-08-07 20:12:19.028 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.ShopController.Details (PaginaBizu)'
+2025-08-07 20:12:19.051 -06:00 [INF] Route matched with {action = "Details", controller = "Shop", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Details(Int32) on controller PaginaBizu.Controllers.ShopController (PaginaBizu).
+2025-08-07 20:12:19.080 -06:00 [INF] ➡️ Acción ejecutándose: Shop/Details | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-07T20:12:19.0802971-06:00"
+2025-08-07 20:12:19.171 -06:00 [INF] Executed DbCommand (17ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[CantidadDisponible], [p].[Categoria], [p].[Descripcion], [p].[FechaCreacion], [p].[ImagenUrl], [p].[NombreArticulo], [p].[Precio]
+FROM [Products] AS [p]
+WHERE [p].[Id] = @__id_0
+2025-08-07 20:12:19.220 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Calificacion], [c].[Contenido], [c].[Fecha], [c].[ProductoId], [c].[UsuarioId]
+FROM [Comentarios] AS [c]
+WHERE [c].[ProductoId] = @__id_0
+ORDER BY [c].[Fecha] DESC
+2025-08-07 20:12:19.276 -06:00 [INF] ✅ Acción ejecutada: Shop/Details | Hora: "2025-08-07T20:12:19.2765692-06:00"
+2025-08-07 20:12:19.285 -06:00 [INF] Executing ViewResult, running view Details.
+2025-08-07 20:12:19.331 -06:00 [INF] Executed ViewResult - view Details executed in 47.042ms.
+2025-08-07 20:12:19.337 -06:00 [INF] Executed action PaginaBizu.Controllers.ShopController.Details (PaginaBizu) in 280.0594ms
+2025-08-07 20:12:19.343 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.ShopController.Details (PaginaBizu)'
+2025-08-07 20:12:19.348 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/Shop/Details/1 - 200 null text/html; charset=utf-8 330.3377ms
+2025-08-07 20:12:19.388 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-07 20:12:19.396 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 7.7255ms
+2025-08-07 20:12:19.995 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_vs/browserLink - null null
+2025-08-07 20:12:20.044 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.9151ms
+2025-08-07 20:12:24.739 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/Cart/Index - null null
+2025-08-07 20:12:24.775 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.CartController.Index (PaginaBizu)'
+2025-08-07 20:12:24.786 -06:00 [INF] Route matched with {action = "Index", controller = "Cart", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.CartController (PaginaBizu).
+2025-08-07 20:12:24.799 -06:00 [INF] ➡️ Acción ejecutándose: Cart/Index | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-07T20:12:24.7991602-06:00"
+2025-08-07 20:12:24.814 -06:00 [INF] ✅ Acción ejecutada: Cart/Index | Hora: "2025-08-07T20:12:24.8141222-06:00"
+2025-08-07 20:12:24.826 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-07 20:12:24.848 -06:00 [INF] Executed ViewResult - view Index executed in 23.8327ms.
+2025-08-07 20:12:24.856 -06:00 [INF] Executed action PaginaBizu.Controllers.CartController.Index (PaginaBizu) in 58.1967ms
+2025-08-07 20:12:24.865 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.CartController.Index (PaginaBizu)'
+2025-08-07 20:12:24.873 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/Cart/Index - 200 null text/html; charset=utf-8 133.6893ms
+2025-08-07 20:12:24.915 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_vs/browserLink - null null
+2025-08-07 20:12:24.915 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-07 20:12:24.939 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_vs/browserLink - 200 null text/javascript; charset=UTF-8 23.5322ms
+2025-08-07 20:12:24.941 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 26.2726ms
+2025-08-07 20:12:25.226 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/Cart/CartCount - null null
+2025-08-07 20:12:25.235 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:25.237 -06:00 [INF] Route matched with {action = "CartCount", controller = "Cart", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CartCount() on controller PaginaBizu.Controllers.CartController (PaginaBizu).
+2025-08-07 20:12:25.245 -06:00 [INF] ➡️ Acción ejecutándose: Cart/CartCount | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-07T20:12:25.2458861-06:00"
+2025-08-07 20:12:25.250 -06:00 [INF] ✅ Acción ejecutada: Cart/CartCount | Hora: "2025-08-07T20:12:25.2505576-06:00"
+2025-08-07 20:12:25.255 -06:00 [INF] Executing JsonResult, writing value of type 'System.Int32'.
+2025-08-07 20:12:25.259 -06:00 [INF] Executed action PaginaBizu.Controllers.CartController.CartCount (PaginaBizu) in 13.8212ms
+2025-08-07 20:12:25.264 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/Cart/CartCount - null null
+2025-08-07 20:12:25.265 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:25.271 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:25.274 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/Cart/CartCount - 200 null application/json; charset=utf-8 48.0248ms
+2025-08-07 20:12:25.276 -06:00 [INF] Route matched with {action = "CartCount", controller = "Cart", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CartCount() on controller PaginaBizu.Controllers.CartController (PaginaBizu).
+2025-08-07 20:12:25.287 -06:00 [INF] ➡️ Acción ejecutándose: Cart/CartCount | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-07T20:12:25.2872151-06:00"
+2025-08-07 20:12:25.294 -06:00 [INF] ✅ Acción ejecutada: Cart/CartCount | Hora: "2025-08-07T20:12:25.2939884-06:00"
+2025-08-07 20:12:25.297 -06:00 [INF] Executing JsonResult, writing value of type 'System.Int32'.
+2025-08-07 20:12:25.299 -06:00 [INF] Executed action PaginaBizu.Controllers.CartController.CartCount (PaginaBizu) in 13.0948ms
+2025-08-07 20:12:25.303 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:25.307 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/Cart/CartCount - 200 null application/json; charset=utf-8 43.0663ms
+2025-08-07 20:12:27.576 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/ - null null
+2025-08-07 20:12:27.595 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-07 20:12:27.602 -06:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.HomeController (PaginaBizu).
+2025-08-07 20:12:27.613 -06:00 [INF] ➡️ Acción ejecutándose: Home/Index | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-07T20:12:27.6133559-06:00"
+2025-08-07 20:12:27.624 -06:00 [INF] ✅ Acción ejecutada: Home/Index | Hora: "2025-08-07T20:12:27.6245649-06:00"
+2025-08-07 20:12:27.635 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-07 20:12:27.668 -06:00 [INF] Executed ViewResult - view Index executed in 33.2848ms.
+2025-08-07 20:12:27.677 -06:00 [INF] Executed action PaginaBizu.Controllers.HomeController.Index (PaginaBizu) in 64.0922ms
+2025-08-07 20:12:27.684 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-07 20:12:27.689 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/ - 200 null text/html; charset=utf-8 112.7733ms
+2025-08-07 20:12:28.070 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/images/bg.png - null null
+2025-08-07 20:12:28.070 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/tailwindcss - null null
+2025-08-07 20:12:28.073 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-07 20:12:28.074 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_vs/browserLink - null null
+2025-08-07 20:12:28.083 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/images/bg.png - 404 0 null 12.7225ms
+2025-08-07 20:12:28.097 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 24.1446ms
+2025-08-07 20:12:28.089 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/tailwindcss - 404 0 null 18.3418ms
+2025-08-07 20:12:28.114 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.9211ms
+2025-08-07 20:12:28.119 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/images/bg.png, Response status code: 404
+2025-08-07 20:12:28.136 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/css/tailwindcss, Response status code: 404
+2025-08-07 20:12:34.973 -06:00 [INF] Request starting HTTP/1.1 POST http://localhost:5116/Account/Login - application/x-www-form-urlencoded 238
+2025-08-07 20:12:34.987 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.AccountController.Login (PaginaBizu)'
+2025-08-07 20:12:35.013 -06:00 [INF] Route matched with {action = "Login", controller = "Account", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(System.String, System.String, Boolean) on controller PaginaBizu.Controllers.AccountController (PaginaBizu).
+2025-08-07 20:12:35.071 -06:00 [INF] ➡️ Acción ejecutándose: Account/Login | Usuario: No autenticado | IP: ::1 | Hora: "2025-08-07T20:12:35.0717039-06:00"
+2025-08-07 20:12:35.129 -06:00 [INF] Executed DbCommand (21ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2025-08-07 20:12:35.469 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2025-08-07 20:12:35.558 -06:00 [INF] Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-08-07 20:12:35.580 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2025-08-07 20:12:35.608 -06:00 [INF] Executed DbCommand (9ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2025-08-07 20:12:35.626 -06:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2025-08-07 20:12:35.634 -06:00 [INF] ✅ Acción ejecutada: Account/Login | Hora: "2025-08-07T20:12:35.6339982-06:00"
+2025-08-07 20:12:35.641 -06:00 [INF] Executing RedirectResult, redirecting to /.
+2025-08-07 20:12:35.648 -06:00 [INF] Executed action PaginaBizu.Controllers.AccountController.Login (PaginaBizu) in 627.4179ms
+2025-08-07 20:12:35.652 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.AccountController.Login (PaginaBizu)'
+2025-08-07 20:12:35.663 -06:00 [INF] Request finished HTTP/1.1 POST http://localhost:5116/Account/Login - 302 0 null 690.6469ms
+2025-08-07 20:12:35.672 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/ - null null
+2025-08-07 20:12:35.693 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-07 20:12:35.696 -06:00 [INF] Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PaginaBizu.Controllers.HomeController (PaginaBizu).
+2025-08-07 20:12:35.701 -06:00 [INF] ➡️ Acción ejecutándose: Home/Index | Usuario: hoshuacastillo48@gmail.com | IP: ::1 | Hora: "2025-08-07T20:12:35.7018585-06:00"
+2025-08-07 20:12:35.708 -06:00 [INF] ✅ Acción ejecutada: Home/Index | Hora: "2025-08-07T20:12:35.7081476-06:00"
+2025-08-07 20:12:35.713 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-07 20:12:35.746 -06:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2025-08-07 20:12:35.765 -06:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2025-08-07 20:12:35.797 -06:00 [INF] Executed ViewResult - view Index executed in 84.0683ms.
+2025-08-07 20:12:35.808 -06:00 [INF] Executed action PaginaBizu.Controllers.HomeController.Index (PaginaBizu) in 107.0347ms
+2025-08-07 20:12:35.819 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.HomeController.Index (PaginaBizu)'
+2025-08-07 20:12:35.823 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/ - 200 null text/html; charset=utf-8 151.1901ms
+2025-08-07 20:12:35.955 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_vs/browserLink - null null
+2025-08-07 20:12:35.971 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_vs/browserLink - 200 null text/javascript; charset=UTF-8 15.544ms
+2025-08-07 20:12:36.005 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-07 20:12:36.014 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 9.4893ms
+2025-08-07 20:12:36.207 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/tailwindcss - null null
+2025-08-07 20:12:36.222 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/tailwindcss - 404 0 null 14.8334ms
+2025-08-07 20:12:36.236 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/css/tailwindcss, Response status code: 404
+2025-08-07 20:12:37.385 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/Products - null null
+2025-08-07 20:12:37.429 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.ProductsController.Index (PaginaBizu)'
+2025-08-07 20:12:37.448 -06:00 [INF] Route matched with {action = "Index", controller = "Products", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller PaginaBizu.Controllers.ProductsController (PaginaBizu).
+2025-08-07 20:12:37.462 -06:00 [INF] ➡️ Acción ejecutándose: Products/Index | Usuario: hoshuacastillo48@gmail.com | IP: ::1 | Hora: "2025-08-07T20:12:37.4620433-06:00"
+2025-08-07 20:12:37.493 -06:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[CantidadDisponible], [p].[Categoria], [p].[Descripcion], [p].[FechaCreacion], [p].[ImagenUrl], [p].[NombreArticulo], [p].[Precio]
+FROM [Products] AS [p]
+2025-08-07 20:12:37.508 -06:00 [INF] ✅ Acción ejecutada: Products/Index | Hora: "2025-08-07T20:12:37.5082954-06:00"
+2025-08-07 20:12:37.518 -06:00 [INF] Executing ViewResult, running view Index.
+2025-08-07 20:12:37.579 -06:00 [INF] Executed ViewResult - view Index executed in 63.5254ms.
+2025-08-07 20:12:37.585 -06:00 [INF] Executed action PaginaBizu.Controllers.ProductsController.Index (PaginaBizu) in 124.0787ms
+2025-08-07 20:12:37.592 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.ProductsController.Index (PaginaBizu)'
+2025-08-07 20:12:37.598 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/Products - 200 null text/html; charset=utf-8 212.3825ms
+2025-08-07 20:12:37.646 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/css/shop.css - null null
+2025-08-07 20:12:37.651 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/imagenpulseraoro.jpg - null null
+2025-08-07 20:12:37.662 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/pulseraverde.jpg - null null
+2025-08-07 20:12:37.676 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/imagenpulseraoro.jpg - 404 0 null 25.1768ms
+2025-08-07 20:12:37.685 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/pulseraverde.jpg - 404 0 null 22.1873ms
+2025-08-07 20:12:37.693 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/imagenpulseraoro.jpg, Response status code: 404
+2025-08-07 20:12:37.703 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/pulseraverde.jpg, Response status code: 404
+2025-08-07 20:12:37.732 -06:00 [INF] Sending file. Request path: '/css/shop.css'. Physical path: 'C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalisisDeSistemas-master\PaginaBizu\wwwroot\css\shop.css'
+2025-08-07 20:12:37.736 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/css/shop.css - 200 5271 text/css 89.2431ms
+2025-08-07 20:12:37.934 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/imagenpulserrojo.jpg - null null
+2025-08-07 20:12:37.936 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - null null
+2025-08-07 20:12:37.948 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/_vs/browserLink - null null
+2025-08-07 20:12:37.959 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/imagenpulserrojo.jpg - 404 0 null 25.417ms
+2025-08-07 20:12:37.968 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_framework/aspnetcore-browser-refresh.js - 200 16505 application/javascript; charset=utf-8 32.2288ms
+2025-08-07 20:12:37.997 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.6554ms
+2025-08-07 20:12:38.012 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/Cart/CartCount - null null
+2025-08-07 20:12:38.001 -06:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5116/imagenpulserrojo.jpg, Response status code: 404
+2025-08-07 20:12:38.039 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:38.046 -06:00 [INF] Route matched with {action = "CartCount", controller = "Cart", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CartCount() on controller PaginaBizu.Controllers.CartController (PaginaBizu).
+2025-08-07 20:12:38.050 -06:00 [INF] ➡️ Acción ejecutándose: Cart/CartCount | Usuario: hoshuacastillo48@gmail.com | IP: ::1 | Hora: "2025-08-07T20:12:38.0502504-06:00"
+2025-08-07 20:12:38.054 -06:00 [INF] ✅ Acción ejecutada: Cart/CartCount | Hora: "2025-08-07T20:12:38.0542253-06:00"
+2025-08-07 20:12:38.058 -06:00 [INF] Executing JsonResult, writing value of type 'System.Int32'.
+2025-08-07 20:12:38.061 -06:00 [INF] Executed action PaginaBizu.Controllers.CartController.CartCount (PaginaBizu) in 11.1175ms
+2025-08-07 20:12:38.062 -06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5116/Cart/CartCount - null null
+2025-08-07 20:12:38.064 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:38.072 -06:00 [INF] Executing endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:38.076 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/Cart/CartCount - 200 null application/json; charset=utf-8 64.8178ms
+2025-08-07 20:12:38.079 -06:00 [INF] Route matched with {action = "CartCount", controller = "Cart", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult CartCount() on controller PaginaBizu.Controllers.CartController (PaginaBizu).
+2025-08-07 20:12:38.092 -06:00 [INF] ➡️ Acción ejecutándose: Cart/CartCount | Usuario: hoshuacastillo48@gmail.com | IP: ::1 | Hora: "2025-08-07T20:12:38.0922883-06:00"
+2025-08-07 20:12:38.096 -06:00 [INF] ✅ Acción ejecutada: Cart/CartCount | Hora: "2025-08-07T20:12:38.0968341-06:00"
+2025-08-07 20:12:38.100 -06:00 [INF] Executing JsonResult, writing value of type 'System.Int32'.
+2025-08-07 20:12:38.102 -06:00 [INF] Executed action PaginaBizu.Controllers.CartController.CartCount (PaginaBizu) in 10.242ms
+2025-08-07 20:12:38.105 -06:00 [INF] Executed endpoint 'PaginaBizu.Controllers.CartController.CartCount (PaginaBizu)'
+2025-08-07 20:12:38.108 -06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5116/Cart/CartCount - 200 null application/json; charset=utf-8 46.8482ms

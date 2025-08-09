@@ -819,3 +819,4 @@ C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalis
 C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalisisDeSistemas-master\PaginaBizu\obj\Debug\net8.0\PaginaBizu.pdb
 C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalisisDeSistemas-master\PaginaBizu\obj\Debug\net8.0\PaginaBizu.genruntimeconfig.cache
 C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalisisDeSistemas-master\PaginaBizu\obj\Debug\net8.0\ref\PaginaBizu.dll
+C:\Users\hoshu\OneDrive\Desktop\ProyectoAnalisisDeSistemas-master\ProyectoAnalisisDeSistemas-master\PaginaBizu\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
