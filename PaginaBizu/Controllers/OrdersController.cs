@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PaginaBizu.Data;
 using PaginaBizu.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace PaginaBizu.Controllers
 {
@@ -61,26 +62,120 @@ namespace PaginaBizu.Controllers
 		// POST: Orders/Edit/5
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public IActionResult Edit(int id, [Bind("Id,Estado")] Order order)
+		public async Task<IActionResult> Edit(int id, [Bind("Id,Estado")] Order order)
 		{
-			if (id != order.Id)
+			try
+			{
+				if (id != order.Id)
+				{
+					if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+						return Json(new { success = false, message = "ID de pedido no válido" });
+					return NotFound();
+				}
+
+				if (string.IsNullOrEmpty(order.Estado))
+				{
+					ModelState.AddModelError("Estado", "El estado es requerido");
+					if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+						return Json(new { success = false, message = "El estado es requerido" });
+					return View(order);
+				}
+
+				var pedidoEnDb = await _context.Orders.FindAsync(id);
+				if (pedidoEnDb == null)
+				{
+					if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+						return Json(new { success = false, message = "Pedido no encontrado" });
+					return NotFound();
+				}
+
+				// Actualizar solo el estado
+				pedidoEnDb.Estado = order.Estado;
+				
+				// Marcar solo el campo Estado como modificado
+				_context.Entry(pedidoEnDb).Property(x => x.Estado).IsModified = true;
+				
+				await _context.SaveChangesAsync();
+				
+				var successMessage = $"Estado del pedido actualizado correctamente a: {order.Estado}";
+				
+				if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+				{
+					return Json(new { 
+						success = true, 
+						message = successMessage,
+						newStatus = order.Estado
+					});
+				}
+				
+				TempData["Success"] = successMessage;
+				return RedirectToAction(nameof(Index));
+			}
+			catch (Exception ex)
+			{
+				// Log the error
+				Console.WriteLine($"Error al actualizar el pedido: {ex.Message}");
+				
+				if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+				{
+					return Json(new { 
+						success = false, 
+						message = "Ocurrió un error al actualizar el pedido. Por favor, inténtalo de nuevo."
+					});
+				}
+				
+				ModelState.AddModelError("", "Ocurrió un error al actualizar el pedido. Por favor, inténtalo de nuevo.");
+				return View(order);
+			}
+		}
+
+		// GET: Orders/Delete/5
+		public async Task<IActionResult> Delete(int? id)
+		{
+			if (id == null)
 			{
 				return NotFound();
 			}
 
-			if (ModelState.IsValid)
+			var order = await _context.Orders
+				.Include(o => o.OrderItems)
+				.ThenInclude(oi => oi.Producto)
+				.FirstOrDefaultAsync(m => m.Id == id);
+
+			if (order == null)
 			{
-				var pedidoEnDb = _context.Orders.Find(id);
-				if (pedidoEnDb == null)
-					return NotFound();
-
-				pedidoEnDb.Estado = order.Estado;
-				_context.SaveChanges();
-
-				return RedirectToAction(nameof(Index));
+				return NotFound();
 			}
 
 			return View(order);
+		}
+
+		// POST: Orders/Delete/5
+		[HttpPost, ActionName("Delete")]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> DeleteConfirmed(int id)
+		{
+			var order = await _context.Orders.FindAsync(id);
+			if (order == null)
+			{
+				return NotFound();
+			}
+
+			// Eliminar los OrderItems primero
+			var orderItems = _context.OrderDetails.Where(od => od.OrderId == id);
+			_context.OrderDetails.RemoveRange(orderItems);
+
+			// Luego eliminar el pedido
+			_context.Orders.Remove(order);
+			await _context.SaveChangesAsync();
+
+			TempData["Success"] = "Pedido eliminado correctamente.";
+			return RedirectToAction(nameof(Index));
+		}
+
+		private bool OrderExists(int id)
+		{
+			return _context.Orders.Any(e => e.Id == id);
 		}
 
 		[Authorize(Roles = "Admin")]

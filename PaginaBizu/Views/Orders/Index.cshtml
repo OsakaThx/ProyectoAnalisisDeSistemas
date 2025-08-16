@@ -1,12 +1,42 @@
-﻿@model IEnumerable<PaginaBizu.Models.Order>
+@model IEnumerable<PaginaBizu.Models.Order>
 
 @{
     ViewData["Title"] = "Lista de Pedidos";
     var primerPedido = Model.FirstOrDefault();
     var isAdmin = User.IsInRole("Admin");
+    
+    // Función para obtener la clase CSS según el estado
+    string GetStatusClass(string estado)
+    {
+        return estado switch
+        {
+            "Pendiente" => "badge bg-warning text-dark",
+            "Procesando" => "badge bg-info text-dark",
+            "Enviado" => "badge bg-primary",
+            "Completado" => "badge bg-success",
+            "Cancelado" => "badge bg-danger",
+            _ => "badge bg-secondary"
+        };
+    }
 }
 
 <h1>Lista de Pedidos</h1>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Success"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Error"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
 
 @if (isAdmin)
 {
@@ -37,11 +67,17 @@
                     <td>@pedido.Id</td>
                     <td>@pedido.Fecha.ToShortDateString()</td>
                     <td>@pedido.UsuarioId</td>
-                    <td>@pedido.Estado</td>
+                    <td>
+                        <span class="@GetStatusClass(pedido.Estado)">@pedido.Estado</span>
+                    </td>
                     <td>@pedido.Total.ToString("C")</td>
                     <td>
-                        <a asp-action="Details" asp-route-id="@pedido.Id">Detalles</a> |
-                        <a asp-action="Edit" asp-route-id="@pedido.Id">Editar</a>
+                        <a asp-action="Details" asp-route-id="@pedido.Id" class="btn btn-info btn-sm">Detalles</a>
+                        <a asp-action="Edit" asp-route-id="@pedido.Id" class="btn btn-warning btn-sm">Editar</a>
+                        @if (isAdmin)
+                        {
+                            <a asp-action="Delete" asp-route-id="@pedido.Id" class="btn btn-danger btn-sm">Eliminar</a>
+                        }
                     </td>
                 </tr>
             }

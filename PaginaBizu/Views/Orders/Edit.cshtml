@@ -1,4 +1,4 @@
-﻿@model PaginaBizu.Models.Order
+@model PaginaBizu.Models.Order
 
 @{
     ViewData["Title"] = $"Editar Estado Pedido #{Model.Id}";
@@ -10,12 +10,20 @@
 
 <h1>Editar Estado Pedido #@Model.Id</h1>
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="Id" />
+@if (ViewData.ModelState[""]?.Errors.Count > 0)
+{
+    <div class="alert alert-danger">
+        @Html.ValidationSummary(true, "Se produjeron los siguientes errores:")
+    </div>
+}
+
+<form asp-action="Edit" method="post" id="editForm">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="Id" id="orderId" />
 
     <div class="form-group">
         <label asp-for="Estado" class="control-label"></label>
-        <select asp-for="Estado" class="form-control" asp-items="estadosSelectList">
+        <select asp-for="Estado" class="form-control" id="estadoSelect" asp-items="estadosSelectList">
             <option value="">-- Seleccione estado --</option>
         </select>
         <span asp-validation-for="Estado" class="text-danger"></span>
@@ -29,4 +37,33 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        $(document).ready(function() {
+            // Asegurarse de que el formulario se envíe correctamente
+            $('form').on('submit', function(e) {
+                e.preventDefault();
+                
+                var form = $(this);
+                var url = form.attr('action');
+                
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: form.serialize(),
+                    success: function(response) {
+                        if (response.redirect) {
+                            window.location.href = response.redirect;
+                        } else {
+                            // Si hay errores, actualizar la vista con los mensajes de error
+                            $('body').html(response);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error:', error);
+                        alert('Ocurrió un error al actualizar el pedido. Por favor, inténtalo de nuevo.');
+                    }
+                });
+            });
+        });
+    </script>
 }
