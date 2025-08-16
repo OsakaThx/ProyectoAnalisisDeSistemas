@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PaginaBizu.Data;
@@ -84,30 +84,58 @@ namespace PaginaBizu.Controllers
 		}
 
 		[Authorize(Roles = "Admin")]
-		[Authorize(Roles = "Admin")]
-		public IActionResult CrearPedidoPrueba()
+		public async Task<IActionResult> CrearPedidoPrueba()
 		{
-			var pedidoPrueba = new Order
+			try
 			{
-				UsuarioId = "usuarioPruebaId",
-				Fecha = DateTime.Now,
-				Estado = "Pendiente",
-				Total = 100,
-				OrderItems = new List<OrderDetail>  
-        {
-			new OrderDetail
-			{
-				ProductId = 1,
-				Cantidad = 2,
-				PrecioUnitario = 50
+				// Get the first available user ID from the database
+				var existingUserId = await _context.Users
+					.OrderBy(u => u.Id)
+					.Select(u => u.Id)
+					.FirstOrDefaultAsync();
+
+				if (string.IsNullOrEmpty(existingUserId))
+				{
+					TempData["Error"] = "No users found in the database. Please create a user first.";
+					return RedirectToAction("Index");
+				}
+
+				// Verify that product with ID 1 exists
+				var productExists = await _context.Products.AnyAsync(p => p.Id == 1);
+				if (!productExists)
+				{
+					TempData["Error"] = "Product with ID 1 not found. Please ensure products are seeded in the database.";
+					return RedirectToAction("Index");
+				}
+
+				var pedidoPrueba = new Order
+				{
+					UsuarioId = existingUserId,
+					Fecha = DateTime.Now,
+					Estado = "Pendiente",
+					Total = 100,
+					OrderItems = new List<OrderDetail>
+					{
+						new OrderDetail
+						{
+							ProductId = 1,
+							Cantidad = 2,
+							PrecioUnitario = 50
+						}
+					}
+				};
+
+				_context.Orders.Add(pedidoPrueba);
+				await _context.SaveChangesAsync();
+
+				TempData["Success"] = "Test order created successfully!";
+				return RedirectToAction("Index");
 			}
-		}
-			};
-
-			_context.Orders.Add(pedidoPrueba);
-			_context.SaveChanges();
-
-			return RedirectToAction("Index");
+			catch (Exception ex)
+			{
+				TempData["Error"] = $"Error creating test order: {ex.Message}";
+				return RedirectToAction("Index");
+			}
 		}
 
 

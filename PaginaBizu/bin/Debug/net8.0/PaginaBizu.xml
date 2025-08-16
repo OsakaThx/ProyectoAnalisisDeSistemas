@@ -143,6 +143,18 @@
         <member name="M:PaginaBizu.Migrations.AddOrdersAndOrderDetails.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:PaginaBizu.Migrations.InitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.InitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.InitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:PaginaBizu.Models.ErrorViewModel">
             <summary>
             Modelo para manejar información de error en la vista de error.

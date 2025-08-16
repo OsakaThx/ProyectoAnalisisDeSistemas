@@ -2,6 +2,8 @@
 using PaginaBizu.Data;
 using PaginaBizu.Helpers;
 using PaginaBizu.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 
 
@@ -70,7 +72,54 @@ namespace PaginaBizu.Controllers
 			return Json(totalItems);
 		}
 
+		[HttpPost]
+		public async Task<IActionResult> CreateTestOrder()
+		{
+			try
+			{
+				// Get the first available user ID from the database
+				var existingUserId = await _context.Users
+					.Select(u => u.Id)
+					.FirstOrDefaultAsync();
 
+				if (string.IsNullOrEmpty(existingUserId))
+				{
+					return Json(new { success = false, message = "No users found in the database. Please create a user first." });
+				}
 
+				// Verify that product with ID 1 exists
+				var productExists = await _context.Products.AnyAsync(p => p.Id == 1);
+				if (!productExists)
+				{
+					return Json(new { success = false, message = "Product with ID 1 not found. Please ensure products are seeded in the database." });
+				}
+
+				var pedidoPrueba = new Order
+				{
+					UsuarioId = existingUserId, // Use the existing user ID
+					Fecha = DateTime.Now,
+					Estado = "Pendiente",
+					Total = 100,
+					OrderItems = new List<OrderDetail>
+					{
+						new OrderDetail
+						{
+							ProductId = 1,
+							Cantidad = 2,
+							PrecioUnitario = 50
+						}
+					}
+				};
+
+				_context.Orders.Add(pedidoPrueba);
+				await _context.SaveChangesAsync();
+
+				return Json(new { success = true, message = "Pedido de prueba creado exitosamente", orderId = pedidoPrueba.Id });
+			}
+			catch (Exception ex)
+			{
+				return Json(new { success = false, message = "Error al crear el pedido: " + ex.Message });
+			}
+		}
 	}
 }
