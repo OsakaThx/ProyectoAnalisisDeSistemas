@@ -1,63 +1,79 @@
-﻿@model PaginaBizu.Models.Product
+@model PaginaBizu.Models.Product
 @{
-    ViewData["Title"] = "Editar producto";
+    ViewData["Title"] = "Editar Producto";
 }
 
-<h1>Editar producto</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">Editar Producto</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit" enctype="multipart/form-data">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                        <input type="hidden" asp-for="Id" />
 
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+                        <div class="form-group mb-3">
+                            <label asp-for="NombreArticulo" class="form-label"></label>
+                            <input asp-for="NombreArticulo" class="form-control" />
+                            <span asp-validation-for="NombreArticulo" class="text-danger"></span>
+                        </div>
 
-            <div class="form-group">
-                <label asp-for="NombreArticulo" class="control-label"></label>
-                <input asp-for="NombreArticulo" class="form-control" />
-                <span asp-validation-for="NombreArticulo" class="text-danger"></span>
+                        <div class="form-group mb-3">
+                            <label asp-for="CantidadDisponible" class="form-label"></label>
+                            <input asp-for="CantidadDisponible" class="form-control" />
+                            <span asp-validation-for="CantidadDisponible" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Precio" class="form-label"></label>
+                            <input asp-for="Precio" class="form-control" />
+                            <span asp-validation-for="Precio" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Descripcion" class="form-label"></label>
+                            <input asp-for="Descripcion" class="form-control" />
+                            <span asp-validation-for="Descripcion" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label class="form-label">Imagen Actual</label>
+                            @if (!string.IsNullOrEmpty(Model.ImagenUrl))
+                            {
+                                <div class="mb-2">
+                                    <img src="@Model.ImagenUrl" alt="Imagen del producto" class="img-thumbnail" style="max-height: 200px;" />
+                                </div>
+                            }
+                            <label asp-for="ImagenUrl" class="form-label">Nueva Imagen (opcional)</label>
+                            <input type="file" name="imageFile" id="imageFile" class="form-control" accept="image/*" />
+                            <span asp-validation-for="ImagenUrl" class="text-danger"></span>
+                            <small class="form-text text-muted">Deje en blanco para mantener la imagen actual</small>
+                            <input type="hidden" asp-for="ImagenUrl" id="imageUrl" />
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Categoria" class="form-label"></label>
+                            <input asp-for="Categoria" class="form-control" />
+                            <span asp-validation-for="Categoria" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="FechaCreacion" class="form-label"></label>
+                            <input asp-for="FechaCreacion" class="form-control" />
+                            <span asp-validation-for="FechaCreacion" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                            <input type="submit" value="Guardar" class="btn btn-success" />
+                        </div>
+                    </form>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label asp-for="CantidadDisponible" class="control-label"></label>
-                <input asp-for="CantidadDisponible" class="form-control" />
-                <span asp-validation-for="CantidadDisponible" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Precio" class="control-label"></label>
-                <input asp-for="Precio" class="form-control" />
-                <span asp-validation-for="Precio" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Descripcion" class="control-label"></label>
-                <input asp-for="Descripcion" class="form-control" />
-                <span asp-validation-for="Descripcion" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="ImagenUrl" class="control-label"></label>
-                <input asp-for="ImagenUrl" class="form-control" />
-                <span asp-validation-for="ImagenUrl" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Categoria" class="control-label"></label>
-                <input asp-for="Categoria" class="form-control" />
-                <span asp-validation-for="Categoria" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="FechaCreacion" class="control-label"></label>
-                <input asp-for="FechaCreacion" class="form-control" />
-                <span asp-validation-for="FechaCreacion" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mt-3">
-                <input type="submit" value="Guardar" class="btn btn-success" />
-                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
@@ -65,4 +81,13 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script>
+        // Update the hidden field with the file name when a file is selected
+        document.getElementById('imageFile')?.addEventListener('change', function(e) {
+            if (e.target.files.length > 0) {
+                const fileName = e.target.files[0].name;
+                document.getElementById('imageUrl').value = '/images/products/' + fileName;
+            }
+        });
+    </script>
 }

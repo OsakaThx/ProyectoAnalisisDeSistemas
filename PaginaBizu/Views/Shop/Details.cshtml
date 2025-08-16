@@ -1,4 +1,4 @@
-﻿@model PaginaBizu.Models.DetalleProductoViewModel
+@model PaginaBizu.Models.DetalleProductoViewModel
 @{
     ViewData["Title"] = Model.Producto.NombreArticulo;
     var precioFormateado = $"₡{Model.Producto.Precio:N0}".Replace(",", " ");
@@ -233,9 +233,11 @@
     <!-- PRODUCT DETAIL -->
     <div class="product-details">
         <div class="product-layout">
-            <img src="@Url.Content("~/images/" + Model.Producto.ImagenUrl)"
+            <img src="@Model.Producto.ImagenUrl"
                  alt="@Model.Producto.NombreArticulo"
-                 class="img-fluid" />
+                 class="img-fluid"
+                 onerror="this.onerror=null; this.src='https://via.placeholder.com/500?text=Imagen+no+disponible'"
+                 style="max-height: 500px; width: auto;" />
 
             <div class="product-info">
                 <h1 class="product-title">@Model.Producto.NombreArticulo</h1>

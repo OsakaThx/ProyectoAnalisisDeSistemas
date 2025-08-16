@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Tienda";
 }
 @model IEnumerable<PaginaBizu.Models.Product>
@@ -145,7 +145,15 @@
         @foreach (var producto in Model)
         {
             <div class="product-item" data-name="@producto.NombreArticulo.ToLower()">
-                <img src="@Url.Content("~/images/" + producto.ImagenUrl)" alt="@producto.NombreArticulo" />
+                @{
+                    var imagePath = producto.ImagenUrl?.StartsWith("/") == true ? 
+                        producto.ImagenUrl : 
+                        $"/images/products/{producto.ImagenUrl}";
+                }
+                <img src="@imagePath" 
+                     alt="@producto.NombreArticulo" 
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/300?text=Imagen+no+disponible'"
+                     style="width: 100%; height: 200px; object-fit: contain;" />
                 <div class="product-name">@producto.NombreArticulo</div>
                 <div class="product-price">₡@String.Format("{0:N0}", producto.Precio) colones</div>
                 <a href="@Url.Action("Details", "Shop", new { id = producto.Id })" class="btn-vermas">Ver más</a>
