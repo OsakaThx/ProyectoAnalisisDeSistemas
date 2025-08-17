@@ -1,7 +1,9 @@
-﻿namespace PaginaBizu.Models
+namespace PaginaBizu.Models
 {
 	using System;
 	using System.ComponentModel.DataAnnotations;
+	using System.ComponentModel.DataAnnotations.Schema;
+	using Microsoft.EntityFrameworkCore;
 
 	public class Product
 	{
@@ -17,6 +19,7 @@
 
 		[Required(ErrorMessage = "El precio es obligatorio.")]
 		[Range(0.01, double.MaxValue, ErrorMessage = "El precio debe ser mayor a cero.")]
+		[Precision(18, 2)]
 		public decimal Precio { get; set; }
 
 		[StringLength(500, ErrorMessage = "La descripción no puede exceder 500 caracteres.")]

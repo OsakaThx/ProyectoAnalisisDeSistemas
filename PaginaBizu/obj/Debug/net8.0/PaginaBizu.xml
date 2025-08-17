@@ -155,6 +155,18 @@
         <member name="M:PaginaBizu.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:PaginaBizu.Migrations.CreateFacturasTable">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.CreateFacturasTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.CreateFacturasTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:PaginaBizu.Migrations.CreateFacturasTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:PaginaBizu.Models.ErrorViewModel">
             <summary>
             Modelo para manejar información de error en la vista de error.

@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PaginaBizu.Models
 {
@@ -11,6 +13,7 @@ namespace PaginaBizu.Models
 
 		public DateTime Fecha { get; set; }
 
+		[Precision(18, 2)]
 		public decimal Total { get; set; }
 
 		public string Estado { get; set; } = "Pendiente";
@@ -25,6 +28,7 @@ namespace PaginaBizu.Models
 		public int OrderId { get; set; }
 		public int ProductId { get; set; }
 		public int Cantidad { get; set; }
+		[Precision(18, 2)]
 		public decimal PrecioUnitario { get; set; }
 		public Product Producto { get; set; }
 		}

@@ -1,0 +1,120 @@
+@model PaginaBizu.Models.Factura
+@{
+    ViewData["Title"] = "Factura de Compra";
+    Layout = "_Layout";
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <div class="row">
+                <div class="col-6">
+                    <h2 class="mb-0">Factura #@Model.NumeroFactura</h2>
+                </div>
+                <div class="col-6 text-end">
+                    <p class="mb-0">Fecha: @Model.FechaEmision.ToString("dd/MM/yyyy")</p>
+                    <p class="mb-0">Estado: <span class="badge bg-success">@Model.Estado</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <h5>Datos del Cliente</h5>
+                    <p class="mb-1"><strong>Nombre:</strong> @Model.NombreCliente</p>
+                    <p class="mb-1"><strong>N° Orden:</strong> @Model.OrderId</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <h5>Bizu Store</h5>
+                    <p class="mb-1">Tienda en línea de productos varios</p>
+                    <p class="mb-1">info@bizustore.com</p>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Producto</th>
+                            <th class="text-end">Precio Unitario</th>
+                            <th class="text-center">Cantidad</th>
+                            <th class="text-end">Subtotal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Detalles)
+                        {
+                            <tr>
+                                <td>@item.NombreProducto</td>
+                                <td class="text-end">₡@item.PrecioUnitario.ToString("#,##0.00")</td>
+                                <td class="text-center">@item.Cantidad</td>
+                                <td class="text-end">₡@((item.PrecioUnitario * item.Cantidad).ToString("#,##0.00"))</td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-end fw-bold">Subtotal:</td>
+                            <td class="text-end">₡@Model.Subtotal.ToString("#,##0.00")</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="text-end fw-bold">Impuesto (13%):</td>
+                            <td class="text-end">₡@Model.Impuesto.ToString("#,##0.00")</td>
+                        </tr>
+                        <tr class="table-active">
+                            <td colspan="3" class="text-end fw-bold fs-5">Total:</td>
+                            <td class="text-end fw-bold fs-5">₡@Model.Total.ToString("#,##0.00")</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="mt-4">
+                <p class="text-muted">
+                    <small>
+                        Gracias por su compra. Para cualquier consulta, contáctenos a info@bizustore.com
+                        o al teléfono +506 1234-5678.
+                    </small>
+                </p>
+            </div>
+        </div>
+        
+        <div class="card-footer text-center">
+            <button class="btn btn-primary" onclick="window.print()">
+                <i class="bi bi-printer"></i> Imprimir Factura
+            </button>
+            <a href="/" class="btn btn-outline-secondary">
+                <i class="bi bi-house"></i> Volver al Inicio
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        @@media print {
+            body * {
+                visibility: hidden;
+            }
+            .card, .card * {
+                visibility: visible;
+            }
+            .card {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                border: none;
+                box-shadow: none;
+            }
+            .card-footer {
+                display: none;
+            }
+            @@page {
+                size: auto;
+                margin: 0mm;
+            }
+        }
+    </style>
+}

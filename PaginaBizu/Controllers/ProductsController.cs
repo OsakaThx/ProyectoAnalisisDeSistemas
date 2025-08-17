@@ -6,6 +6,8 @@ using PaginaBizu.Models;
 using Microsoft.AspNetCore.Hosting;
 using System.IO;
 using System.Threading.Tasks;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace PaginaBizu.Controllers
 {
@@ -214,6 +216,83 @@ namespace PaginaBizu.Controllers
             }
 
             return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> TestPurchase(int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+
+            // Get the current user
+            var userId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null)
+            {
+                return Unauthorized();
+            }
+
+            // Create a test order
+            var order = new Order
+            {
+                UsuarioId = userId,
+                Fecha = DateTime.Now,
+                Total = product.Precio,
+                Estado = "Completada",
+                OrderItems = new List<OrderDetail>
+                {
+                    new OrderDetail
+                    {
+                        ProductId = product.Id,
+                        Cantidad = 1,
+                        PrecioUnitario = product.Precio,
+                        Producto = product
+                    }
+                }
+            };
+
+            _context.Orders.Add(order);
+            await _context.SaveChangesAsync();
+
+            // Create invoice
+            var factura = new Factura
+            {
+                FechaEmision = DateTime.Now,
+                ClienteNombre = user.UserName,
+                ClienteEmail = user.Email,
+                Subtotal = product.Precio,
+                Impuestos = product.Precio * 0.13m, // 13% de impuestos
+                Total = product.Precio * 1.13m,
+                MetodoPago = "Tarjeta de crédito (Prueba)",
+                EstadoPago = "Pagado",
+                OrdenId = order.Id,
+                Detalles = new List<DetalleFactura>
+                {
+                    new DetalleFactura
+                    {
+                        ProductoId = product.Id,
+                        NombreProducto = product.NombreArticulo,
+                        Cantidad = 1,
+                        PrecioUnitario = product.Precio,
+                        Total = product.Precio
+                    }
+                }
+            };
+
+            _context.Facturas.Add(factura);
+            await _context.SaveChangesAsync();
+
+            // Update product stock
+            product.CantidadDisponible--;
+            _context.Products.Update(product);
+            await _context.SaveChangesAsync();
+
+            // Redirect to invoice view
+            return RedirectToAction("Index", "Facturas", new { id = factura.Id });
         }
 
         private bool ProductExists(int id)
