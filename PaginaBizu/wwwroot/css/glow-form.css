@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 @import "tailwindcss";
 
 * {
@@ -26,7 +26,7 @@ body {
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: inset 0 0 1px #272727;
-    z-index: 9999;
+    z-index: 1000; /* Reducido de 9999 a 1000 */
 }
 
     /* Texto título */
@@ -92,6 +92,15 @@ body {
         border-color: #6f6;
         box-shadow: 0 0 20px rgba(0, 255, 0, .6), inset 0 0 10px rgba(0, 255, 0, .4);
     }
+}
+
+/* Asegurar que el modal esté por encima de todo */
+.modal {
+    z-index: 1100 !important;
+}
+
+.modal-backdrop {
+    z-index: 1090 !important;
 }
 
 .login-container-small button {

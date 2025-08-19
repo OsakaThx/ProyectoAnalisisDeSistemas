@@ -1,4 +1,4 @@
-﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity
 @inject UserManager<PaginaBizu.Models.ApplicationUser> UserManager
 @inject IHttpContextAccessor HttpContextAccessor
 
@@ -20,17 +20,328 @@
     <link rel="stylesheet" href="assets/css/baguetteBox.min.css" />
     <link rel="stylesheet" href="assets/css/vanilla-zoom.min.css" />
     <style>
-        .carousel-inner img {
-            width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: contain;
+        /* Efectos de animación */
+        /* Animación de desvanecimiento de abajo hacia arriba */
+        @@keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Animación de zoom suave */
+        @@keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Animación de deslizamiento desde la derecha */
+        @@keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Clases para controlar las animaciones */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+
+        .fade-in { animation: fadeInUp 0.8s ease-out forwards; }
+        .zoom-in { animation: zoomIn 0.8s ease-out forwards; }
+        .slide-in-right { animation: slideInRight 0.8s ease-out forwards; }
+
+        /* Retrasos para animaciones escalonadas */
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        /* New Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background: #f8f9fa;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 70vh;
+            min-height: 400px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .hero-image img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding: 2.5rem;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-content h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 1.2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            letter-spacing: 0.5px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            text-shadow: 1px 1px 1px rgba(255,255,255,0.8);
+        }
+
+        /* Sección de Galería */
+        .gallery-section {
+            background: #fff;
+            padding: 5rem 0;
+            overflow: hidden;
+        }
+
+        /* Estilo para las tarjetas de producto */
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .product-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Estilo para las imágenes de la galería */
+        .gallery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.03);
+        }
+
+        /* Estilo para las secciones con efecto de aparición */
+        .section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+            padding: 80px 0;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-section .section-header h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .gallery-section .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #d4af37;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .gallery-grid {
+            padding: 2rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay h5 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        /* Product Images */
         .custom-image {
-            max-height: 200px;
+            max-height: 300px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .custom-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .product-item {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .product-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* General Styles */
+        .text-info {
+            color: #2c3e50 !important;
+        }
+
+        /* Remove carousel indicators and controls */
+        .carousel-indicators,
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none !important;
+        }
+
+        /* Ensure images in carousel are properly sized */
+        .carousel-inner img {
+            max-height: 500px;
+            width: auto;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Responsive adjustments */
+        @@media (max-width: 768px) {
+            .hero-content {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
         }
     </style>
+    <!-- Script para animaciones al hacer scroll -->
+    <script>
+        // Función para verificar si un elemento está en el viewport
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                rect.bottom >= 0
+            );
+        }
+
+        // Función para manejar las animaciones al hacer scroll
+        function handleScrollAnimations() {
+            // Animar secciones
+            document.querySelectorAll('.section').forEach(section => {
+                if (isInViewport(section)) {
+                    section.classList.add('visible');
+                }
+            });
+
+            // Animar tarjetas de productos
+            document.querySelectorAll('.product-card').forEach((card, index) => {
+                if (isInViewport(card)) {
+                    // Retraso escalonado para cada tarjeta
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, 150 * (index % 4));
+                }
+            });
+        }
+
+        // Ejecutar al cargar la página y al hacer scroll
+        document.addEventListener('DOMContentLoaded', handleScrollAnimations);
+        window.addEventListener('scroll', handleScrollAnimations);
+    </script>
 </head>
 <body>
 
@@ -114,47 +425,59 @@
         </div>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="page landing-page">
-
-        <section class="clean-block clean-hero" style="color: rgba(225,211,223,0.85);background: url('assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg');">
-            <div class="text">
-                <h2>Encuentra la mejor Bizutería de Costa Rica</h2>
+        <!-- Sección Hero - Primera sección con imagen de fondo -->
+        <section class="hero-section section visible">
+            <div class="hero-image">
+                <img src="assets/img/depositphotos_5028610-stock-photo-beautiful-woman.jpg" alt="Bisutería Costa Rica" class="img-fluid w-100 h-100 object-fit-cover">
+                <div class="hero-content">
+                    <h1 class="fade-in">Bisutería Costa Rica</h1>
+                    <p class="lead fade-in delay-1">
+                        Descubre nuestra exclusiva colección de accesorios finamente elaborados
+                    </p>
+                    <div class="fade-in delay-2">
+                        <a href="#productos" class="btn btn-primary btn-lg">Ver Colección</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-wave">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512,64,583.67,69.86c69.27,5.68,135,10,200.41,8.47,69.09-1.67,137.3-16.6,201.07-41.2,35.8-13.9,70.22-31.4,102.85-52.13V0Z" opacity=".25" fill="#ffffff"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,141.56,68.14,9.12,14.48,14.78,30.82,20.08,47.13,7.52,23.18,13.21,47.76,26.63,66.65,21.1,29.73,60.6,38.7,91.28,30.11,31.58-8.79,56.31-33.79,66.28-64.12C1150.49,193.1,1200,15.1,1200,15.1V0Z" opacity=".5" fill="#ffffff"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#ffffff"></path>
+                </svg>
             </div>
         </section>
 
-        <section class="clean-block clean-info dark">
+        <!-- Productos -->
+        <section id="productos" class="clean-block clean-info dark py-5">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info"><span style="color: rgb(0, 0, 0);">Algunos de nuestros accesorios</span></h2>
+                    <h2 class="text-info">Algunos de nuestros accesorios</h2>
                 </div>
                 <div class="container mt-4">
-                    <!-- Producto 1 -->
                     <div class="row mb-4 align-items-center">
                         <div class="col-md-6 text-center">
-                            <img src="assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg" style="max-width: 250px;" alt="Pulsera 1">
+                            <img src="assets/img/scenery/61-HMICpUTL._AC_UY1000_.jpg" class="custom-image" alt="Pulsera dorada simple" />
                         </div>
                         <div class="col-md-6">
                             <h5>Pulsera Dorada</h5>
                             <p>₡15,000</p>
                         </div>
                     </div>
-
-                    <!-- Producto 2 -->
                     <div class="row mb-4 align-items-center">
                         <div class="col-md-6 text-center">
-                            <img src="assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg" style="max-width: 250px;" alt="Pulsera 2">
+                            <img src="assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg" class="custom-image" alt="Pulsera elegante dorada" />
                         </div>
                         <div class="col-md-6">
                             <h5>Pulsera Elegante</h5>
                             <p>₡18,500</p>
                         </div>
                     </div>
-
-                    <!-- Producto 3 -->
                     <div class="row mb-4 align-items-center">
                         <div class="col-md-6 text-center">
-                            <img src="assets/img/scenery/pulsera-aine-stone-gold.jpg" style="max-width: 250px;" alt="Pulsera 3">
+                            <img src="assets/img/scenery/pulsera-aine-stone-gold.jpg" class="custom-image" alt="Pulsera con piedra dorada" />
                         </div>
                         <div class="col-md-6">
                             <h5>Pulsera Piedra Dorada</h5>
@@ -165,50 +488,89 @@
             </div>
         </section>
 
-        <!-- REDES -->
-        <section class="clean-block features">
+        <!-- Galería de Productos -->
+        <section id="galeria" class="gallery-section py-5">
             <div class="container">
-                <div class="block-heading">
-                    <h2 class="text-info"><span style="color: rgb(224, 59, 178);">Encuéntranos en</span></h2>
-                    <p>Costa Rica</p>
+                <div class="section-header text-center mb-5">
+                    <h2 class="display-4 fw-bold">Nuestros Productos</h2>
+                    <p class="lead text-muted">Descubre nuestra exclusiva colección de joyería fina</p>
                 </div>
-                <div class="row text-center">
-                    <div class="col-md-4 feature-box">
-                        <i class="icon-social-instagram icon" style="color: rgb(224,59,178); font-size: 40px;"></i>
-                        <h4><strong>Instagram</strong></h4>
-                        <p>BizuCr</p>
-                    </div>
-                    <div class="col-md-4 feature-box">
-                        <i class="icon-phone icon" style="color: rgb(224,59,178); font-size: 40px;"></i>
-                        <h4><strong>Whatsapp</strong></h4>
-                        <p>8402 5070</p>
-                    </div>
-                    <div class="col-md-4 feature-box">
-                        <i class="icon-social-facebook icon" style="color: rgb(224,59,178); font-size: 40px;"></i>
-                        <h4><strong>Facebook</strong></h4>
-                        <p>BizuCr</p>
+                <div class="gallery-grid">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg" class="img-fluid" alt="Collar dorado en exhibición">
+                                <div class="gallery-overlay">
+                                    <h5>Collar Dorado</h5>
+                                    <p>Elegante collar en oro de 18k</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="assets/img/scenery/il_570xN.2179198790_o9bo.jpeg" class="img-fluid" alt="Pulsera con diseño único">
+                                <div class="gallery-overlay">
+                                    <h5>Pulsera Elegante</h5>
+                                    <p>Diseño único en plata 925</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="gallery-item">
+                                <img src="assets/img/scenery/66824523eb89f54aaf11e243-gold-bracelets-for-women-18k-gold-plated.jpg" class="img-fluid" alt="Pulsera elegante dorada">
+                                <div class="gallery-overlay">
+                                    <h5>Pulsera Elegante</h5>
+                                    <p>Diseño elegante en oro</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Botón central -->
+        <div class="text-center my-4">
+            <a asp-controller="Shop" asp-action="Index" class="btn btn-primary btn-lg">Ver Productos</a>
+        </div>
 
-        <!-- SLIDER -->
-        <section class="clean-block slider dark">
+        <!-- Sección de Galería - Muestra los productos -->
+        <section class="gallery-section section" id="productos">
             <div class="container">
                 <div class="block-heading">
-                    <h2 class="text-info">Slider</h2>
+                    <h2 class="text-info">Sobre nosotros</h2>
+                    <p>Somos una empresa joven en Costa Rica, dedicada a ofrecerte la mejor bisutería con un servicio personalizado.</p>
                 </div>
-                <div class="carousel slide" data-bs-ride="carousel" id="carousel-1">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="w-100 d-block img-fluid" src="assets/img/scenery/09a84a043cf1b58d59b0e39a12c60491.jpg" alt="Slide Image">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="w-100 d-block img-fluid" src="assets/img/scenery/il_570xN.2179198790_o9bo.jpeg" alt="Slide Image">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="w-100 d-block img-fluid" src="assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg" alt="Slide Image">
+                <!-- Resto del código -->
+        </section>
+
+        <!-- Redes -->
+        <section class="clean-block features">
+            <div class="container">
+                <div class="block-heading">
+                    <h2 class="text-info">Encuéntranos en</h2>
+                    <p>Costa Rica</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-4 feature-box">
+                        <i class="icon-social-instagram icon" style="color: #d4af37; font-size: 40px;"></i>
+                        <h4>Instagram</h4>
+                        <p>BizuCr</p>
+                    </div>
+                    <div class="col-md-4 feature-box">
+                        <i class="icon-phone icon" style="color: #d4af37; font-size: 40px;"></i>
+                        <h4>Whatsapp</h4>
+                        <p>8402 5070</p>
+                    </div>
+                    <div class="col-md-4 feature-box">
+                        <i class="icon-social-facebook icon" style="color: #d4af37; font-size: 40px;"></i>
+                        <h4>Facebook</h4>
+                        <p>BizuCr</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+                            <img src="assets/img/scenery/17001222879e9360ad6ad00d7ff0a6b62437cfbf97_thumbnail_720x.jpg" alt="Slide Image" class="img-fluid">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev">
@@ -245,9 +607,11 @@
 
     </main>
 
-    <footer class="page-footer dark">
-        <div class="footer-copyright">
-            <p>© 2025 BizuCr</p>
+    <!-- Footer -->
+    <footer class="page-footer dark text-white" style="background-color: #212529; padding: 30px 0;">
+        <div class="container text-center">
+            <p style="color: #d4af37; margin: 0 0 10px 0;">¡Gracias por visitarnos! Es un gusto ayudarle a encontrar el accesorio perfecto </p>
+            <p class="mb-0">© 2025 Bisutería Costa Rica. Todos los derechos reservados.</p>
         </div>
     </footer>
 
